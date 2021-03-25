@@ -313,8 +313,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _checkPosition: {x: 0, y: -1, z: 0}
-  _checkRadius: 0.1
+  _checkSpherePosition: {x: 0, y: 0, z: 0}
+  _checkSphereRadius: 0
 --- !u!114 &764368769
 MonoBehaviour:
   m_ObjectHideFlags: 0

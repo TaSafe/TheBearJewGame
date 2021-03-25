@@ -1,5 +1,12 @@
 using UnityEngine;
 
+/*
+ * 
+ *  Mudar o calculo da gravidade para ser chamado apenas uma vez durante o método da movimentação
+ * 
+ * 
+ * */
+
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float _characterSpeed = 3f;
