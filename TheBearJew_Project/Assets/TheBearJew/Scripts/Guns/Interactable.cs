@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class IInteractable : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
 
 }
