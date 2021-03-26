@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 8851519156494932516}
   - component: {fileID: 8851519156494932515}
   m_Layer: 0
-  m_Name: Gun_01
+  m_Name: Gun_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,5 +1916,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ffa2e6374828d43b8f8793e6901a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inHandPos: {x: 6.465, y: -1.132, z: -2.1}
-  inHandRot: {x: -1.388, y: 93.751, z: 78.389}
+  inHandPos: {x: 0.3, y: -0.02, z: -0.011}
+  inHandRot: {x: 0, y: 90, z: 90}
