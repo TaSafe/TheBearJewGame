@@ -1,11 +1,8 @@
 using UnityEngine;
 
 /*
- * 
  *  Mudar o calculo da gravidade para ser chamado apenas uma vez durante o método da movimentação
- * 
- * 
- * */
+ */
 
 public class Movement : MonoBehaviour
 {
@@ -16,7 +13,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Vector3 _checkSpherePosition;
     [SerializeField] private float _checkSphereRadius;
-
 
     private CharacterController _characterController;
     private Vector3 playerVelocity = Vector3.zero;  // Up/Down movement velocity
@@ -67,27 +63,36 @@ public class Movement : MonoBehaviour
         _animator.SetFloat("xVelocity", velocityX, .1f, Time.deltaTime);
         _animator.SetFloat("zVelocity", velocityZ, .1f, Time.deltaTime);
 
+        /*
         //Som dos passos não está funcionando :(
 
-        /*   FMOD.Studio.EventInstance soundSteps;
-          soundSteps= FMODUnity.RuntimeManager.CreateInstance("event:/Passos_concreto");
-          private bool soundStepsIsPlaying;
+        FMOD.Studio.EventInstance soundSteps;
+        
+        soundSteps = FMODUnity.RuntimeManager.CreateInstance("event:/Passos_concreto");
+        private bool soundStepsIsPlaying;
 
-          if (xInput > 0.02f || yInput > 0.02f || xInput < -0.02f || yInput < -0.02f)   {
-
-                      if  (!soundStepsIsPlaying) {
-                              Debug.Log("cade o som familia"); 
-                              soundSteps.start(); 
-                              soundStepsIsPlaying = true; }  }
-
-          else { soundSteps.setPaused(true);    soundStepsIsPlaying = false;   }*/
-
-
-         void OnDrawGizmos()
+        if (xInput > 0.02f || yInput > 0.02f || xInput < -0.02f || yInput < -0.02f)   
         {
-            //Check gravity gizmos
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(_checkSpherePosition + transform.position, _checkSphereRadius);
+            if (!soundStepsIsPlaying)
+            {
+                Debug.Log("cade o som familia");
+                soundSteps.start();
+                soundStepsIsPlaying = true;
+            }
         }
+        else
+        {
+            soundSteps.setPaused(true);
+            soundStepsIsPlaying = false;
+        }
+        */
 
-    } }
+    }
+
+    void OnDrawGizmos()
+    {
+        //Check gravity gizmos
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_checkSpherePosition + transform.position, _checkSphereRadius);
+    }
+}
