@@ -1,19 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GunPick : MonoBehaviour, IInteraction
 {
+
     [SerializeField] private Vector3 inHandPos;
     [SerializeField] private Vector3 inHandRot;
 
     public void IdleInteraction()
     {
+        UiInteraction.instance.ShowUi(false);
     }
 
     public void Interacting()
     {
+        UiInteraction.instance.ShowUi(true);
     }
 
     public void Interaction()
+    {
+        UiInteraction.instance.ShowUi(false);
+        AttachGunToHand();
+    }
+
+    private void AttachGunToHand()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         var child = player.GetComponentsInChildren<Transform>();
