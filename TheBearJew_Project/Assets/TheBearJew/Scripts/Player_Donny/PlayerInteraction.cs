@@ -1,38 +1,41 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
     private bool _ableToInteract;
     private bool _hasGun;
     IInteraction _currentInteraction = null;
+    PlayerGunHandler _gunHandler;
 
-    private void Start() => Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
-
-    //Tem que mudar como verifica se possui arma na mão
+    private void Start()
+    {
+        Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
+        _gunHandler = GetComponentInParent<PlayerGunHandler>();
+    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && transform.parent.GetComponentInChildren<GunPick>() != null && _hasGun)
+        if (Input.GetMouseButtonDown(1))
         {
-            transform.parent.GetComponentInChildren<GunPick>().DropGun();
-            _hasGun = false;
-            UiInteraction.instance.GunHudImage(null);   //MUDA A HUD DA ARMA
-        }
-
-        if (Input.GetMouseButtonDown(1) && _ableToInteract)
-        {
-            _currentInteraction.Interaction();
-            _ableToInteract = false;
-            _hasGun = true;
+            if (_ableToInteract && !_gunHandler.HasGun)
+            {
+                _currentInteraction.Interaction();
+                _ableToInteract = false;
+                return;
+            }
+            else if(!_ableToInteract && _gunHandler.HasGun)
+            {
+                _gunHandler.DropGun();
+            }
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         _currentInteraction = other.GetComponent<IInteraction>();
         if (_currentInteraction != null)
         {
+            UiInteraction.instance.ShowUi(true);
             _currentInteraction.Interacting();
             _ableToInteract = true;
         }
@@ -43,18 +46,10 @@ public class PlayerInteraction : MonoBehaviour
         _currentInteraction = other.GetComponent<IInteraction>();
         if (_currentInteraction != null)
         {
+            UiInteraction.instance.ShowUi(false);
             _currentInteraction.IdleInteraction();
             _ableToInteract = false;
         }
-    }
-
-    private Collider GetMouseHitCollider(Camera camera)
-    {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue))
-            return hitInfo.collider;
-        else
-            return null;
     }
 
 }

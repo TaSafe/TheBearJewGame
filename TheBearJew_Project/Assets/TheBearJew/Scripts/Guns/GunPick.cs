@@ -7,46 +7,15 @@ public class GunPick : MonoBehaviour, IInteraction
     [SerializeField] private Vector3 inHandPos;
     [SerializeField] private Vector3 inHandRot;
 
-    public void IdleInteraction()
-    {
-        UiInteraction.instance.ShowUi(false);
-    }
+    public void IdleInteraction() { }
 
-    public void Interacting()
-    {
-        UiInteraction.instance.ShowUi(true);
-    }
+    public void Interacting() { }
 
     public void Interaction()
     {
         UiInteraction.instance.ShowUi(false);
         UiInteraction.instance.GunHudImage(GetComponent<GunBehaviours>().GetGunHudImage());
-        AttachGunToHand();
+        GetComponent<Collider>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGunHandler>().EquipGun(gameObject, inHandPos, inHandRot);
     }
-
-    private void AttachGunToHand()
-    {
-        var child = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Transform>();
-        GameObject neededChild = null;
-        for (int i = 0; i < child.Length; i++)
-        {
-            if (child[i].Find("swat:RightHand") != null)
-            {
-                neededChild = child[i].gameObject;
-                break;
-            }
-        }
-        if (neededChild != null)
-        {
-            gameObject.transform.SetParent(neededChild.transform);
-            gameObject.transform.localPosition = inHandPos;
-            gameObject.transform.localEulerAngles = inHandRot;
-        }
-    }
-
-    public void DropGun()
-    {
-        gameObject.transform.parent = null;
-    }
-
 }
