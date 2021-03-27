@@ -1869,6 +1869,7 @@ GameObject:
   - component: {fileID: 8851519156494932517}
   - component: {fileID: 8851519156494932516}
   - component: {fileID: 8851519156494932515}
+  - component: {fileID: 77921905}
   m_Layer: 0
   m_Name: Gun_Pistol
   m_TagString: Untagged
@@ -1918,3 +1919,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inHandPos: {x: 0.3, y: -0.02, z: -0.011}
   inHandRot: {x: 0, y: 90, z: 90}
+--- !u!114 &77921905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8851519156494932514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eee13b9555d7b469be8d028a53c953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunData: {fileID: 11400000, guid: 7cc31328284cd88408f7417671633384, type: 2}

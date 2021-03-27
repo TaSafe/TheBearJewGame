@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiInteraction : MonoBehaviour
 {
     public static UiInteraction instance;
 
     [SerializeField] GameObject _uiInteraction;
+    [SerializeField] Image _hudGunImage;
 
     private void Awake()
     {
@@ -17,6 +19,11 @@ public class UiInteraction : MonoBehaviour
     public void ShowUi(bool value)
     {
         _uiInteraction.SetActive(value);
+    }
+
+    public void GunHudImage(Sprite sprite)
+    {
+        _hudGunImage.sprite = sprite;
     }
 
 }

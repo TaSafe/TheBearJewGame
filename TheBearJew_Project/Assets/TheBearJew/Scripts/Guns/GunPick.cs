@@ -20,6 +20,7 @@ public class GunPick : MonoBehaviour, IInteraction
     public void Interaction()
     {
         UiInteraction.instance.ShowUi(false);
+        UiInteraction.instance.GunHudImage(GetComponent<GunBehaviours>().GetGunHudImage());
         AttachGunToHand();
     }
 

@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &77921901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8851519156494932514, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
+  m_PrefabInstance: {fileID: 1803117876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &77921905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77921901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eee13b9555d7b469be8d028a53c953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunData: {fileID: 11400000, guid: 7cc31328284cd88408f7417671633384, type: 2}
 --- !u!1 &247370142
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiInteraction: {fileID: 1661384329}
+  _hudGunImage: {fileID: 344399325}
 --- !u!1 &677981538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +1834,24 @@ PrefabInstance:
       objectReference: {fileID: 343691606}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e10559159ce534bb167d0e19250f3a, type: 3}
+--- !u!1 &1455319453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6398524334508288113, guid: b7e10559159ce534bb167d0e19250f3a, type: 3}
+  m_PrefabInstance: {fileID: 1395064468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1455319454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455319453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eee13b9555d7b469be8d028a53c953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunData: {fileID: 11400000, guid: 53c3f4a39e09a9a47a9c70aa3520ccd5, type: 2}
 --- !u!1 &1498803660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,17 +2635,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0294218768ab9714c8e10cae99b336fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2572952573481704348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2572952573481704340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c3494db1721054c91f9d8b24de639a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

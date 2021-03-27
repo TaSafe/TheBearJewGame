@@ -17,6 +17,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             transform.parent.GetComponentInChildren<GunPick>().DropGun();
             _hasGun = false;
+            UiInteraction.instance.GunHudImage(null);   //MUDA A HUD DA ARMA
         }
 
         if (Input.GetMouseButtonDown(1) && _ableToInteract)
