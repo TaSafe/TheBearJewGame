@@ -3,30 +3,30 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    //private Camera _mainCamera;
     private bool _ableToInteract;
+    private bool _hasGun;
     IInteraction _currentInteraction = null;
 
-    private void Start()
-    {
-        //_mainCamera = Camera.main;
-        Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
-    }
+    private void Start() => Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
+
+    //Tem que mudar como verifica se possui arma na mão
 
     void Update()
     {
-        //if (GetMouseHit(_mainCamera)?.GetComponent<IInteraction>() != null)
-        //{
-        //    if (Input.GetMouseButtonDown(1))
-        //        GetMouseHit(_mainCamera).GetComponent<IInteraction>()?.Interaction();
-        //}
+        if (Input.GetMouseButtonDown(1) && transform.parent.GetComponentInChildren<GunPick>() != null && _hasGun)
+        {
+            transform.parent.GetComponentInChildren<GunPick>().DropGun();
+            _hasGun = false;
+        }
 
-
-        if (_ableToInteract && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1) && _ableToInteract)
+        {
             _currentInteraction.Interaction();
+            _ableToInteract = false;
+            _hasGun = true;
+        }
     }
 
-    #region Trriger enter/exit
     void OnTriggerEnter(Collider other)
     {
         _currentInteraction = other.GetComponent<IInteraction>();
@@ -46,9 +46,8 @@ public class PlayerInteraction : MonoBehaviour
             _ableToInteract = false;
         }
     }
-    #endregion
 
-    private Collider GetMouseHit(Camera camera)
+    private Collider GetMouseHitCollider(Camera camera)
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, float.MaxValue))

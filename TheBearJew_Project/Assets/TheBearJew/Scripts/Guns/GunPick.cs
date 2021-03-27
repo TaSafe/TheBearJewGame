@@ -25,8 +25,7 @@ public class GunPick : MonoBehaviour, IInteraction
 
     private void AttachGunToHand()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        var child = player.GetComponentsInChildren<Transform>();
+        var child = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Transform>();
         GameObject neededChild = null;
         for (int i = 0; i < child.Length; i++)
         {
@@ -42,6 +41,11 @@ public class GunPick : MonoBehaviour, IInteraction
             gameObject.transform.localPosition = inHandPos;
             gameObject.transform.localEulerAngles = inHandRot;
         }
+    }
+
+    public void DropGun()
+    {
+        gameObject.transform.parent = null;
     }
 
 }
