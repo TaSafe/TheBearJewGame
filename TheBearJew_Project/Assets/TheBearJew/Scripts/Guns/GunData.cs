@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Gun", menuName = "ScriptableObjects/Gun")]
+[CreateAssetMenu(fileName = "New Gun Data", menuName = "Game Data/Gun")]
 public class GunData : ScriptableObject
 {
 
@@ -15,7 +15,7 @@ public class GunData : ScriptableObject
 
     [HideInInspector] public enum ProjectileRange { close, mid, far }
 
-    [SerializeField] public string Name { get { return _name; } }
+    public string Name { get { return _name; } }
     public Sprite HudImage { get { return _hudImage; } }
     public int Damage { get { return _damage; } }
     public int MaxAmmo { get { return _maxAmmo; } }

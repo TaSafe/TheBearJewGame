@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour, IDamage
@@ -23,6 +21,7 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         }
     }
 
+    //#### PARA TESTAR A VIDA ####
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
