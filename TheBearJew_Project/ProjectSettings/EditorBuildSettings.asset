@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TheBearJew/J1/Menu.unity
+    guid: f284249d7661fe94384ef92df67c1c99
+  - enabled: 1
+    path: Assets/TheBearJew/J1/Level_01.unity
+    guid: a7e40ea2dfd05a94f9b8c30825b2b38c
+  - enabled: 1
+    path: Assets/TheBearJew/J1/End.unity
+    guid: 51578c1ec888818429609e1b441389fc
+  - enabled: 1
     path: Assets/TheBearJew/Scenes/MainScene.unity
     guid: d99c2e5781d85ac4a8b99c1db0324bc2
   m_configObjects: {}
