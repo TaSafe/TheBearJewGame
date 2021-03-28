@@ -5585,7 +5585,6 @@ GameObject:
   - component: {fileID: 6398524334508288118}
   - component: {fileID: 6398524334508288119}
   - component: {fileID: 6398524334508288112}
-  - component: {fileID: 1455319454}
   m_Layer: 0
   m_Name: Gun_Submachine
   m_TagString: Untagged
@@ -5635,18 +5634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ffa2e6374828d43b8f8793e6901a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunData: {fileID: 11400000, guid: 53c3f4a39e09a9a47a9c70aa3520ccd5, type: 2}
   inHandPos: {x: 0.3, y: -0.02, z: -0.011}
   inHandRot: {x: 0, y: 90, z: 90}
---- !u!114 &1455319454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6398524334508288113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30eee13b9555d7b469be8d028a53c953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gunData: {fileID: 11400000, guid: 53c3f4a39e09a9a47a9c70aa3520ccd5, type: 2}
