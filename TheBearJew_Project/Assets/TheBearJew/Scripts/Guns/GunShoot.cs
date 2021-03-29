@@ -35,7 +35,7 @@ public class GunShoot : MonoBehaviour
 
     private void Shoot(float damage)
     {
-        if (_ammoCurrent < 0)
+        if (_ammoCurrent <= 0)
         {
             Debug.Log("Sem munição");
             return;
@@ -50,6 +50,7 @@ public class GunShoot : MonoBehaviour
         }
 
         _ammoCurrent--;
+        UiInteraction.instance.GunAmmo(_ammoCurrent);
     }
 
 }

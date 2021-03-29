@@ -44,6 +44,7 @@ public class PlayerGunHandler : MonoBehaviour
         _gunEquiped.transform.parent = null;
         _gunEquiped.GetComponent<Collider>().enabled = true;
         UiInteraction.instance.GunHudImage(null);   //MUDA A ARMA EXIBIDA NO HUD
+        UiInteraction.instance.GunAmmo(-1);   //MUDA A ARMA EXIBIDA NO HUD
         HasGun = false;
     }
 

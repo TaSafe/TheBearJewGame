@@ -25,6 +25,7 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     {
         UiInteraction.instance.ShowUi(false);
         UiInteraction.instance.GunHudImage(_gunData.HudImage);
+        UiInteraction.instance.GunAmmo(_gunData.MaxAmmo);
         GetComponent<Collider>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGunHandler>().EquipGun(gameObject, inHandPos, inHandRot);
     }
