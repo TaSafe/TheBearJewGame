@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GunShoot : MonoBehaviour
 {
+
+    [SerializeField] private GameObject _vfxMuzzleFlash;
+
     private GunBehaviour _gunBehaviour;
     private float _ammoCurrent;
     
@@ -38,12 +41,12 @@ public class GunShoot : MonoBehaviour
             return;
         }
 
+        Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
+
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
             if (hitInfo.collider.gameObject.GetComponent<IDamage>() != null)
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
-            //else
-            //particula
         }
 
         _ammoCurrent--;

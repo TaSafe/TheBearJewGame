@@ -5650,3 +5650,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710e030c419a68d47afbe55caa9b4c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxMuzzleFlash: {fileID: 4393054787553148848, guid: d9f1d6cb8251c674da0446945f11df8b, type: 3}
