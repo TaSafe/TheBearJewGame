@@ -9,6 +9,7 @@ public class UiInteraction : MonoBehaviour
     [SerializeField] GameObject _uiInteraction;
     [SerializeField] Image _hudGunImage;
     [SerializeField] TMP_Text _hudGunAmmo;
+    [SerializeField] Slider _playerLifeBar;
 
     private void Awake()
     {
@@ -45,6 +46,21 @@ public class UiInteraction : MonoBehaviour
             _hudGunAmmo.color = Color.red;
             _hudGunAmmo.SetText("vazio");
         }
+    }
+
+    //Player
+    public void SetLifeBar(float maxValue)
+    {
+        _playerLifeBar.maxValue = maxValue;
+        _playerLifeBar.value = maxValue;
+    }
+
+    public void ChangeLifeBar(float newValue)
+    {
+        if (newValue < 0f)
+            _playerLifeBar.value = 0f;
+        else
+            _playerLifeBar.value = newValue;
     }
 
 }

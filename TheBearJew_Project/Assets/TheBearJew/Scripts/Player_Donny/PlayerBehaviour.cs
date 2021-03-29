@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     void Start()
     {
         _lifeSystem = new LifeSystem(_totalLife);
+        UiInteraction.instance.SetLifeBar(_totalLife);
     }
 
     public void Damage(float damage)
@@ -16,6 +17,11 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         if (!_lifeSystem.DeathCheck())
         {
             _lifeSystem.RemoveLife(damage);
+
+            UiInteraction.instance.ChangeLifeBar(_lifeSystem.CurrentLife);
+
+            Debug.Log(_lifeSystem.CurrentLife);
+
             if (_lifeSystem.DeathCheck())
                 Debug.Log($"Morri: {gameObject.name}. Vida = {_lifeSystem.CurrentLife}");
         }
@@ -25,9 +31,6 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
-        {
             Damage(20);
-            Debug.Log(_lifeSystem.CurrentLife);
-        }
     }
 }
