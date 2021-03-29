@@ -6,6 +6,7 @@ public class GunShoot : MonoBehaviour
 {
 
     [SerializeField] private GameObject _vfxMuzzleFlash;
+    [SerializeField] private GameObject _vfxHit;
 
     private GunBehaviour _gunBehaviour;
     private float _ammoCurrent;
@@ -45,6 +46,8 @@ public class GunShoot : MonoBehaviour
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
+            Instantiate(_vfxHit, hitInfo.point, Quaternion.identity);
+
             if (hitInfo.collider.gameObject.GetComponent<IDamage>() != null)
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
         }
