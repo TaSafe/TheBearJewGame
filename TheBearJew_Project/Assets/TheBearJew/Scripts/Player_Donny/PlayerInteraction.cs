@@ -15,6 +15,12 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            if (_gunHandler.HasGun)
+                _gunHandler.FireGun();
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             if (_ableToInteract && !_gunHandler.HasGun)

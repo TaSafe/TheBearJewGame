@@ -848,24 +848,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &870576737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2572952574110108904, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
-  m_PrefabInstance: {fileID: 2572952573481704339}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &870576738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870576737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbc007c33e21dc418048dbca7d231f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _totalLife: 100
 --- !u!1 &955496561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1383,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20968
+  m_Name: pb_Mesh24480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2488,6 +2470,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036546293}
   m_CullTransparentMesh: 1
+--- !u!1 &2071493262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+  m_PrefabInstance: {fileID: 4167742156900190010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2071493264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071493262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a0215421f191b44b0ebd937b50bbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyData: {fileID: 11400000, guid: 460761c2b374db549a11ed0df6abde4b, type: 2}
+--- !u!136 &2071493265
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071493262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &17424978905703714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2552,6 +2566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1563933324152763047, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1563933324152763047, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
+      propertyPath: m_TagString
+      value: Muzzle
+      objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108904, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_Name
       value: Player_Donny

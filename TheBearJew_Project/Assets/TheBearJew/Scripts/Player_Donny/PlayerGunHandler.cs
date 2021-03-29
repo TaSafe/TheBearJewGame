@@ -47,4 +47,9 @@ public class PlayerGunHandler : MonoBehaviour
         HasGun = false;
     }
 
+    public void FireGun()
+    {
+        _gunEquiped.GetComponent<GunShoot>().MakeShoot();
+    }
+
 }

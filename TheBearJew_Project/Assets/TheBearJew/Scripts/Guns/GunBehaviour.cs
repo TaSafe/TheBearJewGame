@@ -9,6 +9,14 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     [SerializeField] private Vector3 inHandPos;
     [SerializeField] private Vector3 inHandRot;
 
+    public GunData GunData { get { return _gunData; } }
+    public Transform Muzzle { get; private set; }
+
+    private void Start()
+    {
+        Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
+    }
+
     public void IdleInteraction() { }
 
     public void Interacting() { }

@@ -16,9 +16,9 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
         if (!_lifeSystem.DeathCheck())
         {
             _lifeSystem.RemoveLife(damage);
+            Debug.Log($"{_enemyData.Name} possui {_lifeSystem.CurrentLife} de vida restante.");
             if (_lifeSystem.DeathCheck())
                 Destroy(gameObject);
-                    //Debug.Log($"Morri: {gameObject.name}. Vida = {_lifeSystem.CurrentLife}");
         }
     }
 
