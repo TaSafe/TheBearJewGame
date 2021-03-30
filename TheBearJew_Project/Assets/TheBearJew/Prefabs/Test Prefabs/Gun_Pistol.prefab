@@ -1933,3 +1933,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vfxMuzzleFlash: {fileID: 4393054787553148848, guid: d9f1d6cb8251c674da0446945f11df8b, type: 3}
+  _vfxHit: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}

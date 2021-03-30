@@ -40,9 +40,9 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     }
 
     //#### PARA TESTAR A VIDA ####
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            Damage(20);
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.H))
+    //        Damage(20);
+    //}
 }
