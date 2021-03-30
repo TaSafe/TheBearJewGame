@@ -6838,7 +6838,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/Track1
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -16194,6 +16194,24 @@ PrefabInstance:
       objectReference: {fileID: 6271573414225017425, guid: 42e6d39117cee2846bdfbaa67d935494, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa7ded8b6efefaf43a3a10747fba94fd, type: 3}
+--- !u!1 &2057733308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2588217049119438035, guid: aa7ded8b6efefaf43a3a10747fba94fd, type: 3}
+  m_PrefabInstance: {fileID: 2057733307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2057733309
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057733308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.000001, y: 5.2965302, z: 5.999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2080301633
 GameObject:
   m_ObjectHideFlags: 0

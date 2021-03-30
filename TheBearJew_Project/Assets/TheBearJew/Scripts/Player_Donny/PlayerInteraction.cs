@@ -3,7 +3,6 @@
 public class PlayerInteraction : MonoBehaviour
 {
     private bool _ableToInteract;
-    private bool _hasGun;
     IInteraction _currentInteraction = null;
     PlayerGunHandler _gunHandler;
 
