@@ -5,6 +5,7 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     [SerializeField] private float _totalLife = 100;
 
     private LifeSystem _lifeSystem;
+    public Vector3 RespawnPosition { get; set; }
 
     void Start()
     {
@@ -23,8 +24,19 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
             Debug.Log(_lifeSystem.CurrentLife);
 
             if (_lifeSystem.DeathCheck())
-                Debug.Log($"Morri: {gameObject.name}. Vida = {_lifeSystem.CurrentLife}");
+                Respawn();
+                //Debug.Log($"Morri: {gameObject.name}. Vida = {_lifeSystem.CurrentLife}");
         }
+    }
+
+    public void Respawn()
+    {
+        GetComponent<CharacterController>().enabled = false;
+        transform.position = RespawnPosition;
+        GetComponent<CharacterController>().enabled = true;
+
+        _lifeSystem.AddLife(_totalLife);
+        UiInteraction.instance.SetLifeBar(_totalLife);
     }
 
     //#### PARA TESTAR A VIDA ####
