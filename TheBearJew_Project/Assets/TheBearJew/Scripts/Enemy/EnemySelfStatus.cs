@@ -4,6 +4,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
 {
     [SerializeField] private EnemyData _enemyData;
     [SerializeField] private GameObject _lifeUi;
+    [SerializeField] private GameObject[] _gunsToDrop;
 
     private LifeSystem _lifeSystem;
     private UiLifeEnemy _uiLife;
@@ -34,6 +35,11 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
         if (_lifeSystem.DeathCheck())
         {
             _uiLife.Destroy();
+
+            //Drop da arma
+            var rand = Random.Range(0, _gunsToDrop.Length);
+            Instantiate(_gunsToDrop[rand], transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

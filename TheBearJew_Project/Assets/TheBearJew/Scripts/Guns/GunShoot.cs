@@ -25,9 +25,9 @@ public class GunShoot : MonoBehaviour
             StartCoroutine(ShootRate());
     }
 
+    //Aqui executa o tiro
     public IEnumerator ShootRate()
     {
-        Debug.Log("Tiro");
         Shoot(_gunBehaviour.GunData.Damage);
         _firstShoot = false;
         yield return new WaitForSeconds(_gunBehaviour.GunData.FireRate);
