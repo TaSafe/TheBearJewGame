@@ -38,7 +38,7 @@ public class GunShoot : MonoBehaviour
     {
         if (AmmoCurrent <= 0)
         {
-            Debug.Log("Sem munição");
+            //Debug.Log("Sem munição");
             return;
         }
 
