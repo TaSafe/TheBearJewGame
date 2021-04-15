@@ -29,14 +29,23 @@ public class UiInteraction : MonoBehaviour
         _hudGunImage.sprite = sprite;
     }
 
-    public void GunAmmo(float curretAmmo)
+    /// <summary>
+    /// Atualiza o valor da munição na HUD
+    /// </summary>
+    /// <param name="currentAmmo"></param>
+    public void HudGunAmmo(float currentAmmo)
     {
-        if (curretAmmo > 0)
+        if (currentAmmo == -1)
         {
             _hudGunAmmo.color = Color.white;
-            _hudGunAmmo.SetText($"{curretAmmo:000}");
+            _hudGunAmmo.SetText("infinito");
         }
-        else if (curretAmmo < 0)
+        else if (currentAmmo > 0)
+        {
+            _hudGunAmmo.color = Color.white;
+            _hudGunAmmo.SetText($"{currentAmmo:000}");
+        }
+        else if (currentAmmo < -1)
         {
             _hudGunAmmo.color = Color.white;
             _hudGunAmmo.SetText("-");

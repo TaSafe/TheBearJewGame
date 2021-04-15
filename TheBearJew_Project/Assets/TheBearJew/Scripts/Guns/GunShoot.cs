@@ -53,7 +53,7 @@ public class GunShoot : MonoBehaviour
         }
 
         AmmoCurrent--;
-        UiInteraction.instance.GunAmmo(AmmoCurrent);
+        UiInteraction.instance.HudGunAmmo(AmmoCurrent);
     }
 
 }

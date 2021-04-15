@@ -65,7 +65,6 @@ public class EnemyBehaviours : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("ATACANDO JOGADOR");
         var toLook = new Vector3(_playerPosition.position.x, transform.position.y, _playerPosition.position.z);
         transform.LookAt(toLook);
         

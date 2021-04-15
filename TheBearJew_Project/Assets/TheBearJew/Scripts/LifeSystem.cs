@@ -13,7 +13,7 @@ public class LifeSystem
     {
         if (valueToAdd < 0)
         {
-            Debug.LogError("LifeSystem.AddLife() : Valor de ser maior que zero."); 
+            Debug.LogError("LifeSystem.AddLife() : Valor deve ser maior que zero."); 
             return;
         }
         else
@@ -24,7 +24,7 @@ public class LifeSystem
     {
         if (valueToRemove < 0)
         {
-            Debug.LogError("LifeSystem.RemoveLife() : Valor de ser maior que zero.");
+            Debug.LogError("LifeSystem.RemoveLife() : Valor deve ser maior que zero.");
             return;
         }
         else

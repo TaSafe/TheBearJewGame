@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGunHandler : MonoBehaviour
+public class PlayerWeaponHandler : MonoBehaviour
 {
     public bool HasGun { get; private set; }
     private GameObject _gunEquiped;
@@ -13,11 +13,26 @@ public class PlayerGunHandler : MonoBehaviour
 
         _gunEquiped = gun;
 
-        GetGun(_gunEquiped, inHandPosition, inHandRotation);
+        SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
         HasGun = true;
     }
 
-    private void GetGun(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)
+    public void DropGun()
+    {
+        _gunEquiped.GetComponent<Collider>().enabled = true;
+        _gunEquiped.transform.parent = null;
+        _gunEquiped = null;
+        UiInteraction.instance.GunHudImage(null);   //MUDA A ARMA EXIBIDA NO HUD
+        UiInteraction.instance.HudGunAmmo(-2);   //MUDA A ARMA EXIBIDA NO HUD
+        HasGun = false;
+    }
+
+    public void Attack()
+    {
+        _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
+    }
+
+    private void SetGunToHand(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)
     {
         var child = GetComponentsInChildren<Transform>();
         GameObject neededChild = null;
@@ -38,20 +53,4 @@ public class PlayerGunHandler : MonoBehaviour
             gun.transform.localEulerAngles = inHandRotation;
         }
     }
-
-    public void DropGun()
-    {
-        _gunEquiped.GetComponent<Collider>().enabled = true;
-        _gunEquiped.transform.parent = null;
-        _gunEquiped = null;
-        UiInteraction.instance.GunHudImage(null);   //MUDA A ARMA EXIBIDA NO HUD
-        UiInteraction.instance.GunAmmo(-1);   //MUDA A ARMA EXIBIDA NO HUD
-        HasGun = false;
-    }
-
-    public void FireGun()
-    {
-        _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
-    }
-
 }

@@ -4,12 +4,12 @@ public class PlayerInteraction : MonoBehaviour
 {
     private bool _ableToInteract;
     IInteraction _currentInteraction = null;
-    PlayerGunHandler _gunHandler;
+    PlayerWeaponHandler _gunHandler;
 
     private void Start()
     {
         Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
-        _gunHandler = GetComponentInParent<PlayerGunHandler>();
+        _gunHandler = GetComponentInParent<PlayerWeaponHandler>();
     }
 
     void Update()
@@ -17,7 +17,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (_gunHandler.HasGun)
-                _gunHandler.FireGun();
+                _gunHandler.Attack();
         }
 
         if (Input.GetMouseButtonDown(1))

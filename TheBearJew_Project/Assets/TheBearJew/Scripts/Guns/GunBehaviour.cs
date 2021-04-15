@@ -3,13 +3,13 @@
 public class GunBehaviour : MonoBehaviour, IInteraction
 {
 
-    [SerializeField] private GunData _gunData;
+    [SerializeField] private WeaponData _gunData;
 
     [Header("Posição ao ser pega pelo player")]
     [SerializeField] private Vector3 inHandPos;
     [SerializeField] private Vector3 inHandRot;
 
-    public GunData GunData { get { return _gunData; } }
+    public WeaponData GunData { get { return _gunData; } }
     public Transform Muzzle { get; private set; }
 
     private void Start()
@@ -25,8 +25,8 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     {
         UiInteraction.instance.ShowUi(false);
         UiInteraction.instance.GunHudImage(_gunData.HudImage);
-        UiInteraction.instance.GunAmmo(GetComponent<GunShoot>().AmmoCurrent);  //Maneira de adquirir valor temporária
+        UiInteraction.instance.HudGunAmmo(GetComponent<GunShoot>().AmmoCurrent);  //Maneira de adquirir valor temporária
         GetComponent<Collider>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerGunHandler>().EquipGun(gameObject, inHandPos, inHandRot);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);
     }
 }
