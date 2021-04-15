@@ -9,12 +9,12 @@ public class GunShoot : MonoBehaviour
     [SerializeField] private GameObject _vfxHit;
 
     private GunBehaviour _gunBehaviour;
-    private float _ammoCurrent;
+    public float AmmoCurrent { get; private set; }
     
     void Start()
     {
         _gunBehaviour = GetComponent<GunBehaviour>();
-        _ammoCurrent = _gunBehaviour.GunData.MaxAmmo;
+        AmmoCurrent = _gunBehaviour.GunData.MaxAmmo;
     }
 
     //GAMBIARRA
@@ -36,7 +36,7 @@ public class GunShoot : MonoBehaviour
 
     private void Shoot(float damage)
     {
-        if (_ammoCurrent <= 0)
+        if (AmmoCurrent <= 0)
         {
             Debug.Log("Sem munição");
             return;
@@ -52,8 +52,8 @@ public class GunShoot : MonoBehaviour
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
         }
 
-        _ammoCurrent--;
-        UiInteraction.instance.GunAmmo(_ammoCurrent);
+        AmmoCurrent--;
+        UiInteraction.instance.GunAmmo(AmmoCurrent);
     }
 
 }

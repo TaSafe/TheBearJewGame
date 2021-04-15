@@ -25,7 +25,7 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     {
         UiInteraction.instance.ShowUi(false);
         UiInteraction.instance.GunHudImage(_gunData.HudImage);
-        UiInteraction.instance.GunAmmo(_gunData.MaxAmmo);
+        UiInteraction.instance.GunAmmo(GetComponent<GunShoot>().AmmoCurrent);  //Maneira de adquirir valor temporária
         GetComponent<Collider>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerGunHandler>().EquipGun(gameObject, inHandPos, inHandRot);
     }
