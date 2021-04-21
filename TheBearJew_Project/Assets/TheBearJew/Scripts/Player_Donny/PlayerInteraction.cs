@@ -2,7 +2,6 @@
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private bool _ableToInteract;
     IInteraction _currentInteraction = null;
     PlayerWeaponHandler _gunHandler;
 
@@ -22,13 +21,12 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (_ableToInteract && !_gunHandler.HasGun)
+            if (_currentInteraction != null && !_gunHandler.HasGun)
             {
                 _currentInteraction.Interaction();
-                _ableToInteract = false;
-                return;
+                _currentInteraction = null;
             }
-            else if(!_ableToInteract && _gunHandler.HasGun)
+            else if(_currentInteraction == null && _gunHandler.HasGun)
             {
                 _gunHandler.DropGun();
             }
@@ -42,18 +40,16 @@ public class PlayerInteraction : MonoBehaviour
         {
             UiInteraction.instance.ShowUi(true);
             _currentInteraction.Interacting();
-            _ableToInteract = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _currentInteraction = other.GetComponent<IInteraction>();
         if (_currentInteraction != null)
         {
             UiInteraction.instance.ShowUi(false);
             _currentInteraction.IdleInteraction();
-            _ableToInteract = false;
+            _currentInteraction = null;
         }
     }
 

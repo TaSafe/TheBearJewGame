@@ -4,17 +4,37 @@ using UnityEngine;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
+    public GameObject batPrefab;
+
     public bool HasGun { get; private set; }
     private GameObject _gunEquiped;
+    private GameObject bat;
+
+    private void Start()
+    {
+        bat = Instantiate(batPrefab);
+        
+        Bat batScript = bat.GetComponent<Bat>();
+        EquipGun(bat, batScript.inHandPos, batScript.inHandRot);
+        UiInteraction.instance.GunHudImage(batScript.GunData.HudImage);
+        UiInteraction.instance.HudGunAmmo(batScript.GunData.MaxAmmo);
+    }
 
     public void EquipGun(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)
     {
         if (HasGun) return;
 
-        _gunEquiped = gun;
-
-        SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
-        HasGun = true;
+        if (gun == bat)
+        {
+            SetGunToHand(gun, inHandPosition, inHandRotation);
+        }
+        else
+        {
+            _gunEquiped = gun;
+            bat.SetActive(false);
+            SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
+            HasGun = true;
+        }
     }
 
     public void DropGun()
@@ -22,8 +42,13 @@ public class PlayerWeaponHandler : MonoBehaviour
         _gunEquiped.GetComponent<Collider>().enabled = true;
         _gunEquiped.transform.parent = null;
         _gunEquiped = null;
-        UiInteraction.instance.GunHudImage(null);   //MUDA A ARMA EXIBIDA NO HUD
-        UiInteraction.instance.HudGunAmmo(-2);   //MUDA A ARMA EXIBIDA NO HUD
+
+        Bat batScript = bat.GetComponent<Bat>();
+        bat.SetActive(true);
+
+        UiInteraction.instance.GunHudImage(batScript.GunData.HudImage);   //MUDA A ARMA EXIBIDA NO HUD
+        UiInteraction.instance.HudGunAmmo(batScript.GunData.MaxAmmo);   //MUDA A ARMA EXIBIDA NO HUD
+
         HasGun = false;
     }
 
