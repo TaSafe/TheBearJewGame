@@ -24,7 +24,6 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
         {
             _lifeSystem.RemoveLife(damage);
             _uiLife.ChangeValue(_lifeSystem.CurrentLife);
-            //Debug.Log($"{_enemyData.Name} possui {_lifeSystem.CurrentLife} de vida restante.");
 
             DeathCheck();
         }

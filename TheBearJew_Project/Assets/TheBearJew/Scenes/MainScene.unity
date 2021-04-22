@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1232
+  m_Name: pb_Mesh-1258
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -745,7 +745,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1222
+  m_Name: pb_Mesh-1248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1225,10 +1225,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6612499096465481971, guid: b7e10559159ce534bb167d0e19250f3a, type: 3}
-      propertyPath: _vfxHit
-      value: 
-      objectReference: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
     - target: {fileID: 7790784761954307628, guid: b7e10559159ce534bb167d0e19250f3a, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1338,7 +1334,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1262
+  m_Name: pb_Mesh-1288
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1503,10 +1499,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 866347299, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
-      propertyPath: _vfxHit
-      value: 
-      objectReference: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
     - target: {fileID: 2989280697967882331, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1752,7 +1744,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1956
+  m_Name: pb_Mesh-1982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1916,7 +1908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1242
+  m_Name: pb_Mesh-1268
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2138,14 +2130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2572952573481704341, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
-      propertyPath: bat
-      value: 
-      objectReference: {fileID: 9149590615884574207, guid: 4cc9bbab36c9cf540ba64db6cb23e88d, type: 3}
-    - target: {fileID: 2572952573481704341, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
-      propertyPath: batPrefab
-      value: 
-      objectReference: {fileID: 9149590615884574207, guid: 4cc9bbab36c9cf540ba64db6cb23e88d, type: 3}
     - target: {fileID: 2572952574110108904, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_Name
       value: Player_Donny
@@ -2192,10 +2176,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108908, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572952574110108910, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

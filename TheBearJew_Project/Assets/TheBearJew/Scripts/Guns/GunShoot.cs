@@ -46,7 +46,8 @@ public class GunShoot : MonoBehaviour
             return;
         }
 
-        Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
+        var muzzleFlash = Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
+        muzzleFlash.transform.SetParent(_gunBehaviour.transform);   //para que o flash siga o movimento da arma
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
