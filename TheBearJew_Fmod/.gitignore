@@ -1,3 +1,4 @@
 #Pastas do Fmod Project a serem ignoradas
+/.cache/
 /.unsaved/
 /.user/
