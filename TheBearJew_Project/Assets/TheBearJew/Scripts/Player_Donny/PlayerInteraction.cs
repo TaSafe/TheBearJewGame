@@ -3,32 +3,32 @@
 public class PlayerInteraction : MonoBehaviour
 {
     IInteraction _currentInteraction = null;
-    PlayerWeaponHandler _gunHandler;
+    PlayerWeaponHandler _weaponHandler;
 
     private void Start()
     {
         Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
-        _gunHandler = GetComponentInParent<PlayerWeaponHandler>();
+        _weaponHandler = GetComponentInParent<PlayerWeaponHandler>();
     }
 
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            if (_gunHandler.HasGun)
-                _gunHandler.Attack();
+            if (_weaponHandler.HasGun)
+                _weaponHandler.Attack();
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (_currentInteraction != null && !_gunHandler.HasGun)
+            if (_currentInteraction != null && !_weaponHandler.HasGun)
             {
                 _currentInteraction.Interaction();
                 _currentInteraction = null;
             }
-            else if(_currentInteraction == null && _gunHandler.HasGun)
+            else if(_currentInteraction == null && _weaponHandler.HasGun)
             {
-                _gunHandler.DropGun();
+                _weaponHandler.DropGun();
             }
         }
     }

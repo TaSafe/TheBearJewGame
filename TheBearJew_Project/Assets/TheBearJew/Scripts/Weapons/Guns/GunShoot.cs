@@ -18,8 +18,7 @@ public class GunShoot : MonoBehaviour
         AmmoCurrent = _gunBehaviour.GunData.MaxAmmo;
     }
 
-    //GAMBIARRA
-    bool _firstShoot = true;
+    bool _firstShoot = true; //GAMBIARRA
     public void MakeShoot()
     {
         if (_firstShoot)
@@ -39,15 +38,18 @@ public class GunShoot : MonoBehaviour
     {
         if (AmmoCurrent <= 0)
         {
-            //Debug.Log("Sem munição");
-            //Som sem munição
-            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundNoAmmo);
-
+            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundNoAmmo); //Som sem munição
             return;
         }
 
+        AmmoCurrent--;
+        
         var muzzleFlash = Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
         muzzleFlash.transform.SetParent(_gunBehaviour.transform);   //para que o flash siga o movimento da arma
+
+        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundShoot); //Som do tiro genérico
+
+        UiInteraction.instance.HudGunAmmo(AmmoCurrent);
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
@@ -61,12 +63,5 @@ public class GunShoot : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/hit_enemy_layer");
             }
         }
-
-        AmmoCurrent--;
-        UiInteraction.instance.HudGunAmmo(AmmoCurrent);
-
-        //Som do tiro genérico
-        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundShoot);
     }
-
 }

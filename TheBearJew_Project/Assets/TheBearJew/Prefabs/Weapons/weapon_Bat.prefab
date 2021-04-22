@@ -2027,5 +2027,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: 868b40a5f75a6814480524bf8d782999, type: 2}
-  inHandPos: {x: 0.1077591, y: -0.02063731, z: -0.08396515}
+  inHandPos: {x: 0.38, y: -0.04, z: -0.08396515}
   inHandRot: {x: 90, y: 0, z: 0}
