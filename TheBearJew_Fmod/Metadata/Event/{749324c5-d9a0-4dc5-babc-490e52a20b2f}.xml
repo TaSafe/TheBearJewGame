@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{749324c5-d9a0-4dc5-babc-490e52a20b2f}">
 		<property name="name">
-			<value>pegar_arma</value>
+			<value>pick_weapon</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{fe66f3c9-f7ac-4441-94c2-95f5148bf2d2}</destination>
+			<destination>{745888d8-18b1-4b5a-a013-54634400c368}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{537fd3ef-7cff-44ef-b0ea-98dd82744076}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{76e63fa0-159a-4a12-a5c1-411b5f5381d1}">
+		<property name="volume">
+			<value>4</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{3d8dc2a3-930b-443f-b853-c97102af1189}</destination>
 		</relationship>
@@ -92,11 +95,20 @@
 		<property name="length">
 			<value>0.65306122448979587</value>
 		</property>
+		<property name="volume">
+			<value>-7</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{1624cd8f-91d6-452a-a627-ebacc1ce68a6}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{08fbb359-e1c3-4e72-96dd-203d05c1c40a}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{9aaba847-ea5d-4c1b-87d0-52dc0916e832}">
+		<property name="volume">
+			<value>3.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -117,6 +129,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{37842370-204f-48ee-af19-9b8b7bad50ea}" />
 	<object class="MixerBusFader" id="{830aa4a2-9549-481e-b9e6-0b7893b55975}" />
+	<object class="RandomizerModulator" id="{1624cd8f-91d6-452a-a627-ebacc1ce68a6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{0324659e-6bdf-451f-840c-f5a36bbff9f2}">
 		<relationship name="effects">
 			<destination>{e0034060-0460-4664-a92f-208a551acb89}</destination>

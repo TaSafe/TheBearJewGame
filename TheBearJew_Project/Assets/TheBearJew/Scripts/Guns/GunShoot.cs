@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GunShoot : MonoBehaviour
 {
 
@@ -39,6 +40,9 @@ public class GunShoot : MonoBehaviour
         if (AmmoCurrent <= 0)
         {
             //Debug.Log("Sem munição");
+            //Som sem munição
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/no_ammo");
+
             return;
         }
 
@@ -49,11 +53,19 @@ public class GunShoot : MonoBehaviour
             Instantiate(_vfxHit, hitInfo.point, Quaternion.identity);
 
             if (hitInfo.collider.gameObject.GetComponent<IDamage>() != null)
+            {
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
+
+                //Feedback sonoro hit no inimigo 
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/hit_enemy_layer");
+            }
         }
 
         AmmoCurrent--;
         UiInteraction.instance.HudGunAmmo(AmmoCurrent);
+
+        //Som do tiro genérico
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/Shot");
     }
 
 }

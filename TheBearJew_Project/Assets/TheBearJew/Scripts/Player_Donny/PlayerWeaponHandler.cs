@@ -34,6 +34,9 @@ public class PlayerWeaponHandler : MonoBehaviour
             bat.SetActive(false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
             HasGun = true;
+
+            //Som pegar arma
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/pick_weapon");
         }
     }
 
@@ -50,6 +53,9 @@ public class PlayerWeaponHandler : MonoBehaviour
         UiInteraction.instance.HudGunAmmo(batScript.GunData.MaxAmmo);   //MUDA A ARMA EXIBIDA NO HUD
 
         HasGun = false;
+
+        //Som dropar arma
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");
     }
 
     public void Attack()
