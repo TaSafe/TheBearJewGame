@@ -41,7 +41,7 @@ public class GunShoot : MonoBehaviour
         {
             //Debug.Log("Sem munição");
             //Som sem munição
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/no_ammo");
+            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundNoAmmo);
 
             return;
         }
@@ -66,7 +66,7 @@ public class GunShoot : MonoBehaviour
         UiInteraction.instance.HudGunAmmo(AmmoCurrent);
 
         //Som do tiro genérico
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/Shot");
+        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundShoot);
     }
 
 }
