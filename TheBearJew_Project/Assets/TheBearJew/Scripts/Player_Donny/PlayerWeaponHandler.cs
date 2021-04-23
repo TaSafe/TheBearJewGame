@@ -15,7 +15,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         bat = Instantiate(batPrefab);
         
         Bat batScript = bat.GetComponent<Bat>();
-        EquipGun(bat, batScript.ParentInHandRotation , batScript.ParentInHandRotation);
+        EquipGun(bat, batScript.ParentInHandPosition , batScript.ParentInHandRotation);
         UiInteraction.instance.GunHudImage(batScript.WeaponData.HudImage);
         UiInteraction.instance.HudGunAmmo(batScript.WeaponData.MaxAmmo);
     }
@@ -62,6 +62,8 @@ public class PlayerWeaponHandler : MonoBehaviour
     public void Attack()
     {
         _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
+
+        if (bat.activeSelf == true) bat.GetComponent<Bat>().Shoot();
     }
 
     private void SetGunToHand(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)

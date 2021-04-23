@@ -1993,7 +1993,7 @@ GameObject:
   - component: {fileID: 1038628876023800448}
   - component: {fileID: 7150561678867928094}
   m_Layer: 0
-  m_Name: weapon_Bat
+  m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2029,5 +2029,5 @@ MonoBehaviour:
   _weaponData: {fileID: 11400000, guid: 868b40a5f75a6814480524bf8d782999, type: 2}
   _vfxMuzzleFlash: {fileID: 4393054787553148848, guid: d9f1d6cb8251c674da0446945f11df8b, type: 3}
   _vfxHit: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
-  _inHandPos: {x: 0.07275908, y: -0.03963836, z: -0.09196191}
+  _inHandPos: {x: 0.38, y: -0.03963836, z: -0.09196191}
   _inHandRot: {x: 90, y: 0, z: 0}
