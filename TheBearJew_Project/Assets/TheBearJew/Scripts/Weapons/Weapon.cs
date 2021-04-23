@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public abstract class Weapon
+public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponData _weaponData;
     [SerializeField] private GameObject _vfxMuzzleFlash;
     [SerializeField] private GameObject _vfxHit;
 
     [Header("Posição ao ser pega pelo player")]
-    [SerializeField] private Vector3 inHandPos;
-    [SerializeField] private Vector3 inHandRot;
+    [SerializeField] private Vector3 _inHandPos;
+    [SerializeField] private Vector3 _inHandRot;
 
-    public virtual WeaponData WeaponData() { return _weaponData; }
-    public abstract float AmmoCurrent { get; set; }
+    private float _ammoCurrent;
+
+    public WeaponData WeaponData { get { return _weaponData; } }
+    public float AmmoCurrent { get { return _ammoCurrent; } }
+    public Vector3 ParentInHandPosition { get { return _inHandPos; } }
+    public Vector3 ParentInHandRotation { get { return _inHandRot; } }
 
     public abstract void Shoot();
 }

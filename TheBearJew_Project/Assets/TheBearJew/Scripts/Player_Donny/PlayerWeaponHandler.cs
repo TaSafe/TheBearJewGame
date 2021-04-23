@@ -15,9 +15,9 @@ public class PlayerWeaponHandler : MonoBehaviour
         bat = Instantiate(batPrefab);
         
         Bat batScript = bat.GetComponent<Bat>();
-        EquipGun(bat, batScript.inHandPos, batScript.inHandRot);
-        UiInteraction.instance.GunHudImage(batScript.GunData.HudImage);
-        UiInteraction.instance.HudGunAmmo(batScript.GunData.MaxAmmo);
+        EquipGun(bat, batScript.ParentInHandRotation , batScript.ParentInHandRotation);
+        UiInteraction.instance.GunHudImage(batScript.WeaponData.HudImage);
+        UiInteraction.instance.HudGunAmmo(batScript.WeaponData.MaxAmmo);
     }
 
     public void EquipGun(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)
@@ -50,8 +50,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         Bat batScript = bat.GetComponent<Bat>();
         bat.SetActive(true);
 
-        UiInteraction.instance.GunHudImage(batScript.GunData.HudImage);   //MUDA A ARMA EXIBIDA NO HUD
-        UiInteraction.instance.HudGunAmmo(batScript.GunData.MaxAmmo);   //MUDA A ARMA EXIBIDA NO HUD
+        UiInteraction.instance.GunHudImage(batScript.WeaponData.HudImage);   //MUDA A ARMA EXIBIDA NO HUD
+        UiInteraction.instance.HudGunAmmo(batScript.WeaponData.MaxAmmo);   //MUDA A ARMA EXIBIDA NO HUD
 
         //Som dropar arma
         FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");

@@ -1,15 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Bat : MonoBehaviour
+public class Bat : Weapon
 {
-
-    [SerializeField] private WeaponData _gunData;
-
-    [Header("Posição ao ser pega pelo player")]
-    public Vector3 inHandPos;
-    public Vector3 inHandRot;
-
-    public WeaponData GunData { get { return _gunData; } }
-
+    public override void Shoot()
+    {
+        var animator = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>();
+        animator.SetTrigger("BatSlash");
+    }
 }
