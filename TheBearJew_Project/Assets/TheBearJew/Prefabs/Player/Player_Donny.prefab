@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batPrefab: {fileID: 9149590615884574207, guid: 4cc9bbab36c9cf540ba64db6cb23e88d, type: 3}
+  _muzzle: {fileID: 1563933324152763047}
 --- !u!114 &870576738
 MonoBehaviour:
   m_ObjectHideFlags: 0

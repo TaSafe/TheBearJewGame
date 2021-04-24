@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerWeaponHandler : MonoBehaviour
 {
     public GameObject batPrefab;
+    [SerializeField] private GameObject _muzzle;
+    public GameObject Muzzle { get { return _muzzle; } }
 
     public bool HasGun { get; private set; }
     private GameObject _gunEquiped;
@@ -63,7 +65,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
 
-        if (bat.activeSelf == true) bat.GetComponent<Bat>().Shoot();
+        if (bat.activeSelf == true) bat.GetComponent<Weapon>().Attack();
     }
 
     private void SetGunToHand(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)

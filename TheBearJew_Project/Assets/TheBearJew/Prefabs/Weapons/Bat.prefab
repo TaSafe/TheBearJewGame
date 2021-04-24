@@ -2031,3 +2031,5 @@ MonoBehaviour:
   _vfxHit: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
   _inHandPos: {x: 0.38, y: -0.03963836, z: -0.09196191}
   _inHandRot: {x: 90, y: 0, z: 0}
+  _attackStartTime: 0.73
+  _attackRadius: 0.7

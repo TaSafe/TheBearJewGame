@@ -18,5 +18,5 @@ public abstract class Weapon : MonoBehaviour
     public Vector3 ParentInHandPosition { get { return _inHandPos; } }
     public Vector3 ParentInHandRotation { get { return _inHandRot; } }
 
-    public abstract void Shoot();
+    public abstract void Attack();
 }
