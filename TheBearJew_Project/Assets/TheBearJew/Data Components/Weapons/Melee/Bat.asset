@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   _name: Bat
-  _hudImage: {fileID: 21300000, guid: dbaa49644dd3e9d43a47e7e19ad9fac4, type: 3}
-  _damage: 999
+  _damage: 30
   _maxAmmo: -1
   _fireRate: 1
-  _range: 0
+  _hudImage: {fileID: 21300000, guid: dbaa49644dd3e9d43a47e7e19ad9fac4, type: 3}
+  _soundShoot: 
+  _soundNoAmmo: 
