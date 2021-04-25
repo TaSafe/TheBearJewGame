@@ -20,7 +20,7 @@ public class Bat : Weapon
     {
         _animator.SetTrigger("batSlash");
 
-        FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot);
+        //FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot);
 
         StartCoroutine(Attacking(_attackStartTime));
     }
@@ -48,5 +48,10 @@ public class Bat : Weapon
             if (iDamage != null)
                 iDamage.Damage(WeaponData.Damage);
         }
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

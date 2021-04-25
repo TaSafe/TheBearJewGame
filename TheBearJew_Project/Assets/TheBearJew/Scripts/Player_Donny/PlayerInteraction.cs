@@ -13,11 +13,18 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && _weaponHandler.HasGun)
-            _weaponHandler.Attack();
         //Para parâmetros trigger o 'GetMouseButton' pode registrar que está precionado por mais de um frame, por isso o 'GetMouseButtonDown'
-        else if (Input.GetMouseButtonDown(0)) 
-            _weaponHandler.Attack();    //Isso foi feito para que o ataque do bastão não seja disparado errado
+        if (_weaponHandler._weaponEquiped == PlayerWeaponHandler.WeaponEquiped.gun)
+        {
+            if (Input.GetMouseButton(0))
+                _weaponHandler.Attack();
+        }
+        else if (_weaponHandler._weaponEquiped == PlayerWeaponHandler.WeaponEquiped.bat)
+        {
+            //Isso foi feito para que o ataque do bastão não seja disparado errado
+            if (Input.GetMouseButtonDown(0))
+                _weaponHandler.Attack();
+        }
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -31,6 +38,10 @@ public class PlayerInteraction : MonoBehaviour
                 _weaponHandler.DropGun();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+            _weaponHandler.SwitchWeapons();
+
     }
 
     void OnTriggerStay(Collider other)

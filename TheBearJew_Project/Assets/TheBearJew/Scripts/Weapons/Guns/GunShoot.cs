@@ -64,4 +64,11 @@ public class GunShoot : MonoBehaviour
             }
         }
     }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        _firstShoot = true;
+    }
+
 }
