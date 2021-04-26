@@ -39,9 +39,8 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
             _weaponHandler.SwitchWeapons();
-
     }
 
     void OnTriggerStay(Collider other)
@@ -49,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour
         _currentInteraction = other.GetComponent<IInteraction>();
         if (_currentInteraction != null)
         {
-            UiInteraction.instance.ShowUi(true);
+            UiHUD.instance.ShowIntereactionUI(true);
             _currentInteraction.Interacting();
         }
     }
@@ -58,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (_currentInteraction != null)
         {
-            UiInteraction.instance.ShowUi(false);
+            UiHUD.instance.ShowIntereactionUI(false);
             _currentInteraction.IdleInteraction();
             _currentInteraction = null;
         }

@@ -2,7 +2,6 @@
 
 public class GunBehaviour : MonoBehaviour, IInteraction
 {
-
     [SerializeField] private WeaponData _gunData;
 
     [Header("Posição ao ser pega pelo player")]
@@ -12,10 +11,7 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     public WeaponData WeaponData { get { return _gunData; } }
     public Transform Muzzle { get; private set; }
 
-    private void Start()
-    {
-        Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
-    }
+    private void Start() => Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
 
     public void IdleInteraction() { }
 
@@ -23,9 +19,7 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     public void Interaction()
     {
-        UiInteraction.instance.ShowUi(false);
-        UiInteraction.instance.HudWeaponImage(_gunData.HudImage);
-        UiInteraction.instance.HudWeaponAmmo(GetComponent<GunShoot>().AmmoCurrent);  //Maneira de adquirir valor temporária
+        UiHUD.instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);
     }

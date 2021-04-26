@@ -10,14 +10,14 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     void Start()
     {
         _lifeSystem = new LifeSystem(_totalLife);
-        UiInteraction.instance.SetLifeBar(_totalLife);
+        UiHUD.instance.SetLifeBar(_totalLife);
     }
 
     public void Damage(float damage)
     {
         _lifeSystem.RemoveLife(damage);
 
-        UiInteraction.instance.ChangeLifeBar(_lifeSystem.CurrentLife);
+        UiHUD.instance.ChangeLifeBar(_lifeSystem.CurrentLife);
 
         if (_lifeSystem.DeathCheck())
             Respawn();
@@ -30,6 +30,6 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         GetComponent<CharacterController>().enabled = true;
 
         _lifeSystem.AddLife(_totalLife);
-        UiInteraction.instance.SetLifeBar(_totalLife);
+        UiHUD.instance.SetLifeBar(_totalLife);
     }
 }

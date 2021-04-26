@@ -2,17 +2,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UiInteraction : MonoBehaviour
+public class UiHUD : MonoBehaviour
 {
-    public static UiInteraction instance;
+    public static UiHUD instance;
 
-    [SerializeField] GameObject _uiInteraction;
+    [SerializeField] GameObject _groupInteractionUI;
     [SerializeField] Image _hudWeaponImageActive;
     [SerializeField] Image _hudWeaponImageInactive;
+    [SerializeField] Sprite _hudWeaponImageDefault;
     [SerializeField] TMP_Text _hudGunAmmo;
     [SerializeField] Slider _playerLifeBar;
 
-    public enum HUDWeapon { none, active, inactive }
+    public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
 
     private void Awake()
     {
@@ -22,22 +23,11 @@ public class UiInteraction : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void ShowUi(bool value)
+    public void ShowIntereactionUI(bool value)
     {
-        _uiInteraction.SetActive(value);
+        _groupInteractionUI.SetActive(value);
     }
-
-    public void HudWeaponImage(Sprite sprite, HUDWeapon activeState = HUDWeapon.none)
-    {
-        if (activeState == HUDWeapon.none || activeState == HUDWeapon.active)
-            _hudWeaponImageActive.sprite = sprite;
-        else
-            _hudWeaponImageInactive.sprite = sprite;
-    }
-
-    /// <summary>
-    /// Atualiza o valor da munição na HUD
-    /// </summary>
+    
     public void HudWeaponAmmo(float currentAmmo)
     {
         if (currentAmmo == -1)
@@ -62,6 +52,21 @@ public class UiInteraction : MonoBehaviour
         }
     }
 
+    public void HudWeaponImage(Sprite sprite, bool activeState = true)
+    {
+        if (activeState)
+            _hudWeaponImageActive.sprite = sprite;
+        else
+            _hudWeaponImageInactive.sprite = sprite;
+    }
+
+    public void HudChangeWeapon(float currentAmmo, Sprite activeWeaponImage, Sprite inactiveWeaponImage)
+    {
+        HudWeaponAmmo(currentAmmo);
+        HudWeaponImage(activeWeaponImage);
+        HudWeaponImage(inactiveWeaponImage, false);
+    }
+
     //Player
     public void SetLifeBar(float maxValue)
     {
@@ -76,5 +81,4 @@ public class UiInteraction : MonoBehaviour
         else
             _playerLifeBar.value = newValue;
     }
-
 }

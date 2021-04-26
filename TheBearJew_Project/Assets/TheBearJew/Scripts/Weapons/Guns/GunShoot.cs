@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class GunShoot : MonoBehaviour
 {
-
     [SerializeField] private GameObject _vfxMuzzleFlash;
     [SerializeField] private GameObject _vfxHit;
 
@@ -49,7 +46,7 @@ public class GunShoot : MonoBehaviour
 
         FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundShoot); //Som do tiro genérico
 
-        UiInteraction.instance.HudWeaponAmmo(AmmoCurrent);
+        UiHUD.instance.HudWeaponAmmo(AmmoCurrent);
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
@@ -70,5 +67,4 @@ public class GunShoot : MonoBehaviour
         StopAllCoroutines();
         _firstShoot = true;
     }
-
 }

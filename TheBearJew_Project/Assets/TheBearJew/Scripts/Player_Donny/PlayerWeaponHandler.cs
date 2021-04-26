@@ -21,8 +21,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         Bat batScript = _batClone.GetComponent<Bat>();
         EquipGun(_batClone, batScript.ParentInHandPosition , batScript.ParentInHandRotation);
         
-        UiInteraction.instance.HudWeaponImage(batScript.WeaponData.HudImage);
-        UiInteraction.instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);
+        UiHUD.instance.HudWeaponImage(batScript.WeaponData.HudImage);
+        UiHUD.instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);
     }
     
     public void Attack()
@@ -37,28 +37,32 @@ public class PlayerWeaponHandler : MonoBehaviour
     public void SwitchWeapons()
     {
         if (!HasGun) return;
-        //Os cases podem ser substituídos por um método
+        //O que os cases executam pode ser substituído por um método
         switch (_weaponEquiped)
         {
             case WeaponEquiped.bat:
                 _batClone.SetActive(false);
                 _gunEquiped.SetActive(true);
-                //UI
-                UiInteraction.instance.HudWeaponAmmo(_gunEquiped.GetComponent<GunShoot>().AmmoCurrent);
-                UiInteraction.instance.HudWeaponImage(_gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage);
-                UiInteraction.instance.HudWeaponImage(_batClone.GetComponent<Weapon>().WeaponData.HudImage, UiInteraction.HUDWeapon.inactive);
-                //Status
-                _weaponEquiped = WeaponEquiped.gun;
+                
+                UiHUD.instance.HudChangeWeapon(
+                    _gunEquiped.GetComponent<GunShoot>().AmmoCurrent, 
+                    _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage,
+                    _batClone.GetComponent<Weapon>().WeaponData.HudImage
+                    );
+                
+                _weaponEquiped = WeaponEquiped.gun; //status
                 break;
             case WeaponEquiped.gun:
                 _gunEquiped.SetActive(false);
                 _batClone.SetActive(true);
-                //UI
-                UiInteraction.instance.HudWeaponAmmo(_batClone.GetComponent<Weapon>().WeaponData.MaxAmmo);
-                UiInteraction.instance.HudWeaponImage(_batClone.GetComponent<Weapon>().WeaponData.HudImage);
-                UiInteraction.instance.HudWeaponImage(_gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage, UiInteraction.HUDWeapon.inactive);
-                //Status
-                _weaponEquiped = WeaponEquiped.bat;
+                
+                UiHUD.instance.HudChangeWeapon(
+                    _batClone.GetComponent<Weapon>().WeaponData.MaxAmmo, 
+                    _batClone.GetComponent<Weapon>().WeaponData.HudImage, 
+                    _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage
+                    );
+                
+                _weaponEquiped = WeaponEquiped.bat; //status
                 break;
         }
     }
@@ -77,6 +81,12 @@ public class PlayerWeaponHandler : MonoBehaviour
             _gunEquiped = gun;
             _batClone.SetActive(false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
+
+            UiHUD.instance.HudChangeWeapon(
+                gun.GetComponent<GunShoot>().AmmoCurrent, 
+                gun.GetComponent<GunBehaviour>().WeaponData.HudImage, 
+                _batClone.GetComponent<Weapon>().WeaponData.HudImage
+                );
 
             //Som pegar arma
             FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/pick_weapon");
@@ -97,14 +107,15 @@ public class PlayerWeaponHandler : MonoBehaviour
         Bat batScript = _batClone.GetComponent<Bat>();
         _batClone.SetActive(true);
 
+        UiHUD.instance.HudChangeWeapon(
+            batScript.WeaponData.MaxAmmo, 
+            batScript.WeaponData.HudImage, 
+            UiHUD.instance.HudWeaponImageDefault
+            );
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");  //Som dropar arma
+
         _weaponEquiped = WeaponEquiped.bat;
-
-        UiInteraction.instance.HudWeaponImage(batScript.WeaponData.HudImage);   //MUDA A ARMA EXIBIDA NO HUD
-        UiInteraction.instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);   //MUDA A ARMA EXIBIDA NO HUD
-
-        //Som dropar arma
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");
-
         HasGun = false;
     }
 
