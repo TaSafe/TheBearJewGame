@@ -15,7 +15,7 @@ public class GunShoot : MonoBehaviour
     void Start()
     {
         _gunBehaviour = GetComponent<GunBehaviour>();
-        AmmoCurrent = _gunBehaviour.GunData.MaxAmmo;
+        AmmoCurrent = _gunBehaviour.WeaponData.MaxAmmo;
     }
 
     bool _firstShoot = true; //GAMBIARRA
@@ -28,9 +28,9 @@ public class GunShoot : MonoBehaviour
     //Aqui executa o tiro
     public IEnumerator ShootRate()
     {
-        Shoot(_gunBehaviour.GunData.Damage);
+        Shoot(_gunBehaviour.WeaponData.Damage);
         _firstShoot = false;
-        yield return new WaitForSeconds(_gunBehaviour.GunData.FireRate);
+        yield return new WaitForSeconds(_gunBehaviour.WeaponData.FireRate);
         _firstShoot = true;
     }
 
@@ -38,7 +38,7 @@ public class GunShoot : MonoBehaviour
     {
         if (AmmoCurrent <= 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundNoAmmo); //Som sem munição
+            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundNoAmmo); //Som sem munição
             return;
         }
 
@@ -47,9 +47,9 @@ public class GunShoot : MonoBehaviour
         var muzzleFlash = Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
         muzzleFlash.transform.SetParent(_gunBehaviour.transform);   //para que o flash siga o movimento da arma
 
-        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.GunData.SoundShoot); //Som do tiro genérico
+        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundShoot); //Som do tiro genérico
 
-        UiInteraction.instance.HudGunAmmo(AmmoCurrent);
+        UiInteraction.instance.HudWeaponAmmo(AmmoCurrent);
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {

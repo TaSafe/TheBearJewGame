@@ -7,9 +7,12 @@ public class UiInteraction : MonoBehaviour
     public static UiInteraction instance;
 
     [SerializeField] GameObject _uiInteraction;
-    [SerializeField] Image _hudGunImage;
+    [SerializeField] Image _hudWeaponImageActive;
+    [SerializeField] Image _hudWeaponImageInactive;
     [SerializeField] TMP_Text _hudGunAmmo;
     [SerializeField] Slider _playerLifeBar;
+
+    public enum HUDWeapon { none, active, inactive }
 
     private void Awake()
     {
@@ -24,16 +27,18 @@ public class UiInteraction : MonoBehaviour
         _uiInteraction.SetActive(value);
     }
 
-    public void GunHudImage(Sprite sprite)
+    public void HudWeaponImage(Sprite sprite, HUDWeapon activeState = HUDWeapon.none)
     {
-        _hudGunImage.sprite = sprite;
+        if (activeState == HUDWeapon.none || activeState == HUDWeapon.active)
+            _hudWeaponImageActive.sprite = sprite;
+        else
+            _hudWeaponImageInactive.sprite = sprite;
     }
 
     /// <summary>
     /// Atualiza o valor da munição na HUD
     /// </summary>
-    /// <param name="currentAmmo"></param>
-    public void HudGunAmmo(float currentAmmo)
+    public void HudWeaponAmmo(float currentAmmo)
     {
         if (currentAmmo == -1)
         {
