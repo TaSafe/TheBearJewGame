@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         UiHUD.instance.SetLifeBar(_totalLife);
     }
 
-    public void Damage(float damage)
+    public void Damage(float damage, bool bat = false)
     {
         _lifeSystem.RemoveLife(damage);
 

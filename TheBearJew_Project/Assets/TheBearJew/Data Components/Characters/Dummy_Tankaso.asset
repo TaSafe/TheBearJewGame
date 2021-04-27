@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dummy_Tankaso
   m_EditorClassIdentifier: 
   _name: tank
-  _life: 1000
+  _life: 100

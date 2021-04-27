@@ -1,27 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UiLifeEnemy : MonoBehaviour
 {
+    [SerializeField] private GameObject _executionFeedback;
+
     private Transform _parent;
     private Slider _slider;
 
-    private void Awake()
-    {
-        _slider = GetComponent<Slider>();
-    }
+    private void Awake() => _slider = GetComponentInChildren<Slider>();
 
-    private void Start()
-    {
-        transform.SetParent(GameObject.FindGameObjectWithTag("WorldCanvas").transform);
-    }
+    private void Start() => transform.SetParent(GameObject.FindGameObjectWithTag("WorldCanvas").transform);
 
-    void Update()
-    {
-        transform.position = new Vector3(_parent.position.x, _parent.position.y + 2.3f, _parent.position.z);
-    }
+    void Update() => transform.position = new Vector3(_parent.position.x, _parent.position.y + 2.3f, _parent.position.z);
 
     public void SetValues(Transform parent, float sliderMaxValue)
     {
@@ -38,9 +29,7 @@ public class UiLifeEnemy : MonoBehaviour
             _slider.value = newValue;
     }
 
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
+    public void ShowExecutionFeedback() => _executionFeedback.SetActive(true);
 
+    public void Destroy() => Destroy(gameObject);
 }

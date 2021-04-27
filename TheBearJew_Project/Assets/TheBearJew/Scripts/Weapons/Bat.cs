@@ -46,7 +46,7 @@ public class Bat : Weapon
 
             IDamage iDamage = collider.GetComponent<IDamage>();
             if (iDamage != null)
-                iDamage.Damage(WeaponData.Damage);
+                iDamage.Damage(WeaponData.Damage, true);
         }
     }
 

@@ -13,25 +13,23 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
     {
         _lifeSystem = new LifeSystem(_enemyData.Life);
 
-        var uiLife = Instantiate(_lifeUi);
+        var uiLife = Instantiate(_lifeUi, _lifeUi.transform.position, Quaternion.Euler(new Vector3(45f, 0f, 0f)));
         _uiLife = uiLife.GetComponent<UiLifeEnemy>();
         _uiLife.SetValues(transform, _enemyData.Life);
     }
 
-    public void Damage(float damage)
+    public void Damage(float damage, bool bat = false)
     {
-        if (!_lifeSystem.DeathCheck())
-        {
-            _lifeSystem.RemoveLife(damage);
-            _uiLife.ChangeValue(_lifeSystem.CurrentLife);
+        _lifeSystem.RemoveLife(damage);
+        _uiLife.ChangeValue(_lifeSystem.CurrentLife);
 
-            DeathCheck();
-        }
+        DeathCheck(bat);
     }
 
-    private void DeathCheck()
+    //A execução tá bem torta, tem que pensar melhor depois - 27/04/2021
+    private void DeathCheck(bool batAttack)
     {
-        if (_lifeSystem.DeathCheck())
+        if (_lifeSystem.DeathCheck() || /*execução*/ batAttack && _lifeSystem.CurrentLife < 40f)
         {
             _uiLife.Destroy();
 
@@ -41,16 +39,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
 
             Destroy(gameObject);
         }
+        else if (_lifeSystem.CurrentLife < 40f) //abilita execução
+            _uiLife.ShowExecutionFeedback();
     }
-
-    //#### PARA TESTAR A VIDA ####
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Damage(20);
-            Debug.Log($"{_enemyData.Name} possui {_lifeSystem.CurrentLife} de vida restante.");
-        }
-    }
-
 }
