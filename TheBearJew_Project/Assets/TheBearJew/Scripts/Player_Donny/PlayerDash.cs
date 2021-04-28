@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+//TODO: Colocar a animação
+//TODO: Acertar o timing da rolagem
+//TODO: Bloquear alguns inputs do jogador enquanto está rolando
+
 public class PlayerDash : MonoBehaviour
 {
     private Movement _movement;
@@ -30,12 +34,21 @@ public class PlayerDash : MonoBehaviour
 
     void Roll()
     {
+        Debug.DrawRay(transform.position, _rollDirection * 5f, Color.blue);
+
         if (_isRolling)
         {
-            //if (Physics.Raycast(transform.position + (rollDirection * .75f), rollDirection, out RaycastHit hit, 1.5f))
-            //{
-
-            //}
+            //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
+            //TODO: Tornar as variáveis que controlam os parâmetros de Rolar em SerializeField pra editar pelo inspector
+            if (Physics.Raycast(transform.position, _rollDirection, out RaycastHit hit, 5f))
+            {
+                if (hit.collider != null)
+                {
+                    _characterCotroller.enabled = true;
+                    _isRolling = false;
+                    return;
+                }
+            }
 
             transform.position += (_rollDirection * 2f) * _rollingSpeed * Time.deltaTime;
             _rollingSpeed -= _rollingSpeed * 10f * Time.deltaTime;
