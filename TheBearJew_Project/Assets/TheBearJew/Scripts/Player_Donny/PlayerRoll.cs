@@ -4,7 +4,7 @@
 //TODO: Acertar o timing da rolagem
 //TODO: Bloquear alguns inputs do jogador enquanto está rolando
 
-public class PlayerDash : MonoBehaviour
+public class PlayerRoll : MonoBehaviour
 {
     private Movement _movement;
     private CharacterController _characterCotroller;
@@ -12,6 +12,7 @@ public class PlayerDash : MonoBehaviour
     private bool _isRolling;
     private float _rollSpeed = 10f;
     private float _rollingSpeed;
+    private float _rayCastDistance = 1f;
 
     void Start()
     {
@@ -34,13 +35,13 @@ public class PlayerDash : MonoBehaviour
 
     void Roll()
     {
-        Debug.DrawRay(transform.position, _rollDirection * 5f, Color.blue);
+        Debug.DrawRay(transform.position, _rollDirection * _rayCastDistance, Color.blue);
 
         if (_isRolling)
         {
             //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
             //TODO: Tornar as variáveis que controlam os parâmetros de Rolar em SerializeField pra editar pelo inspector
-            if (Physics.Raycast(transform.position, _rollDirection, out RaycastHit hit, 5f))
+            if (Physics.Raycast(transform.position, _rollDirection, out RaycastHit hit, _rayCastDistance))
             {
                 if (hit.collider != null)
                 {
