@@ -17,6 +17,9 @@ public class Movement : MonoBehaviour
     private CharacterController _characterController;
     private Vector3 playerVelocity = Vector3.zero;  // Up/Down movement velocity
 
+    public float InputX { get; private set; }
+    public float InputY { get; private set; }
+
     //Animation
     private Animator _animator;
 
@@ -30,6 +33,8 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
+        if (_characterController.enabled == false) return;
+
         //Check gravity
         bool isGrounded = Physics.CheckSphere(_checkSpherePosition + transform.position, _checkSphereRadius, _groundLayer);  //verify if is in the ground
 
@@ -37,13 +42,13 @@ public class Movement : MonoBehaviour
             playerVelocity.y = -2f;
 
         //Player Input
-        float xInput = Input.GetAxisRaw("Horizontal");
-        float yInput = Input.GetAxisRaw("Vertical");
+        InputX = Input.GetAxisRaw("Horizontal");
+        InputY = Input.GetAxisRaw("Vertical");
 
         //Final movement calculations
-        Vector3 move = new Vector3(xInput, 0f, yInput);
+        Vector3 move = new Vector3(InputX, 0f, InputY);
 
-        if (move.magnitude > 0)
+        if (move.magnitude > 0f)
         {
             move.Normalize();  //This part is responsible for make the diagonals become part of the circle of values and not de addition (1,1) -> (0.707,0.0707)
             _characterController.Move(move * _characterSpeed * Time.deltaTime);

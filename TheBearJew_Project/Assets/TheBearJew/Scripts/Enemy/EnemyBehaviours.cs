@@ -16,6 +16,7 @@ public class EnemyBehaviours : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private int _currentPatrolPoint;
     private Transform _playerPosition;
+    private float _elevateRaycastStartPoint = 3f;
 
     void Start()
     {
@@ -65,7 +66,7 @@ public class EnemyBehaviours : MonoBehaviour
 
     private void Attack()
     {
-        var toLook = new Vector3(_playerPosition.position.x, transform.position.y, _playerPosition.position.z);
+        Vector3 toLook = new Vector3(_playerPosition.position.x, transform.position.y, _playerPosition.position.z);
         transform.LookAt(toLook);
         
         //shoot
@@ -95,16 +96,16 @@ public class EnemyBehaviours : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, _playerPosition.position) < range)
         {
-            var pos = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
-            var pos2 = new Vector3(_playerPosition.position.x, _playerPosition.position.y, _playerPosition.position.z);
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + _elevateRaycastStartPoint, transform.position.z);
+            Vector3 pos2 = new Vector3(_playerPosition.position.x, _playerPosition.position.y, _playerPosition.position.z);
 
-            var direction = pos2 - pos;
+            Vector3 direction = pos2 - pos;
 
             Ray ray = new Ray(pos, direction);
 
-            Debug.DrawRay(ray.origin, ray.direction * 50, Color.green);
+            Debug.DrawRay(ray.origin, ray.direction * 50f, Color.green);
 
-            if (Physics.Raycast(ray, out var hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (hit.collider.CompareTag("Player"))
                     return true;
