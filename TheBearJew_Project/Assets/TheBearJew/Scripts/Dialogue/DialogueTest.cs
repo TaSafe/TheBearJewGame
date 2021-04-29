@@ -15,9 +15,13 @@ public class DialogueTest : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !_dialogueSystem.HasEndedSequence)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            _dialogueSystem.DialogueChanger(_sequence);
+            if (_dialogueSystem.HasEndedSequence)
+                _dialogueSystem.ResetDialogue();
+
+            if (!_dialogueSystem.HasEndedSequence)
+                _dialogueSystem.DialogueChanger(_sequence);
         }
     }
 }

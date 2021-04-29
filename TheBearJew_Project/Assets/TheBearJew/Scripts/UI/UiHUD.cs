@@ -93,13 +93,20 @@ public class UiHUD : MonoBehaviour
     }
     #endregion
 
+    #region DIÁLOGO
     //Dialogo
     public void DialogueShow(bool activeState) => _dialogueUI.SetActive(activeState);
 
     public void DialogueChangeTexts(string character, string text)
     {
-        _dialogueCharacater.SetText(character);
-        _dialogueTxt.SetText(text);
-    }
+        //TODO: Ver se essas verificações são melhor pra performance
+        //Não sei se fazer essas verificações é melhor ou pior pra performance, no final pode não significar nada
 
+        if (_dialogueCharacater.text != character)
+            _dialogueCharacater.SetText(character);
+        
+        if (_dialogueTxt.text != text)
+            _dialogueTxt.SetText(text);
+    }
+    #endregion
 }

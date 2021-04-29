@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: Dialogue Sequence
   m_EditorClassIdentifier: 
   dialogues:
-  - character: 2
-    dialogue: asdasdasda
-  - character: 1
-    dialogue: dsfsdfsdfdf
-  - character: 0
-    dialogue: aaaaaaaaa
-  - character: 3
-    dialogue: ssssssssss
-  - character: 4
-    dialogue: cccccccccccccc
-  - character: 5
-    dialogue: asdadadadadadadadadadada
+  - characterName: 1
+    dialogueText: "Ol\xE1 Jack!"
+  - characterName: 0
+    dialogueText: "Ol\xE1 Clark"
+  - characterName: 1
+    dialogueText: O que aconteceu com John?
+  - characterName: 0
+    dialogueText: Infelizmente o John quebrou a perna.
+  - characterName: 0
+    dialogueText: "Ele n\xE3o vai poder jogar..."
+  - characterName: 1
+    dialogueText: "\xC9 uma pena mesmo."
+  - characterName: 1
+    dialogueText: "Ent\xE3o vamos?"
+  - characterName: 0
+    dialogueText: Vamos.

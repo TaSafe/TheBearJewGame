@@ -4,23 +4,23 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     public bool HasEndedSequence { get; private set; }
+    public bool HasStartedDialogue { get; private set; }
 
-    private bool _hasStartedDialogue;
     private int _dialogueIndex;
 
     public void DialogueChanger(DialogueSequence sequence)
     {
-        if (!_hasStartedDialogue)
+        if (!HasStartedDialogue)
         {
             //Abrir a janela de dialogo
             UiHUD.instance.DialogueShow(true);
 
             //Habilitar trocar diálogos
             HasEndedSequence = false;
-            _hasStartedDialogue = true;
+            HasStartedDialogue = true;
         }
 
-        if (_dialogueIndex < sequence.Dialogues.Count && !HasEndedSequence && _hasStartedDialogue)
+        if (_dialogueIndex < sequence.Dialogues.Count && !HasEndedSequence && HasStartedDialogue)
         {
             UiHUD.instance.DialogueChangeTexts(
                 sequence.Dialogues[_dialogueIndex].characterName.ToString(), 
@@ -34,9 +34,12 @@ public class DialogueSystem : MonoBehaviour
         if (HasEndedSequence)
         {
             _dialogueIndex = 0;
-            _hasStartedDialogue = false;
+            HasStartedDialogue = false;
             UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty);
             UiHUD.instance.DialogueShow(false);
         }
     }
+
+    public void ResetDialogue() => HasEndedSequence = false;
+
 }
