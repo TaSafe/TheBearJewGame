@@ -3,10 +3,19 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem instance;
     public bool HasEndedSequence { get; private set; }
     public bool HasStartedDialogue { get; private set; }
 
     private int _dialogueIndex;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     public void DialogueChanger(DialogueSequence sequence)
     {

@@ -1,27 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTest : MonoBehaviour
+public class DialogueTest : MonoBehaviour, IInteraction
 {
     [SerializeField] private DialogueSequence _sequence;
 
-    private DialogueSystem _dialogueSystem;
+    public void IdleInteraction() { }
 
-    private void Start()
+    public void Interacting() { }
+
+    public void Interaction()
     {
-        _dialogueSystem = GetComponent<DialogueSystem>();
-    }
+        if (DialogueSystem.instance.HasEndedSequence)
+            DialogueSystem.instance.ResetDialogue();
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (_dialogueSystem.HasEndedSequence)
-                _dialogueSystem.ResetDialogue();
-
-            if (!_dialogueSystem.HasEndedSequence)
-                _dialogueSystem.DialogueChanger(_sequence);
-        }
+        if (!DialogueSystem.instance.HasEndedSequence)
+            DialogueSystem.instance.DialogueChanger(_sequence);
     }
 }

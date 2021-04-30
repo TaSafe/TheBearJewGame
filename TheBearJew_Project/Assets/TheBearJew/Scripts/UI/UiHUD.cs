@@ -7,11 +7,13 @@ public class UiHUD : MonoBehaviour
     public static UiHUD instance;
 
     [SerializeField] GameObject _groupInteractionUI;
+    [SerializeField] Slider _playerLifeBar;
+    
+    [Header("HUD Weapon")]
     [SerializeField] Image _hudWeaponImageActive;
     [SerializeField] Image _hudWeaponImageInactive;
     [SerializeField] Sprite _hudWeaponImageDefault;
     [SerializeField] TMP_Text _hudGunAmmo;
-    [SerializeField] Slider _playerLifeBar;
 
     [Header("Diálogo")]
     [SerializeField] private GameObject _dialogueUI;

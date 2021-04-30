@@ -1474,11 +1474,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groupInteractionUI: {fileID: 6673748024477800601}
+  _playerLifeBar: {fileID: 6673748024653051433}
   _hudWeaponImageActive: {fileID: 6673748025710965709}
   _hudWeaponImageInactive: {fileID: 8351988558486912312}
-  _hudWeaponImageDefault: {fileID: 0}
+  _hudWeaponImageDefault: {fileID: 21300000, guid: 6a410026a6e5ab1418c30966532819ef, type: 3}
   _hudGunAmmo: {fileID: 6673748025518752763}
-  _playerLifeBar: {fileID: 6673748024653051433}
   _dialogueUI: {fileID: 6496317060186110898}
   _dialogueCharacater: {fileID: 42660907639804966}
   _dialogueTxt: {fileID: 7694680790290549549}
