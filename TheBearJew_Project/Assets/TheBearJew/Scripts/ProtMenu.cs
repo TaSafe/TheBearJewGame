@@ -5,16 +5,11 @@ public class ProtMenu : MonoBehaviour
 {
     public GameObject _gameMenu;
 
-    public void ChangeScene(string scene)
-    {
-        SceneManager.LoadScene(scene);
-    }
+    public void ChangeScene(string scene) => SceneManager.LoadScene(scene);
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    public void ExitGame() => Application.Quit();
 
+    #region IN-GAME
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Level_01" && _gameMenu.activeSelf == false)
@@ -28,5 +23,5 @@ public class ProtMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
-
+    #endregion
 }
