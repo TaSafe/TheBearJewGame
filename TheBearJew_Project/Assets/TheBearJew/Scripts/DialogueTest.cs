@@ -11,7 +11,7 @@ public class DialogueTest : MonoBehaviour, IInteraction
     public void Interaction()
     {
         if (DialogueSystem.instance.HasEndedSequence)
-            DialogueSystem.instance.ResetDialogue();
+            DialogueSystem.instance.DialogueReset();
 
         if (!DialogueSystem.instance.HasEndedSequence)
             DialogueSystem.instance.DialogueChanger(_sequence);

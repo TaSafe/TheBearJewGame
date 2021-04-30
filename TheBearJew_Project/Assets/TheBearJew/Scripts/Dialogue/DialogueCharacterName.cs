@@ -1,4 +1,4 @@
-﻿public enum CharacterName
+﻿public enum DialogueCharacterName
 {
     Jack,
     Clark,

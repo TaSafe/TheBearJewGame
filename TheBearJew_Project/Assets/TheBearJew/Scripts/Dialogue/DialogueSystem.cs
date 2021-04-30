@@ -4,9 +4,12 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem instance;
+    
+    [SerializeField] private List<DialogueCharacterImage> _characterImages;
+
     public bool HasEndedSequence { get; private set; }
     public bool HasStartedDialogue { get; private set; }
-
+    
     private int _dialogueIndex;
 
     private void Awake()
@@ -19,36 +22,55 @@ public class DialogueSystem : MonoBehaviour
 
     public void DialogueChanger(DialogueSequence sequence)
     {
+        //Inicia diálogo
         if (!HasStartedDialogue)
         {
-            //Abrir a janela de dialogo
             UiHUD.instance.DialogueShow(true);
 
-            //Habilitar trocar diálogos
             HasEndedSequence = false;
             HasStartedDialogue = true;
         }
 
+        //Troca diálogo
         if (_dialogueIndex < sequence.Dialogues.Count && !HasEndedSequence && HasStartedDialogue)
         {
+            //Imagem do personagem
+            Sprite characterImg = null;
+            if (_dialogueIndex == 0)    //SEI LÁ..... FUNCIONA.
+                characterImg = CharacterImageFinder(sequence);
+            else if (sequence.Dialogues[_dialogueIndex - 1].characterName != sequence.Dialogues[_dialogueIndex].characterName)
+                characterImg = CharacterImageFinder(sequence);
+
+            //Atualiza a caixa de diálogo
             UiHUD.instance.DialogueChangeTexts(
-                sequence.Dialogues[_dialogueIndex].characterName.ToString(), 
-                sequence.Dialogues[_dialogueIndex].dialogueText);
+                    sequence.Dialogues[_dialogueIndex].characterName.ToString(),
+                    sequence.Dialogues[_dialogueIndex].dialogueText,
+                    characterImg);
 
             _dialogueIndex++;
         }
         else
             HasEndedSequence = true;
 
+        //Reseta diálogo após finalizar
         if (HasEndedSequence)
         {
             _dialogueIndex = 0;
             HasStartedDialogue = false;
-            UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty);
+            UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.instance.HudWeaponImageDefault);
             UiHUD.instance.DialogueShow(false);
         }
     }
 
-    public void ResetDialogue() => HasEndedSequence = false;
+    public void DialogueReset() => HasEndedSequence = false;
 
+    private Sprite CharacterImageFinder(DialogueSequence sequence)
+    {
+        foreach (DialogueCharacterImage character in _characterImages)
+        {
+            if (character.CharacterName == sequence.Dialogues[_dialogueIndex].characterName)
+                return character.CharacterImage;
+        }
+        return UiHUD.instance.HudWeaponImageDefault;
+    }
 }

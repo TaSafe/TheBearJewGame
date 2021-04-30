@@ -19,6 +19,7 @@ public class UiHUD : MonoBehaviour
     [SerializeField] private GameObject _dialogueUI;
     [SerializeField] private TMP_Text _dialogueCharacater;
     [SerializeField] private TMP_Text _dialogueTxt;
+    [SerializeField] private Image _dialogueCharacterImg;
 
     public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
 
@@ -36,7 +37,6 @@ public class UiHUD : MonoBehaviour
     }
 
     #region HUD WEAPON
-
     public void HudWeaponAmmo(float currentAmmo)
     {
         if (currentAmmo == -1)
@@ -75,11 +75,9 @@ public class UiHUD : MonoBehaviour
         HudWeaponImage(activeWeaponImage);
         HudWeaponImage(inactiveWeaponImage, false);
     }
-
     #endregion
 
     #region PLAYER
-    //Player
     public void SetLifeBar(float maxValue)
     {
         _playerLifeBar.maxValue = maxValue;
@@ -96,16 +94,15 @@ public class UiHUD : MonoBehaviour
     #endregion
 
     #region DIÁLOGO
-    //Dialogo
     public void DialogueShow(bool activeState) => _dialogueUI.SetActive(activeState);
 
-    public void DialogueChangeTexts(string character, string text)
+    public void DialogueChangeTexts(string character, string text, Sprite characterImage)
     {
-        //TODO: Ver se essas verificações são melhor pra performance
-        //Não sei se fazer essas verificações é melhor ou pior pra performance, no final pode não significar nada
-
         if (_dialogueCharacater.text != character)
+        {
             _dialogueCharacater.SetText(character);
+            _dialogueCharacterImg.sprite = characterImage;
+        }
         
         if (_dialogueTxt.text != text)
             _dialogueTxt.SetText(text);

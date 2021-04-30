@@ -1,6 +1,6 @@
 ﻿[System.Serializable]
 public struct Dialogue
 {
-    public CharacterName characterName;
+    public DialogueCharacterName characterName;
     public string dialogueText;
 }
