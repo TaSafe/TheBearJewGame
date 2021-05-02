@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b65f7cabea91ee4b918999f478672b1, type: 3}
-  m_Name: Bat
+  m_Script: {fileID: 11500000, guid: 0296fc9c9069e76498bf3b8023aedc2b, type: 3}
+  m_Name: TEST_Dialogue Character Image 2
   m_EditorClassIdentifier: 
-  _name: Bat
-  _damage: 5
-  _maxAmmo: -1
-  _fireRate: 1
-  _hudImage: {fileID: 21300000, guid: dbaa49644dd3e9d43a47e7e19ad9fac4, type: 3}
-  _soundShoot: 
-  _soundNoAmmo: 
+  _characterName: 1
+  _image: {fileID: 21300000, guid: cfe3dcc3bcbdac34b96f5e77c5d748f1, type: 3}

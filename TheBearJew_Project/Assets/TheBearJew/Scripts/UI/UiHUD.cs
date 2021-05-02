@@ -7,11 +7,19 @@ public class UiHUD : MonoBehaviour
     public static UiHUD instance;
 
     [SerializeField] GameObject _groupInteractionUI;
+    [SerializeField] Slider _playerLifeBar;
+    
+    [Header("HUD Weapon")]
     [SerializeField] Image _hudWeaponImageActive;
     [SerializeField] Image _hudWeaponImageInactive;
     [SerializeField] Sprite _hudWeaponImageDefault;
     [SerializeField] TMP_Text _hudGunAmmo;
-    [SerializeField] Slider _playerLifeBar;
+
+    [Header("Diálogo")]
+    [SerializeField] private GameObject _dialogueUI;
+    [SerializeField] private TMP_Text _dialogueCharacater;
+    [SerializeField] private TMP_Text _dialogueTxt;
+    [SerializeField] private Image _dialogueCharacterImg;
 
     public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
 
@@ -27,7 +35,8 @@ public class UiHUD : MonoBehaviour
     {
         _groupInteractionUI.SetActive(value);
     }
-    
+
+    #region HUD WEAPON
     public void HudWeaponAmmo(float currentAmmo)
     {
         if (currentAmmo == -1)
@@ -66,8 +75,9 @@ public class UiHUD : MonoBehaviour
         HudWeaponImage(activeWeaponImage);
         HudWeaponImage(inactiveWeaponImage, false);
     }
+    #endregion
 
-    //Player
+    #region PLAYER
     public void SetLifeBar(float maxValue)
     {
         _playerLifeBar.maxValue = maxValue;
@@ -81,4 +91,21 @@ public class UiHUD : MonoBehaviour
         else
             _playerLifeBar.value = newValue;
     }
+    #endregion
+
+    #region DIÁLOGO
+    public void DialogueShow(bool activeState) => _dialogueUI.SetActive(activeState);
+
+    public void DialogueChangeTexts(string character, string text, Sprite characterImage)
+    {
+        if (_dialogueCharacater.text != character)
+        {
+            _dialogueCharacater.SetText(character);
+            _dialogueCharacterImg.sprite = characterImage;
+        }
+        
+        if (_dialogueTxt.text != text)
+            _dialogueTxt.SetText(text);
+    }
+    #endregion
 }
