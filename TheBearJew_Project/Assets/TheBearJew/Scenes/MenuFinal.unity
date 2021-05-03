@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302c79314da48164e97674f5b9d19d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameMenu: {fileID: 0}
 --- !u!1 &1202281344
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +690,7 @@ GameObject:
   - component: {fileID: 1342353697}
   - component: {fileID: 1342353696}
   m_Layer: 5
-  m_Name: Button_Play
+  m_Name: Button_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -768,7 +769,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: MenuInicial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1342353697
@@ -954,6 +955,7 @@ GameObject:
   - component: {fileID: 1915632416}
   - component: {fileID: 1915632415}
   - component: {fileID: 1915632414}
+  - component: {fileID: 1915632417}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1050,6 +1052,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915632417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915632413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &2082417921
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class EndGame : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("End");
+        SceneManager.LoadScene("MenuFinal");
     }
 
 }

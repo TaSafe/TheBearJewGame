@@ -1,12 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WindowType : MonoBehaviour
+public class GameSettings : MonoBehaviour
 {
-    private float dropdownOldValue;
+    [SerializeField] private Dropdown _dropdownWindowType;
+    [SerializeField] private Dropdown _dropdownGraphicQuality;
 
+    private int dropdownOldValue = 0;
     private enum Window { FULLSCREEN, BORDERLESS, WINDOW }
 
-    public void DropdownValueChange(int value)
+    private void Awake()
+    {
+        //_dropdownWindowType.SetValueWithoutNotify(dropdownOldValue);  //Pra isso funcionar tem que manter o valor salvo entre as cenas
+        _dropdownGraphicQuality.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
+    }
+
+    public void WindowType(int value)
     {
         if (value != dropdownOldValue)
         {
@@ -29,4 +38,7 @@ public class WindowType : MonoBehaviour
             dropdownOldValue = value;
         }
     }
+
+    public void QualityChange(int qualityIndex) => QualitySettings.SetQualityLevel(qualityIndex);
+
 }
