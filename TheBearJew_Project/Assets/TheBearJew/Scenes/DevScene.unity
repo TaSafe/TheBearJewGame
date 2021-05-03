@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 1685285841}
   - component: {fileID: 1685285840}
   m_Layer: 0
-  m_Name: Dial_Test_02
+  m_Name: DialTest_02
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 1811770734}
   - component: {fileID: 1811770731}
   m_Layer: 0
-  m_Name: Dial_Test_01
+  m_Name: DialTest_01
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2525,7 +2525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 17424979614846772, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 17424979614846779, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_RootOrder
@@ -2773,7 +2773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 410031618378034270, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
       propertyPath: m_Name
-      value: Canvas Group
+      value: CanvasGroup
       objectReference: {fileID: 0}
     - target: {fileID: 6673748024177819999, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
       propertyPath: m_AnchorMax.x
