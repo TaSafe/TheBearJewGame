@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TheBearJew/Scenes/MenuFinal.unity
     guid: 51578c1ec888818429609e1b441389fc
-  - enabled: 0
+  - enabled: 1
     path: Assets/TheBearJew/Scenes/DevScene.unity
     guid: d99c2e5781d85ac4a8b99c1db0324bc2
+  - enabled: 1
+    path: Assets/TheBearJew/Scenes/DevScene_02.unity
+    guid: eb06f08197c19a6498491486e4769ae4
   m_configObjects: {}
