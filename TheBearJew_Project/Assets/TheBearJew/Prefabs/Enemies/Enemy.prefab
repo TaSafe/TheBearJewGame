@@ -110,9 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentBehaviour: 0
-  _patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolPoints: []
   _rangePlayerFollow: 11.35
   _rangePlayerAttack: 9.55
   _muzzle: {fileID: 1040815317}
