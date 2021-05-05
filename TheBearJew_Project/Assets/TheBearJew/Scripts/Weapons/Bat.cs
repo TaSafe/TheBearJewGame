@@ -19,9 +19,6 @@ public class Bat : Weapon
     public override void Attack()
     {
         _animator.SetTrigger("batSlash");
-
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/bat");
-
         StartCoroutine(Attacking(_attackStartTime));
     }
 
@@ -31,6 +28,9 @@ public class Bat : Weapon
 
         while (time > 0f)
         {
+            if (time < .3f) //Sound
+                FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot); 
+
             time -= Time.deltaTime;
             yield return null;
         }
