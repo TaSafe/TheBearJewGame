@@ -25,6 +25,8 @@ public class DialogueSystem : MonoBehaviour
         //Inicia diálogo
         if (!HasStartedDialogue)
         {
+            PlayerInput.instance.DisableInput();
+
             UiHUD.instance.DialogueShow(true);
 
             HasEndedSequence = false;
@@ -59,10 +61,11 @@ public class DialogueSystem : MonoBehaviour
             HasStartedDialogue = false;
             UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.instance.HudWeaponImageDefault);
             UiHUD.instance.DialogueShow(false);
+            PlayerInput.instance.EnableInput();
+
+            HasEndedSequence = false;   //Reseta a sequência
         }
     }
-
-    public void DialogueReset() => HasEndedSequence = false;
 
     private Sprite CharacterImageFinder(DialogueSequence sequence)
     {

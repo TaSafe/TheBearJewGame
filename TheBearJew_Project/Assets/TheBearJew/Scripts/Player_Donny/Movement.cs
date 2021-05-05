@@ -29,9 +29,7 @@ public class Movement : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    private void Update() => Move();
-
-    private void Move()
+    public void Move(float inputX, float inputY)
     {
         if (_characterController.enabled == false) return;
 
@@ -42,8 +40,8 @@ public class Movement : MonoBehaviour
             playerVelocity.y = -2f;
 
         //Player Input
-        InputX = Input.GetAxisRaw("Horizontal");
-        InputY = Input.GetAxisRaw("Vertical");
+        InputX = inputX; //Input.GetAxisRaw("Horizontal");
+        InputY = inputY; //Input.GetAxisRaw("Vertical");
 
         //Final movement calculations
         Vector3 move = new Vector3(InputX, 0f, InputY);
@@ -69,9 +67,6 @@ public class Movement : MonoBehaviour
         //Altera os valores na animação
         _animator.SetFloat("xVelocity", velocityX, .1f, Time.deltaTime);
         _animator.SetFloat("zVelocity", velocityZ, .1f, Time.deltaTime);
-
-       
-
     }
 
     void OnDrawGizmos()

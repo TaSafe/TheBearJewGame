@@ -25,12 +25,15 @@ public class PlayerWeaponHandler : MonoBehaviour
         UiHUD.instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);
     }
     
-    public void Attack()
+    public void Attack(bool mouseButtonDown)
     {
-        if (_weaponEquiped == WeaponEquiped.gun)
+        //Para parâmetros trigger o 'GetMouseButton' pode registrar que está precionado por mais de um frame, por isso usar o 'GetMouseButtonDown'
+
+        if (_weaponEquiped == WeaponEquiped.gun && !mouseButtonDown)
             _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
 
-        if (_weaponEquiped == WeaponEquiped.bat) 
+        //Isso foi feito para que o ataque do bastão não seja disparado errado
+        if (_weaponEquiped == WeaponEquiped.bat && mouseButtonDown) 
             _batClone.GetComponent<Weapon>().Attack();
     }
 

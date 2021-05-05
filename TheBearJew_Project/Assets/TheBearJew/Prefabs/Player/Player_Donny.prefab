@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2572952574110108908}
   - component: {fileID: 2572952574110108911}
+  - component: {fileID: 2090271369}
+  - component: {fileID: 870576738}
   - component: {fileID: 2572952574110108691}
   - component: {fileID: 2572952574110108690}
-  - component: {fileID: 870576738}
-  - component: {fileID: 2572952573481704341}
   - component: {fileID: 1887483289}
+  - component: {fileID: 2572952573481704341}
+  - component: {fileID: 2090271370}
   m_Layer: 0
   m_Name: Player_Donny
   m_TagString: Player
@@ -57,6 +59,31 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2090271369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572952574110108904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4b578326113af40a0ae8fa4a6ecc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &870576738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572952574110108904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbc007c33e21dc418048dbca7d231f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _totalLife: 100
 --- !u!114 &2572952574110108691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +118,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &870576738
+--- !u!114 &1887483289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,10 +127,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2572952574110108904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbc007c33e21dc418048dbca7d231f4, type: 3}
+  m_Script: {fileID: 11500000, guid: af171db6e5ff2374ca6a728cf5f6392d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totalLife: 100
 --- !u!114 &2572952573481704341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +145,7 @@ MonoBehaviour:
   _muzzle: {fileID: 6098159914653404907}
   _batPrefab: {fileID: 9149590615884574207, guid: 4cc9bbab36c9cf540ba64db6cb23e88d, type: 3}
   _weaponEquiped: 0
---- !u!114 &1887483289
+--- !u!114 &2090271370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2572952574110108904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af171db6e5ff2374ca6a728cf5f6392d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3d109d007b58e4da8bcbeddea74420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &2143428507454617066
