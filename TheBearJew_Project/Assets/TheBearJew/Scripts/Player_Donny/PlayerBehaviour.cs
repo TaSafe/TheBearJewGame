@@ -20,7 +20,11 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         UiHUD.instance.ChangeLifeBar(_lifeSystem.CurrentLife);
 
         if (_lifeSystem.DeathCheck())
+        {
+            //som de morte
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/death");
             Respawn();
+        }
     }
 
     public void Respawn()

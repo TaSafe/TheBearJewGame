@@ -52,6 +52,8 @@ public class Movement : MonoBehaviour
         {
             move.Normalize();  //This part is responsible for make the diagonals become part of the circle of values and not de addition (1,1) -> (0.707,0.0707)
             _characterController.Move(move * _characterSpeed * Time.deltaTime);
+            //som passos
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
         }
 
         //Aplly gravity
@@ -68,29 +70,7 @@ public class Movement : MonoBehaviour
         _animator.SetFloat("xVelocity", velocityX, .1f, Time.deltaTime);
         _animator.SetFloat("zVelocity", velocityZ, .1f, Time.deltaTime);
 
-        /*
-        //Som dos passos não está funcionando :(
-
-        FMOD.Studio.EventInstance soundSteps;
-        
-        soundSteps = FMODUnity.RuntimeManager.CreateInstance("event:/Passos_concreto");
-        private bool soundStepsIsPlaying;
-
-        if (xInput > 0.02f || yInput > 0.02f || xInput < -0.02f || yInput < -0.02f)   
-        {
-            if (!soundStepsIsPlaying)
-            {
-                Debug.Log("cade o som familia");
-                soundSteps.start();
-                soundStepsIsPlaying = true;
-            }
-        }
-        else
-        {
-            soundSteps.setPaused(true);
-            soundStepsIsPlaying = false;
-        }
-        */
+       
 
     }
 

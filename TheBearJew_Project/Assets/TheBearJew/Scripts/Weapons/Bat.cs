@@ -20,7 +20,7 @@ public class Bat : Weapon
     {
         _animator.SetTrigger("batSlash");
 
-        //FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/bat");
 
         StartCoroutine(Attacking(_attackStartTime));
     }

@@ -57,7 +57,11 @@
 			<destination>{cfe4b134-1e34-4cf1-b80b-9fba76e7de26}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{1c0b4ecb-7de7-459c-9aa6-16ceb124cbc6}" />
+	<object class="EventAutomatableProperties" id="{1c0b4ecb-7de7-459c-9aa6-16ceb124cbc6}">
+		<property name="triggerCooldown">
+			<value>1200</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{fef31a08-5610-49fe-bf8e-7cd95dd53086}" />
 	<object class="GroupTrack" id="{7c95d750-1f16-4c26-8639-e1feaf572d69}">
 		<relationship name="modules">
@@ -83,7 +87,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{1b0f32ed-cfe3-46d2-a232-d4b929d4a650}">
 		<property name="volume">
-			<value>8.5</value>
+			<value>3.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{db893503-89a4-4ab3-8cea-25f39fbb2629}</destination>
@@ -110,6 +114,9 @@
 		</property>
 		<property name="length">
 			<value>0.55200000000000005</value>
+		</property>
+		<property name="startOffset">
+			<value>24.5</value>
 		</property>
 		<property name="pitch">
 			<value>0.400000006</value>
@@ -153,6 +160,9 @@
 		<property name="length">
 			<value>0.53999999999999992</value>
 		</property>
+		<property name="startOffset">
+			<value>20</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{a16663ec-a8e8-49cf-9b2c-fa0664f47832}</destination>
 		</relationship>
@@ -180,9 +190,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4ad72e29-33d4-4c03-933f-a909a974e234}">
-		<property name="volume">
-			<value>1.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -199,9 +206,6 @@
 	<object class="RandomizerModulator" id="{db893503-89a4-4ab3-8cea-25f39fbb2629}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
-		</property>
-		<property name="amount">
-			<value>5</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{ecf31b50-2df5-4f7f-b657-3b03b9205c8e}">
@@ -224,7 +228,7 @@
 			<value>startOffset</value>
 		</property>
 		<property name="amount">
-			<value>23</value>
+			<value>16.5</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{a10e3990-64a3-4cce-b0ac-723b148484c6}">

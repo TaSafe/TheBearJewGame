@@ -81,6 +81,8 @@ public class EnemyBehaviours : MonoBehaviour
     {
         Instantiate(_bullet, _muzzle.position, _muzzle.rotation);
         shoot = true;
+        //som tiro
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/enemy_shot");
         yield return new WaitForSeconds(.8f);
 
         shoot = false;
