@@ -62,10 +62,10 @@ public class DialogueSystem : MonoBehaviour
             UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.instance.HudWeaponImageDefault);
             UiHUD.instance.DialogueShow(false);
             PlayerInput.instance.EnableInput();
+
+            HasEndedSequence = false;   //Reseta a sequência
         }
     }
-
-    public void DialogueReset() => HasEndedSequence = false;
 
     private Sprite CharacterImageFinder(DialogueSequence sequence)
     {

@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 
-public class Gate
+public abstract class Gate : MonoBehaviour
 {
-    private string _keyName;
+    [SerializeField] private GameObject _key;
 
-    public Gate(string keyName) => _keyName = keyName;
+    public abstract void GateActions();
 
-    public bool CheckKey(string keyName)
+    public bool CheckKey()
     {
-        if (keyName == _keyName)
+        if (PlayerInput.instance.Inventory.ContainItem(_key))
+        {
+            gameObject.SetActive(false);
             return true;
+        }
         else
             return false;
     }
+
 }

@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             _currentInteraction.Interaction();
             _currentInteraction = null;
+            UiHUD.instance.ShowIntereactionUI(false);
         }
         else if (_currentInteraction == null && playerWeaponHandler.HasGun)
         {

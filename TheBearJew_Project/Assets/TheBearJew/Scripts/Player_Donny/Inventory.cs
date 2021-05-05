@@ -9,15 +9,27 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(GameObject item)
     {
-        if (HasItem(item))
+        if (ContainItem(item))
             _itens.Remove(item);
     }
 
-    public bool HasItem(GameObject item)
+    public bool ContainItem(GameObject item)
     {
         if (_itens.Contains(item))
             return true;
         else
             return false;
     }
+
+    public bool HasItemOfType<T>()
+    {
+        foreach (GameObject item in _itens)
+        {
+            if (item.gameObject.GetComponent<T>() != null)
+                return true;
+        }
+
+        return false;
+    }
+
 }
