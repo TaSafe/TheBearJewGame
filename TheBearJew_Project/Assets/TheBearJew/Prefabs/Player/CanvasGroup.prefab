@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7606755485774639131}
   m_Layer: 0
-  m_Name: Canvas Group
+  m_Name: CanvasGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1694104045627508714
 RectTransform:
   m_ObjectHideFlags: 0
