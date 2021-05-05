@@ -2097,10 +2097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2572952574110108691, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
-      propertyPath: _characterSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108904, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_Name
       value: Player_Donny
@@ -2111,15 +2107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108908, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108908, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -0.0000046491623
       objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108908, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.74
+      value: -42.43
       objectReference: {fileID: 0}
     - target: {fileID: 2572952574110108908, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_LocalRotation.w
