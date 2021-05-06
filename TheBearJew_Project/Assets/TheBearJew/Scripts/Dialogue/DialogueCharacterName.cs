@@ -1,6 +1,7 @@
 ﻿public enum DialogueCharacterName
 {
-    Donny_Donowitz,
+    Donny,
+    Donny_,
     Soldado_Max,
     General
 }
