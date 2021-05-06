@@ -39,6 +39,10 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
             _playerInteraction.Interact(_playerWeaponHandler);
 
+        //HACK: Apenas para testar o funcionamento do vídeo
+        if (Input.GetKeyDown(KeyCode.J))
+            VideoController.instance?.VideoActivate();
+
         if (!isInputEnable) return;
 
         _aim.Aiming();
