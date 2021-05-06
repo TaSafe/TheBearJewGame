@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  *  Mudar o calculo da gravidade para ser chamado apenas uma vez durante o método da movimentação
@@ -50,8 +51,13 @@ public class Movement : MonoBehaviour
         {
             move.Normalize();  //This part is responsible for make the diagonals become part of the circle of values and not de addition (1,1) -> (0.707,0.0707)
             _characterController.Move(move * _characterSpeed * Time.deltaTime);
+
             //som passos
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "Piso_0F_Esgoto")
+            { FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_metal"); }
+            else FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
+            
         }
 
         //Aplly gravity
