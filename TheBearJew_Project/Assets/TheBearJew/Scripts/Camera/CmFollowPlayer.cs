@@ -3,19 +3,7 @@ using Cinemachine;
 
 public class CmFollowPlayer : MonoBehaviour
 {
-    private static CmFollowPlayer instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
-    }
-
-    void Start()
+    void Awake()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         GetComponent<CinemachineVirtualCamera>().Follow = player.transform;

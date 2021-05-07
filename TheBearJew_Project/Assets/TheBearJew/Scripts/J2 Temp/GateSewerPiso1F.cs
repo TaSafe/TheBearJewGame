@@ -22,6 +22,7 @@ public class GateSewerPiso1F : Gate, IInteraction
         if (CheckKey())
         {
             GameManagerPJDois.instance.HasEnteredSewer = true;
+            GameManagerPJDois.instance.LevelCheck = false;
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
         }

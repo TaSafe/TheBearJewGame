@@ -10,7 +10,7 @@ public class GameManagerPJDois : MonoBehaviour
 {
     public static GameManagerPJDois instance;
 
-    private bool _levelCheck;
+    public bool LevelCheck { get; set; }
 
     #region PISO 1F
 
@@ -37,7 +37,7 @@ public class GameManagerPJDois : MonoBehaviour
 
     private void Update()
     {
-        if (!_levelCheck)
+        if (!LevelCheck)
         {
             if (SceneManager.GetActiveScene().name == "Piso_1F")
                 Piso1FChecks();
@@ -45,12 +45,8 @@ public class GameManagerPJDois : MonoBehaviour
                 Piso0FEsgotoChecks();
             else if (SceneManager.GetActiveScene().name == "Tuneis_Subterraneos")
                 TuneisSubterraneosChechks();
-
-            _levelCheck = true;
         }
     }
-
-    private void OnDisable() => _levelCheck = false;
 
     private void Piso1FChecks()
     {
@@ -68,6 +64,8 @@ public class GameManagerPJDois : MonoBehaviour
                 item.gameObject.SetActive(false);
             }
         }
+        Debug.Log("11111");
+        LevelCheck = true;
     }
 
     public void EnemyDeadPiso1F(GameObject item)
@@ -77,7 +75,6 @@ public class GameManagerPJDois : MonoBehaviour
         enemies.Remove(item);
 
         if (enemies.Count < 0) HasEnemyAlive = false;
-        Debug.Log(enemies.Count);
 
         if (!HasEnemyAlive)
         {
@@ -89,7 +86,14 @@ public class GameManagerPJDois : MonoBehaviour
 
     private void Piso0FEsgotoChecks()
     {
+        var spawn = GameObject.FindGameObjectWithTag("SpawnPoint");
+        var characterController = PlayerInput.instance.GetComponent<CharacterController>();
+        characterController.enabled = false;
+        PlayerInput.instance.gameObject.transform.position = spawn.transform.position;
+        characterController.enabled = true;
+        Debug.Log("222222");
 
+        LevelCheck = true;
     }
 
     private void TuneisSubterraneosChechks()

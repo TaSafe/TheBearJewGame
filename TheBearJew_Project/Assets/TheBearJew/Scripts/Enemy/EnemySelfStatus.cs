@@ -18,6 +18,12 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
         _uiLife.SetValues(transform, _enemyData.Life);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            Damage(40f);
+    }
+
     public void Damage(float damage, bool bat = false)
     {
         _lifeSystem.RemoveLife(damage);
