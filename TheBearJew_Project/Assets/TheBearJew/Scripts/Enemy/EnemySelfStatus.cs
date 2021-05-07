@@ -36,6 +36,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
             //Drop da arma
             var rand = Random.Range(0, _gunsToDrop.Length);
             Instantiate(_gunsToDrop[rand], transform.position, Quaternion.identity);
+            GameManagerPJDois.instance?.EnemyDeadPiso1F(gameObject);
 
             Destroy(gameObject);
         }

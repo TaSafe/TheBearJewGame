@@ -19,6 +19,8 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     public void Interaction()
     {
+        if (PlayerInput.instance.PlayerWeaponHandler.HasGun) return;
+
         UiHUD.instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);

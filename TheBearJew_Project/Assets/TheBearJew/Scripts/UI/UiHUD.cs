@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UiHUD : MonoBehaviour
@@ -53,6 +54,8 @@ public class UiHUD : MonoBehaviour
             PlayerInput.instance.IsAllInputsEnable = true;
         }
     }
+
+    public void LoadLevel(string levelName) => SceneManager.LoadScene(levelName);
 
     public void QuitGame() => Application.Quit();
 
