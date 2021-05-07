@@ -12,7 +12,10 @@ public class GateDevSceneOne : Gate, IInteraction
     public override void GateActions()
     {
         if (CheckKey())
+        {
+            gameObject.SetActive(false);
             return;
+        }
         else if (PlayerInput.instance.Inventory.HasItemOfType<Key>())
             DialogueSystem.instance.DialogueChanger(dialogueDontHaveNecessaryKey);
         else

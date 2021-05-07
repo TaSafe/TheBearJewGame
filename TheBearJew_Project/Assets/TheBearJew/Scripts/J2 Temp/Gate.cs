@@ -10,7 +10,6 @@ public abstract class Gate : MonoBehaviour
     {
         if (PlayerInput.instance.Inventory.ContainItem(_key))
         {
-            gameObject.SetActive(false);
             return true;
         }
         else
