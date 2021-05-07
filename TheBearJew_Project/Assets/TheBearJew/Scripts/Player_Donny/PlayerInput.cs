@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
     public Inventory Inventory { get; private set; }
+    public bool IsAllInputsEnable { get; set; } //HACK: pra parar tudo temporariamente
 
     private Aim _aim;
     private Movement _movement;
@@ -30,18 +31,21 @@ public class PlayerInput : MonoBehaviour
         _playerInteraction = GetComponentInChildren<PlayerInteraction>();
         _playerWeaponHandler = GetComponent<PlayerWeaponHandler>();
         Inventory = GetComponent<Inventory>();
+
+        IsAllInputsEnable = true;
     }
 
     private void Update() => PlayerInputs();
 
     private void PlayerInputs()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            UiHUD.instance.Pause();
+
+        if (!IsAllInputsEnable) return;
+
         if (Input.GetMouseButtonDown(1))
             _playerInteraction.Interact(_playerWeaponHandler);
-
-        //HACK: Apenas para testar o funcionamento do vídeo
-        if (Input.GetKeyDown(KeyCode.J))
-            VideoController.instance?.VideoActivate();
 
         if (!isInputEnable) return;
 

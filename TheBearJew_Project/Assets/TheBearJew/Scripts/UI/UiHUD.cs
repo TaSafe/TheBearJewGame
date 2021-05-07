@@ -7,6 +7,7 @@ public class UiHUD : MonoBehaviour
     public static UiHUD instance;
 
     [SerializeField] GameObject _groupInteractionUI;
+    [SerializeField] GameObject _groupPauseMenu;
     [SerializeField] Slider _playerLifeBar;
     
     [Header("HUD Weapon")]
@@ -35,6 +36,25 @@ public class UiHUD : MonoBehaviour
     {
         _groupInteractionUI.SetActive(value);
     }
+
+    //FIXME: mover para uma classe própria a função Pause()
+    public void Pause()
+    {
+        if (Time.timeScale > 0f)
+        {
+            PlayerInput.instance.IsAllInputsEnable = false;
+            _groupPauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            _groupPauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            PlayerInput.instance.IsAllInputsEnable = true;
+        }
+    }
+
+    public void QuitGame() => Application.Quit();
 
     #region HUD WEAPON
     public void HudWeaponAmmo(float currentAmmo)
