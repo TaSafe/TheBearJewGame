@@ -5,11 +5,12 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
     public Inventory Inventory { get; private set; }
+    public bool IsAllInputsEnable { get; set; } //HACK: pra parar tudo temporariamente
 
     private Aim _aim;
     private Movement _movement;
     private PlayerInteraction _playerInteraction;
-    private PlayerWeaponHandler _playerWeaponHandler;
+    public PlayerWeaponHandler PlayerWeaponHandler { get; private set; }
 
     private bool isInputEnable = true;
 
@@ -19,7 +20,7 @@ public class PlayerInput : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
+        
         DontDestroyOnLoad(gameObject);
     }
 
@@ -28,20 +29,23 @@ public class PlayerInput : MonoBehaviour
         _aim = GetComponent<Aim>();
         _movement = GetComponent<Movement>();
         _playerInteraction = GetComponentInChildren<PlayerInteraction>();
-        _playerWeaponHandler = GetComponent<PlayerWeaponHandler>();
+        PlayerWeaponHandler = GetComponent<PlayerWeaponHandler>();
         Inventory = GetComponent<Inventory>();
+
+        IsAllInputsEnable = true;
     }
 
     private void Update() => PlayerInputs();
 
     private void PlayerInputs()
     {
-        if (Input.GetMouseButtonDown(1))
-            _playerInteraction.Interact(_playerWeaponHandler);
+        if (Input.GetKeyDown(KeyCode.Escape))
+            UiHUD.instance.Pause();
 
-        //HACK: Apenas para testar o funcionamento do vídeo
-        if (Input.GetKeyDown(KeyCode.J))
-            VideoController.instance?.VideoActivate();
+        if (!IsAllInputsEnable) return;
+
+        if (Input.GetMouseButtonDown(1))
+            _playerInteraction.Interact(PlayerWeaponHandler);
 
         if (!isInputEnable) return;
 
@@ -53,13 +57,13 @@ public class PlayerInput : MonoBehaviour
         _movement.Move(xInput, yInput);
 
         if (Input.GetMouseButton(0))
-            _playerWeaponHandler.Attack(false);
+            PlayerWeaponHandler.Attack(false);
 
         if (Input.GetMouseButtonDown(0))
-            _playerWeaponHandler.Attack(true);
+            PlayerWeaponHandler.Attack(true);
 
         if (Input.GetKeyDown(KeyCode.Q))
-            _playerWeaponHandler.SwitchWeapons();
+            PlayerWeaponHandler.SwitchWeapons();
 
         //FIXME: Adicionar o input do espaço do PlayerRoll
     }

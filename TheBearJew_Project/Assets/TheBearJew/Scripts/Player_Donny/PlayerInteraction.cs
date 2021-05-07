@@ -8,11 +8,14 @@ public class PlayerInteraction : MonoBehaviour
     
     public void Interact(PlayerWeaponHandler playerWeaponHandler)
     {
-        if (_currentInteraction != null && !playerWeaponHandler.HasGun)
+        if (_currentInteraction != null /*&& !playerWeaponHandler.HasGun*/)
         {
             _currentInteraction.Interaction();
-            _currentInteraction = null;
             UiHUD.instance.ShowIntereactionUI(false);
+
+            if (DialogueSystem.instance.HasStartedDialogue) return;
+
+            _currentInteraction = null;
         }
         else if (_currentInteraction == null && playerWeaponHandler.HasGun)
         {
