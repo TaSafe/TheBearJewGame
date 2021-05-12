@@ -9,7 +9,7 @@ public class EndGame : MonoBehaviour
     {
         SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
-        SceneManager.MoveGameObjectToScene(GameManagerPJDois.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameStatus.Instance.gameObject, SceneManager.GetActiveScene());
 
         SceneManager.LoadScene("MenuFinal");
     }

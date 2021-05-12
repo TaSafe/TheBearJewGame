@@ -13,7 +13,7 @@ public class GateSewerPiso1F : Gate, IInteraction
 
     public override void GateActions()
     {
-        if (GameManagerPJDois.Instance.HasEnteredSewer)
+        if (GameStatus.Instance.HasEnteredSewer)
         {
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
@@ -21,8 +21,7 @@ public class GateSewerPiso1F : Gate, IInteraction
 
         if (CheckKey())
         {
-            GameManagerPJDois.Instance.HasEnteredSewer = true;
-            GameManagerPJDois.Instance.LevelCheck = false;
+            GameStatus.Instance.HasEnteredSewer = true;
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
         }

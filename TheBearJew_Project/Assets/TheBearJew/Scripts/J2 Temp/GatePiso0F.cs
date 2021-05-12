@@ -13,10 +13,4 @@ public class GatePiso0F : MonoBehaviour, IInteraction
         SceneManager.LoadScene("Piso_1F");
         UiHUD.instance?.ShowIntereactionUI(false);
     }
-
-    //private void OnDestroy()
-    //{
-    //    GameManagerPJDois.Instance.LevelCheck = false;
-    //}
-
 }

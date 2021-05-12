@@ -2,13 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagerPJDois : MonoBehaviour
+public class GameStatus : MonoBehaviour
 {
-    public static GameManagerPJDois Instance { get; private set; }
+    public static GameStatus Instance { get; private set; }
 
-    public bool LevelCheck { get; set; }
-
-    #region PISO 1F
+    #region PISO 1F Variables
 
     [SerializeField] private bool _cutsceneOne;
     [SerializeField] private Collider _Crowbar;
@@ -29,34 +27,31 @@ public class GameManagerPJDois : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-
-        LevelCheck = false;
     }
 
-    private void Update()
+    private void OnEnable() => SceneManager.sceneLoaded += SceneLoaded;
+
+    private void OnDisable() => SceneManager.sceneLoaded -= SceneLoaded;
+
+    private void SceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        if (!LevelCheck)
+        switch (SceneManager.GetActiveScene().name)
         {
-            if (SceneManager.GetActiveScene().name == "Piso_1F")
-            {
+            case "Piso_1F":
                 Piso1FChecks();
-                LevelCheck = true;
-            }
-            else if (SceneManager.GetActiveScene().name == "Piso_0F_Esgoto")
-            {
+                break;
+            case "Piso_0F_Esgoto":
                 Piso0FEsgotoChecks();
-                LevelCheck = true;
-            }
-            else if (SceneManager.GetActiveScene().name == "Tuneis_Subterraneos")
-            {
+                break;
+            case "Tuneis_Subterraneos":
                 TuneisSubterraneosChechks();
-                LevelCheck = true;
-            }
-
-            Debug.Log(SceneManager.GetActiveScene().name);
+                break;
         }
+
+        Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
     }
 
+    #region Piso_1F
     private void Piso1FChecks()
     {
         if (!_cutsceneOne)
@@ -74,7 +69,6 @@ public class GameManagerPJDois : MonoBehaviour
             }
         }
     }
-
     public void EnemyDeadPiso1F(GameObject item)
     {
         if (_crowbarCollected) return;
@@ -90,6 +84,7 @@ public class GameManagerPJDois : MonoBehaviour
         }
     }
     public void Piso1FKeyCollected() => _crowbarCollected = true;
+    #endregion
 
     private void Piso0FEsgotoChecks()
     {
@@ -98,5 +93,4 @@ public class GameManagerPJDois : MonoBehaviour
     }
 
     private void TuneisSubterraneosChechks() { }
-
 }
