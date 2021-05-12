@@ -3,21 +3,21 @@
 //HACK: Temporariamente transformando essa classe no singleton do Player
 public class PlayerInput : MonoBehaviour
 {
-    public static PlayerInput instance;
+    public static PlayerInput Instance { get; private set; }
     public Inventory Inventory { get; private set; }
+    public PlayerWeaponHandler PlayerWeaponHandler { get; private set; }
+    public PlayerBehaviour PlayerBehaviour { get; private set; }
     public bool IsAllInputsEnable { get; set; } //HACK: pra parar tudo temporariamente
-
+    
     private Aim _aim;
     private Movement _movement;
     private PlayerInteraction _playerInteraction;
-    public PlayerWeaponHandler PlayerWeaponHandler { get; private set; }
-
     private bool isInputEnable = true;
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
         
@@ -31,6 +31,7 @@ public class PlayerInput : MonoBehaviour
         _playerInteraction = GetComponentInChildren<PlayerInteraction>();
         PlayerWeaponHandler = GetComponent<PlayerWeaponHandler>();
         Inventory = GetComponent<Inventory>();
+        PlayerBehaviour = GetComponent<PlayerBehaviour>();
 
         IsAllInputsEnable = true;
     }

@@ -25,7 +25,7 @@ public class DialogueSystem : MonoBehaviour
         //Inicia diálogo
         if (!HasStartedDialogue)
         {
-            PlayerInput.instance.DisableInput();
+            PlayerInput.Instance.DisableInput();
 
             UiHUD.instance.DialogueShow(true);
 
@@ -61,7 +61,7 @@ public class DialogueSystem : MonoBehaviour
             HasStartedDialogue = false;
             UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.instance.HudWeaponImageDefault);
             UiHUD.instance.DialogueShow(false);
-            PlayerInput.instance.EnableInput();
+            PlayerInput.Instance.EnableInput();
 
             HasEndedSequence = false;   //Reseta a sequência
         }

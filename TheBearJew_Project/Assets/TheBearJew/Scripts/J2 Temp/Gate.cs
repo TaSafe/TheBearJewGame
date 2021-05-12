@@ -8,7 +8,7 @@ public abstract class Gate : MonoBehaviour
 
     public bool CheckKey()
     {
-        if (PlayerInput.instance.Inventory.ContainItem(_key))
+        if (PlayerInput.Instance.Inventory.ContainItem(_key))
         {
             return true;
         }

@@ -10,7 +10,7 @@ public class Key : MonoBehaviour, IInteraction
     public void Interacting() { }
     public void Interaction()
     {
-        PlayerInput.instance.Inventory.AddItem(gameObject);
+        PlayerInput.Instance.Inventory.AddItem(gameObject);
         gameObject.transform.position = new Vector3(0f, 1000f, 0f);
         OnCollect?.Invoke();
         gameObject.SetActive(false);

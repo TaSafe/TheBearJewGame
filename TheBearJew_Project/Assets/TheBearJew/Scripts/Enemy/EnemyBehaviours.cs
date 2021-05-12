@@ -21,7 +21,7 @@ public class EnemyBehaviours : MonoBehaviour
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        _playerPosition = GameObject.FindGameObjectWithTag("Player").transform; //TODO: mudar para a instancia
 
     }
 

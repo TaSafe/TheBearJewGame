@@ -38,7 +38,7 @@ public class VideoController : MonoBehaviour
 
     public void VideoActivate()
     {
-        PlayerInput.instance?.DisableInput();
+        PlayerInput.Instance?.DisableInput();
         _videoPanel.SetActive(true);
     }
 }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CameraDontDestroy : MonoBehaviour
 {
-    public static CameraDontDestroy instance;
+    public static CameraDontDestroy Instance { get; private set; }
 
     void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
 

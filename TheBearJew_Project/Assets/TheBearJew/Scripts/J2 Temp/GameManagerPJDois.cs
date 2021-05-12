@@ -1,14 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// HACK: FIXME: ESSE SCRIPT TEVE A OREDEM DE EXECUÇÃO ALTERADA NO PROJECT SETTINGS
-/// </summary>
 public class GameManagerPJDois : MonoBehaviour
 {
-    public static GameManagerPJDois instance;
+    public static GameManagerPJDois Instance { get; private set; }
 
     public bool LevelCheck { get; set; }
 
@@ -27,12 +23,14 @@ public class GameManagerPJDois : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+
+        LevelCheck = false;
     }
 
     private void Update()
@@ -40,11 +38,22 @@ public class GameManagerPJDois : MonoBehaviour
         if (!LevelCheck)
         {
             if (SceneManager.GetActiveScene().name == "Piso_1F")
+            {
                 Piso1FChecks();
+                LevelCheck = true;
+            }
             else if (SceneManager.GetActiveScene().name == "Piso_0F_Esgoto")
+            {
                 Piso0FEsgotoChecks();
+                LevelCheck = true;
+            }
             else if (SceneManager.GetActiveScene().name == "Tuneis_Subterraneos")
+            {
                 TuneisSubterraneosChechks();
+                LevelCheck = true;
+            }
+
+            Debug.Log(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -59,13 +68,11 @@ public class GameManagerPJDois : MonoBehaviour
         if (_crowbarCollected)
         {
             _Crowbar.gameObject.SetActive(false);
-            foreach (GameObject item in enemies)
+            foreach (GameObject enemy in enemies)
             {
-                item.gameObject.SetActive(false);
+                enemy.gameObject.SetActive(false);
             }
         }
-        Debug.Log("11111");
-        LevelCheck = true;
     }
 
     public void EnemyDeadPiso1F(GameObject item)
@@ -86,19 +93,10 @@ public class GameManagerPJDois : MonoBehaviour
 
     private void Piso0FEsgotoChecks()
     {
-        var spawn = GameObject.FindGameObjectWithTag("SpawnPoint");
-        var characterController = PlayerInput.instance.GetComponent<CharacterController>();
-        characterController.enabled = false;
-        PlayerInput.instance.gameObject.transform.position = spawn.transform.position;
-        characterController.enabled = true;
-        Debug.Log("222222");
-
-        LevelCheck = true;
+        Transform spawn = GameObject.FindGameObjectWithTag("SpawnPoint").transform;
+        PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(spawn.position);
     }
 
-    private void TuneisSubterraneosChechks()
-    {
-
-    }
+    private void TuneisSubterraneosChechks() { }
 
 }

@@ -29,11 +29,16 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
 
     public void Respawn()
     {
-        GetComponent<CharacterController>().enabled = false;
-        transform.position = RespawnPosition;
-        GetComponent<CharacterController>().enabled = true;
+        SetPlayerPosition(RespawnPosition);
 
         _lifeSystem.AddLife(_totalLife);
         UiHUD.instance.SetLifeBar(_totalLife);
+    }
+
+    public void SetPlayerPosition(Vector3 position)
+    {
+        GetComponent<CharacterController>().enabled = false;
+        transform.position = position;
+        GetComponent<CharacterController>().enabled = true;
     }
 }

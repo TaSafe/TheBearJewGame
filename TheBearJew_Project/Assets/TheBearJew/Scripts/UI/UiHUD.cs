@@ -43,7 +43,7 @@ public class UiHUD : MonoBehaviour
     {
         if (Time.timeScale > 0f)
         {
-            PlayerInput.instance.IsAllInputsEnable = false;
+            PlayerInput.Instance.IsAllInputsEnable = false;
             _groupPauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -51,7 +51,7 @@ public class UiHUD : MonoBehaviour
         {
             _groupPauseMenu.SetActive(false);
             Time.timeScale = 1f;
-            PlayerInput.instance.IsAllInputsEnable = true;
+            PlayerInput.Instance.IsAllInputsEnable = true;
         }
     }
 

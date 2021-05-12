@@ -11,7 +11,7 @@ public class Bat : Weapon
 
     private void Start()
     {
-        var playerRef = GameObject.FindGameObjectWithTag("Player");
+        var playerRef = GameObject.FindGameObjectWithTag("Player"); //FIXME: mudar para instancia do player
         _muzzle = playerRef.GetComponent<PlayerWeaponHandler>().Muzzle;
         _animator = playerRef.GetComponentInChildren<Animator>();
     }

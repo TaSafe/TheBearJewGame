@@ -7,9 +7,9 @@ public class EndGame : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.MoveGameObjectToScene(PlayerInput.instance.gameObject, SceneManager.GetActiveScene());
-        SceneManager.MoveGameObjectToScene(CameraDontDestroy.instance.gameObject, SceneManager.GetActiveScene());
-        SceneManager.MoveGameObjectToScene(GameManagerPJDois.instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameManagerPJDois.Instance.gameObject, SceneManager.GetActiveScene());
 
         SceneManager.LoadScene("MenuFinal");
     }

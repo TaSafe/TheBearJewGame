@@ -10,8 +10,13 @@ public class GatePiso0F : MonoBehaviour, IInteraction
     public void Interacting() { }
     public void Interaction()
     {
-        GameManagerPJDois.instance.LevelCheck = false;
         SceneManager.LoadScene("Piso_1F");
         UiHUD.instance?.ShowIntereactionUI(false);
     }
+
+    //private void OnDestroy()
+    //{
+    //    GameManagerPJDois.Instance.LevelCheck = false;
+    //}
+
 }

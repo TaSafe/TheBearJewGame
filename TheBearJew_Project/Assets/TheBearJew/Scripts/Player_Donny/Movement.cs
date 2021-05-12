@@ -55,9 +55,9 @@ public class Movement : MonoBehaviour
             //som passos
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name == "Piso_0F_Esgoto")
-            { FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_metal"); }
-            else FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
-            
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_metal");
+            else 
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
         }
 
         //Aplly gravity
