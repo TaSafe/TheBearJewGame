@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Enemy Data", menuName = "Game Data/Enemy")]
-public class EnemyData : ScriptableObject
+public class EnemyDataSO : ScriptableObject
 {
     [SerializeField] private string _name;
     [SerializeField] private float _life;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySelfStatus : MonoBehaviour, IDamage
 {
-    [SerializeField] private EnemyData _enemyData;
+    [SerializeField] private EnemyDataSO _enemyData;
     [SerializeField] private GameObject _lifeUi;
     [SerializeField] private GameObject[] _gunsToDrop;
 
@@ -20,6 +20,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
 
     private void Update()
     {
+        //Teste de dano
         if (Input.GetKeyDown(KeyCode.P))
             Damage(40f);
     }
@@ -32,7 +33,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
         DeathCheck(bat);
     }
 
-    //A execução tá bem torta, tem que pensar melhor depois - 27/04/2021
+    //A 'execução' tá bem torta, tem que pensar melhor depois - 27/04/2021
     private void DeathCheck(bool batAttack)
     {
         if (_lifeSystem.DeathCheck() || /*execução*/ batAttack && _lifeSystem.CurrentLife < 40f)
@@ -46,7 +47,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
 
             Destroy(gameObject);
         }
-        else if (_lifeSystem.CurrentLife < 40f) //abilita execução
+        else if (_lifeSystem.CurrentLife < 40f) //abilita 'execução'
             _uiLife.ShowExecutionFeedback();
     }
 }
