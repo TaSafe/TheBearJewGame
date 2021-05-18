@@ -31,7 +31,7 @@ public class LifeSystem
             CurrentLife -= valueToRemove;
     }
 
-    public bool DeathCheck()
+    public bool IsDead()
     {
         if (CurrentLife <= 0)
             return true;
