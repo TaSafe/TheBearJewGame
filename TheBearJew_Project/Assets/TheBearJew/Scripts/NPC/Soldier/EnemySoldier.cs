@@ -1,11 +1,27 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySoldier : Enemy
 {
     [SerializeField] private EnemyDataSO _enemyData;
+    [SerializeField] private List<GameObject> _patrolPoints = new List<GameObject>();
 
-    private void Start() => EnemyInit(_enemyData);
+    private BTRoot behaviour;
+
+    private void Start()
+    {
+        EnemyInit(_enemyData);
+
+        behaviour = GetComponent<BTRoot>();
+
+        BTSequence patrol = new BTSequence();
+        patrol.children.Add( new NodeMoveToTarget(transform, GetComponent<NavMeshAgent>(), _patrolPoints) );
+
+        behaviour.root = patrol;
+        StartCoroutine(behaviour.Execute());
+    }
 
     public override void Damage(float damage, bool bat = false) 
     { 
