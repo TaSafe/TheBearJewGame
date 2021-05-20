@@ -9,11 +9,11 @@ public abstract class BTNode
 
     public List<BTNode> children = new List<BTNode>();  //Lista com os nodes filhos
 
-    //Método que roda o comportamneto do node, ele recebe a Behaviour Tree como parâmentro (isso possibilidade acessar o GameObject)
+    //Método que roda o comportamneto do node, ele recebe a Behaviour Tree como parâmentro (isso possibilita acessar o GameObject)
     public abstract IEnumerator Run(BTRoot root);
 
     //Método para debug
-    public void Print(string message = "")
+    protected void Print(string message = "")
     {
         string color = "cyan";
         if (status == Status.SUCCESS) color = "green";
