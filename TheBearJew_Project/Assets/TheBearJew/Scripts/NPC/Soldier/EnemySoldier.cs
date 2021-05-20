@@ -12,8 +12,9 @@ public class EnemySoldier : Enemy
     [SerializeField] private List<Transform> _patrolPoints = new List<Transform>();
 
     [Header("Patrol Actions")]
-    public bool _isPursuing;
-    public float playerNearCircleRadius = 5f;
+    [SerializeField] private bool _isPursuing;
+    [SerializeField] private float _detectionRadius = 5f;
+    [SerializeField] private float _detectionConeAngle = 30f;
 
     private BTRoot behaviour;
 
@@ -24,7 +25,7 @@ public class EnemySoldier : Enemy
         behaviour = GetComponent<BTRoot>();
 
         BTSequence patrol = new BTSequence();
-        patrol.children.Add( new NodeIsOnViewCone(45f) );
+        patrol.children.Add( new NodeIsOnViewCone(_detectionConeAngle, _detectionRadius) );
 
         //O if é para facilitar durante o desenvolvimento, não afeta em nada a lógica
         //if (_movingPatrol)
@@ -60,7 +61,7 @@ public class EnemySoldier : Enemy
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, playerNearCircleRadius);
+        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
     }
 
 }
