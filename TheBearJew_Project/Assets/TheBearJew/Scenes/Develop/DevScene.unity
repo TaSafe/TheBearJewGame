@@ -320,23 +320,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &176816860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7095371651389541920, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
-  m_PrefabInstance: {fileID: 7078333736888973612}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &176816861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176816860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beef197e9bbc1a944b4f754fe0aa6a2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &182302548
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +407,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1568
+  m_Name: pb_Mesh-15054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -588,7 +571,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3274
+  m_Name: pb_Mesh-16756
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1441,11 +1424,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 58.415276, y: 1, z: 58.6115}
   m_Center: {x: -7.4332314, y: 0, z: 7.040144}
---- !u!1 &1033264310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6884847177138369902, guid: 01f1079e17fc6c04da13fcf42c9b3842, type: 3}
-  m_PrefabInstance: {fileID: 6884847177346803266}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1049929974
 Mesh:
   m_ObjectHideFlags: 0
@@ -2678,11 +2656,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1756556718 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6884847177138369902, guid: 01f1079e17fc6c04da13fcf42c9b3842, type: 3}
-  m_PrefabInstance: {fileID: 1074863959}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803117876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3975,18 +3948,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 21561334883514125, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
-      propertyPath: _patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 21561334883514125, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
-      propertyPath: _patrolPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1033264310}
-    - target: {fileID: 21561334883514125, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
-      propertyPath: _patrolPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1756556718}
     - target: {fileID: 2579043226527515051, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
       propertyPath: m_Mesh
       value: 

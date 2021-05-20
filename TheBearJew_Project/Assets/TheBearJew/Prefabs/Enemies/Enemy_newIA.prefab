@@ -1919,6 +1919,7 @@ GameObject:
   - component: {fileID: 7078333736279403195}
   - component: {fileID: 1563696833223509238}
   - component: {fileID: 21561334883514125}
+  - component: {fileID: 176816861}
   m_Layer: 0
   m_Name: Enemy_newIA
   m_TagString: Enemy
@@ -1991,6 +1992,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 460761c2b374db549a11ed0df6abde4b, type: 2}
+  _movingPatrol: 1
+  _patrolPoints: []
+--- !u!114 &176816861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095371651389541920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beef197e9bbc1a944b4f754fe0aa6a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8097609655077858258
 GameObject:
   m_ObjectHideFlags: 0
