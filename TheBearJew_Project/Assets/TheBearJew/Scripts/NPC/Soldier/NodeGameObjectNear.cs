@@ -4,13 +4,8 @@ using UnityEngine;
 public class NodeGameObjectNear : BTNode
 {
     private float circleRadius;
-    private GameObject gameObjectToCheck;
 
-    public NodeGameObjectNear(float parameters, GameObject go)
-    {
-        circleRadius = parameters;
-        gameObjectToCheck = go;
-    }
+    public NodeGameObjectNear(float circleRadius) => this.circleRadius = circleRadius;
 
     public override IEnumerator Run(BTRoot root)
     {
@@ -18,12 +13,9 @@ public class NodeGameObjectNear : BTNode
 
         if (Physics.SphereCast(new Ray(root.transform.position, root.transform.forward), circleRadius, out RaycastHit hit))
         {
-            if (hit.collider.gameObject == gameObjectToCheck)
+            if (hit.collider.gameObject == PlayerInput.Instance.gameObject)
                 status = Status.SUCCESS;
         }
-
-        Print();
-
         yield break;
     }
 }
