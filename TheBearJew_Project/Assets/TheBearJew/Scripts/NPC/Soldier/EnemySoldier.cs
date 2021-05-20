@@ -6,18 +6,25 @@ using UnityEngine.AI;
 public class EnemySoldier : Enemy
 {
     [SerializeField] private EnemyDataSO _enemyData;
-    [SerializeField] private List<GameObject> _patrolPoints = new List<GameObject>();
+
+    [SerializeField] private bool _movingPatrol = true;
+    [SerializeField] private List<Transform> _patrolPoints = new List<Transform>();
 
     private BTRoot behaviour;
 
-    private void Start()
-    {
-        EnemyInit(_enemyData);
+    private void Awake() => EnemyInit(_enemyData);
 
+    private void OnEnable()
+    {
         behaviour = GetComponent<BTRoot>();
 
         BTSequence patrol = new BTSequence();
-        patrol.children.Add( new NodeMoveToTarget(transform, GetComponent<NavMeshAgent>(), _patrolPoints) );
+
+        //O if é para facilitar durante o desenvolvimento, não afeta em nada a lógica
+        if (_movingPatrol)
+            patrol.children.Add( new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), _patrolPoints) );
+        else
+            patrol.children.Add(new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), null));
 
         behaviour.root = patrol;
         StartCoroutine(behaviour.Execute());
