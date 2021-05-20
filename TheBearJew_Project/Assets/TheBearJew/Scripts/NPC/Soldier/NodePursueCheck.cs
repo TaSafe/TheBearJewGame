@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-public class NodePuersueCheck : BTNode
+public class NodePursueCheck : BTNode
 {
     public override IEnumerator Run(BTRoot root)
     {
