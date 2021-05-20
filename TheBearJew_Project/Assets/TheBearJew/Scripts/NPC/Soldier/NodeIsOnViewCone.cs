@@ -14,6 +14,8 @@ public class NodeIsOnViewCone : BTNode
         if (MathUtilities.ConeChecker(root.gameObject, PlayerInput.Instance.gameObject.transform.position, _coneAngle))
             status = Status.SUCCESS;
 
+        Print();
+
         yield break;
     }
 }
