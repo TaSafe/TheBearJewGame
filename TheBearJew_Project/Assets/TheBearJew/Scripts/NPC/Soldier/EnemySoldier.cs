@@ -24,7 +24,7 @@ public class EnemySoldier : Enemy
         behaviour = GetComponent<BTRoot>();
 
         BTSequence patrol = new BTSequence();
-        patrol.children.Add( new NodeGameObjectNear(playerNearCircleRadius, PlayerInput.Instance.gameObject) );
+        patrol.children.Add( new NodeGameObjectNear(playerNearCircleRadius) );
 
         //O if é para facilitar durante o desenvolvimento, não afeta em nada a lógica
         //if (_movingPatrol)
