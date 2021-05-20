@@ -6,9 +6,9 @@ public class MathUtilities : MonoBehaviour
     {
         float cosAngle = Vector3.Dot(
             (objectToCompare - mainGameObject.transform.position).normalized,
-            mainGameObject.transform.forward);
+            mainGameObject.transform.forward.normalized);
 
-        float angle = Mathf.Acos((cosAngle) * Mathf.Rad2Deg);
+        float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
 
         return angle < coneAngle;
     }
