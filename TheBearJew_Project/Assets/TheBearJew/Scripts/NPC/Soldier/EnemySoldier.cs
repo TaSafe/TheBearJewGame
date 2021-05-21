@@ -25,7 +25,7 @@ public class EnemySoldier : Enemy
         behaviour = GetComponent<BTRoot>();
 
         BTSequence patrol = new BTSequence();
-        patrol.children.Add( new NodeIsOnViewCone(_detectionConeAngle, _detectionRadius) );
+        patrol.children.Add( new NodeApproximationToPlayer(3f, GetComponent<NavMeshAgent>()) );
 
         //O if é para facilitar durante o desenvolvimento, não afeta em nada a lógica
         //if (_movingPatrol)
@@ -59,9 +59,9 @@ public class EnemySoldier : Enemy
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(transform.position, _detectionRadius);
+    //}
 
 }
