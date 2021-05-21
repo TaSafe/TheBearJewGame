@@ -48,7 +48,7 @@ public class GameStatus : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
+        //Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
     }
 
     #region Piso_1F

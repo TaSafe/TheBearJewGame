@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class BTSelector : BTNode
 {
@@ -8,7 +6,7 @@ public class BTSelector : BTNode
     {
         status = Status.RUNNING;
         
-        Print();
+        //Print();
 
         foreach (BTNode node in children)
         {
@@ -23,6 +21,6 @@ public class BTSelector : BTNode
 
         if (status == Status.RUNNING) status = Status.FAILURE;
 
-        Print();
+        //Print();
     }
 }

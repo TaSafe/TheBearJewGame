@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class BTSequence : BTNode
 {
@@ -8,7 +6,7 @@ public class BTSequence : BTNode
     {
         status = Status.RUNNING;
 
-        Print();
+        //Print();
 
         foreach (BTNode node in children)
         {
@@ -23,6 +21,6 @@ public class BTSequence : BTNode
 
         if (status == Status.RUNNING) status = Status.SUCCESS;
         
-        Print();
+        //Print();
     }
 }

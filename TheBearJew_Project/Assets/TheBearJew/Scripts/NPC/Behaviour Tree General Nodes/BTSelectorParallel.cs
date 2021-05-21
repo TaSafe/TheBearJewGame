@@ -8,7 +8,7 @@ public class BTSelectorParallel : BTNode
     {
         status = Status.RUNNING;
 
-        Print();
+        //Print();
 
         //Manter uma referência para as Coroutines que estarão rodando
         Dictionary<BTNode, Coroutine> routines = new Dictionary<BTNode, Coroutine>();
@@ -63,6 +63,6 @@ public class BTSelectorParallel : BTNode
             yield return new WaitForSeconds(.1f);
         }
 
-        Print();
+        //Print();
     }
 }
