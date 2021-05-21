@@ -2,32 +2,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    float timer;
+    private const float BULLET_SPEED = 10f;
 
-    private void Start()
-    {
-        timer = Time.deltaTime + 10f;
-    }
+    private void Awake() => Destroy(gameObject, 7f);
 
-    private void Update()
-    {
-        if (timer <= 0)
-            Destroy(gameObject);
-        else
-            timer -= Time.deltaTime;
-
-        transform.Translate(Vector3.forward * Time.deltaTime * 10f);
-    }
+    private void Update() => transform.Translate(Vector3.forward * BULLET_SPEED * Time.deltaTime);
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponentInParent<IDamage>()?.Damage(10);
+            other.gameObject.GetComponentInParent<IDamage>()?.Damage(20f);
             Destroy(gameObject);
         }
         else
             Destroy(gameObject);
     }
-
 }
