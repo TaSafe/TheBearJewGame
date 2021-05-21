@@ -2006,11 +2006,15 @@ MonoBehaviour:
   _enemyData: {fileID: 11400000, guid: 460761c2b374db549a11ed0df6abde4b, type: 2}
   _bullet: {fileID: 1734583370307269723, guid: 6fe25230ab67b9b4c96d4c25c8903bd8, type: 3}
   _muzzle: {fileID: 7078333735294797055}
+  _lifeUi: {fileID: 6315666523205481511, guid: 5582c1494bc33ea4daa2438d64dbebb2, type: 3}
   _movingPatrol: 1
-  _patrolPoints: []
+  _patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   _isPursuing: 0
-  _detectionRadius: 5
+  _detectionRadius: 8
   _detectionConeAngle: 30
+  _attackRange: 5
 --- !u!1 &8097609655077858258
 GameObject:
   m_ObjectHideFlags: 0

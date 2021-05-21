@@ -1,30 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySoldier : Enemy
 {
     [SerializeField] private EnemyDataSO _enemyData;
+
+    [Header("Attack")]
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _muzzle;
+    private bool _shoot; //Talvez saia depois
+
+    [Header("UI")]
+    [SerializeField] private GameObject _lifeUi;
+    private UiLifeEnemy _uiLife;
 
     [Header("Patrol Points")]
     [SerializeField] private bool _movingPatrol = true;
     [SerializeField] private List<Transform> _patrolPoints = new List<Transform>();
 
-    [Header("Patrol Actions")]
+    [Header("Patrol Detections")]
     [SerializeField] private bool _isPursuing;
-    [SerializeField] private float _detectionRadius = 5f;
-    [SerializeField] private float _detectionConeAngle = 30f;
+    [SerializeField] private float _detectionRadius = 8f;
+    [SerializeField] private float _detectionConeAngle = 60f;
+    [SerializeField] private float _attackRange = 5f;
 
     private BTRoot behaviour;
     
-    //Talvez saia depois
-    private bool _shoot;
-
     private void Awake() => EnemyInit(_enemyData);
 
-    private void Start() => BehaviourTree();
+    private void Start()
+    {
+        GameObject uiLife = Instantiate(_lifeUi, _lifeUi.transform.position, Quaternion.Euler(new Vector3(45f, 0f, 0f)));
+        _uiLife = uiLife.GetComponent<UiLifeEnemy>();
+        _uiLife.SetValues(transform, _enemyData.Life);
+
+        BehaviourTree();
+    }
 
     private void Update() => PursueState = _isPursuing;
 
@@ -32,33 +45,41 @@ public class EnemySoldier : Enemy
     {
         behaviour = GetComponent<BTRoot>();
 
+        BTSequence playerDetection = new BTSequence();
+        playerDetection.children.Add( new NodePlayerNear(_detectionRadius) );
+        playerDetection.children.Add( new NodeIsOnViewCone(_detectionConeAngle, _detectionRadius));
+        playerDetection.children.Add( new NodeApproximationToPlayer(_attackRange, GetComponent<NavMeshAgent>()) );
+        playerDetection.children.Add( new NodeAttack() );
+
         BTSequence patrol = new BTSequence();
-        patrol.children.Add(new NodeAttack());
-        //patrol.children.Add( new NodeApproximationToPlayer(3f, GetComponent<NavMeshAgent>()) );
-
         //O if é para facilitar durante o desenvolvimento, não afeta em nada a lógica
-        //if (_movingPatrol)
-        //    patrol.children.Add( new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), _patrolPoints) );
-        //else
-        //    patrol.children.Add( new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), null) );
+        if (_movingPatrol)
+            patrol.children.Add(new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), _patrolPoints));
+        else
+            patrol.children.Add(new NodePatrolMove(transform, GetComponent<NavMeshAgent>(), null));
 
-        behaviour.root = patrol;
+        BTSelectorParallel enemySoldierBehaviour = new BTSelectorParallel();
+        enemySoldierBehaviour.children.Add( playerDetection );
+        enemySoldierBehaviour.children.Add( patrol );
+
+        behaviour.root = enemySoldierBehaviour;
         StartCoroutine(behaviour.Execute());
     }
 
     public override void Damage(float damage, bool bat = false) 
     { 
-        print($"Damage: {damage}; Bat: {bat}");
+        //print($"Damage: {damage}; Bat: {bat}");
         LifeStatus.RemoveLife(damage);
+        _uiLife.ChangeValue(LifeStatus.CurrentLife);
         DeathCheck(bat);
     }
 
     protected override void DeathCheck(bool batAttack) 
     { 
-        print($"DeathCheck > Bat attack {batAttack}");
+        //print($"DeathCheck > Bat attack {batAttack}");
         if (LifeStatus.IsDead())
         {
-            print("Morreu");
+            _uiLife.Destroy();
             Destroy(gameObject);
         }
     }

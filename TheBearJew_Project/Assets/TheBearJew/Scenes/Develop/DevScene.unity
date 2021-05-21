@@ -407,7 +407,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1570
+  m_Name: pb_Mesh-34980
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -571,7 +571,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3278
+  m_Name: pb_Mesh-36688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3948,6 +3948,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21561334883514125, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
+      propertyPath: _patrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1958056749}
+    - target: {fileID: 21561334883514125, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
+      propertyPath: _patrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1074863960}
     - target: {fileID: 2579043226527515051, guid: 27289ce2b25c00546af870e09151f10c, type: 3}
       propertyPath: m_Mesh
       value: 
