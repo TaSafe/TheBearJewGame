@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IDamage
 {
@@ -7,7 +8,11 @@ public abstract class Enemy : MonoBehaviour, IDamage
 
     protected void EnemyInit(EnemyDataSO enemyData) => LifeStatus = new LifeSystem(enemyData.Life);
 
+    public abstract void BehaviourTree();
+
     public abstract void Damage(float damage, bool bat = false);
 
     protected abstract void DeathCheck(bool batAttack);
+
+    public abstract void Attack();
 }
