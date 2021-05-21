@@ -13,7 +13,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
     {
         _lifeSystem = new LifeSystem(_enemyData.Life);
 
-        var uiLife = Instantiate(_lifeUi, _lifeUi.transform.position, Quaternion.Euler(new Vector3(45f, 0f, 0f)));
+        GameObject uiLife = Instantiate(_lifeUi, _lifeUi.transform.position, Quaternion.Euler(new Vector3(45f, 0f, 0f)));
         _uiLife = uiLife.GetComponent<UiLifeEnemy>();
         _uiLife.SetValues(transform, _enemyData.Life);
     }
