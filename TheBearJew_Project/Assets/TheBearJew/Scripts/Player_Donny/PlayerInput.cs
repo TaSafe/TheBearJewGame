@@ -7,12 +7,12 @@ public class PlayerInput : MonoBehaviour
     public Inventory Inventory { get; private set; }
     public PlayerWeaponHandler PlayerWeaponHandler { get; private set; }
     public PlayerBehaviour PlayerBehaviour { get; private set; }
-    public bool IsAllInputsEnable { get; set; } //HACK: pra parar tudo temporariamente
-    
+    public bool IsAllInputsEnable { get; set; } = true; //HACK: pra parar tudo temporariamente
+
     private Aim _aim;
     private Movement _movement;
     private PlayerInteraction _playerInteraction;
-    private bool isInputEnable = true;
+    private bool inputEnabled = true;
 
     private void Awake()
     {
@@ -32,8 +32,6 @@ public class PlayerInput : MonoBehaviour
         PlayerWeaponHandler = GetComponent<PlayerWeaponHandler>();
         Inventory = GetComponent<Inventory>();
         PlayerBehaviour = GetComponent<PlayerBehaviour>();
-
-        IsAllInputsEnable = true;
     }
 
     private void Update() => PlayerInputs();
@@ -46,9 +44,9 @@ public class PlayerInput : MonoBehaviour
         if (!IsAllInputsEnable) return;
 
         if (Input.GetMouseButtonDown(1))
-            _playerInteraction.Interact(PlayerWeaponHandler);
+            _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
 
-        if (!isInputEnable) return;
+        if (!inputEnabled) return;
 
         _aim.Aiming();
 
@@ -69,6 +67,6 @@ public class PlayerInput : MonoBehaviour
         //FIXME: Adicionar o input do espaço do PlayerRoll
     }
 
-    public void EnableInput() => isInputEnable = true;
-    public void DisableInput() => isInputEnable = false;
+    public void EnableInput() => inputEnabled = true;
+    public void DisableInput() => inputEnabled = false;
 }

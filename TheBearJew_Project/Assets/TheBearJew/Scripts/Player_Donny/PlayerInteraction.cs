@@ -6,7 +6,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start() => Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
     
-    public void Interact(PlayerWeaponHandler playerWeaponHandler)
+    public void WeaponHandlerInteraction(PlayerWeaponHandler playerWeaponHandler)
     {
         if (_currentInteraction != null /*&& !playerWeaponHandler.HasGun*/)
         {
@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         _currentInteraction = other.GetComponent<IInteraction>();
         if (_currentInteraction != null)
@@ -32,6 +32,13 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction.Interacting();
         }
     }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    _currentInteraction = other.GetComponent<IInteraction>();
+    //    if (_currentInteraction == null)
+    //        UiHUD.instance.ShowIntereactionUI(false);
+    //}
 
     private void OnTriggerExit(Collider other)
     {
