@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemySelfStatus : MonoBehaviour, IDamage
@@ -41,9 +42,10 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
             _uiLife.Destroy();
 
             //Drop da arma
-            var rand = Random.Range(0, _gunsToDrop.Length);
+            var rand = UnityEngine.Random.Range(0, _gunsToDrop.Length);
             Instantiate(_gunsToDrop[rand], transform.position, Quaternion.identity);
-            GameStatus.Instance?.EnemyDeadPiso1F(gameObject);
+
+            ManagerPiso1F.Instance?.RemoveEnemiesFromList(gameObject);
 
             Destroy(gameObject);
         }

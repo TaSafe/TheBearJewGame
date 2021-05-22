@@ -11,7 +11,7 @@ public class GateDevSceneOne : Gate, IInteraction
 
     public override void GateActions()
     {
-        if (CheckKey())
+        if (CheckKeyInPlayerInventary())
         {
             gameObject.SetActive(false);
             return;

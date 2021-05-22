@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GateMainPiso1F : Gate, IInteraction
@@ -12,8 +10,9 @@ public class GateMainPiso1F : Gate, IInteraction
 
     public override void GateActions()
     {
-        if (CheckKey())
+        if (CheckKeyInPlayerInventary())
         {
+            RemoveKeyFromPlayerInventary();
             gameObject.SetActive(false);
             return;
         }

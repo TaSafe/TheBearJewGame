@@ -19,9 +19,10 @@ public class GateSewerPiso1F : Gate, IInteraction
             return;
         }
 
-        if (CheckKey())
+        if (CheckKeyInPlayerInventary())
         {
             GameStatus.Instance.HasEnteredSewer = true;
+            RemoveKeyFromPlayerInventary();
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
         }

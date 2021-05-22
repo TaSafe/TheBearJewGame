@@ -8,14 +8,9 @@ public class GameStatus : MonoBehaviour
 
     #region PISO 1F Variables
 
-    [SerializeField] private bool _cutsceneOne;
-    [SerializeField] private Collider _Crowbar;
-    [SerializeField] private GameObject _CrowbarParticle;
-    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
-    public bool HasEnteredSewer;
-
-    private bool HasEnemyAlive;
-    private bool _crowbarCollected;
+    [SerializeField] private bool _HasPlayedCutsceneOne;
+    public bool HasEnteredSewer { get; set; }
+    public bool HasEnemyAlive { get; set; } = true;
 
     #endregion
 
@@ -51,46 +46,25 @@ public class GameStatus : MonoBehaviour
         //Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
     }
 
-    #region Piso_1F
     private void Piso1FChecks()
     {
-        if (!_cutsceneOne)
+        if (!_HasPlayedCutsceneOne)
         {
-            VideoController.instance.VideoActivate();
-            _cutsceneOne = true;
+            VideoController.Instance?.VideoActivate();
+            _HasPlayedCutsceneOne = true;
         }
-
-        if (_crowbarCollected)
-        {
-            _Crowbar.gameObject.SetActive(false);
-            foreach (GameObject enemy in enemies)
-            {
-                enemy.gameObject.SetActive(false);
-            }
-        }
-    }
-    public void EnemyDeadPiso1F(GameObject item)
-    {
-        if (_crowbarCollected) return;
-
-        enemies.Remove(item);
-
-        if (enemies.Count < 0) HasEnemyAlive = false;
 
         if (!HasEnemyAlive)
-        {
-            _Crowbar.enabled = true;
-            _CrowbarParticle.SetActive(true);
-        }
+            ManagerPiso1F.Instance?.LevelEndUpdate();
     }
-    public void Piso1FKeyCollected() => _crowbarCollected = true;
-    #endregion
 
+    #region Piso_0F
     private void Piso0FEsgotoChecks()
     {
         Transform spawn = GameObject.FindGameObjectWithTag("SpawnPoint").transform;
         PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(spawn.position);
     }
+    #endregion
 
     private void TuneisSubterraneosChechks() { }
 }
