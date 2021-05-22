@@ -4,7 +4,7 @@ using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
-    public static VideoController instance;
+    public static VideoController Instance { get; private set; }
 
     [SerializeField] private GameObject _videoPanel;
     [SerializeField] private VideoClip _video;
@@ -12,8 +12,8 @@ public class VideoController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
     }
