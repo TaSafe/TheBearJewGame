@@ -10,7 +10,10 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(GameObject item)
     {
         if (ContainItem(item))
+        {
             _itens.Remove(item);
+
+        }
     }
 
     public bool ContainItem(GameObject item)
@@ -26,9 +29,24 @@ public class Inventory : MonoBehaviour
         foreach (GameObject item in _itens)
         {
             if (item.gameObject.GetComponent<T>() != null)
+            {
                 return true;
+            }
         }
+        return false;
+    }
 
+    public bool HasItemOfType<T>(out T component)
+    {
+        foreach (GameObject item in _itens)
+        {
+            if (item.gameObject.GetComponent<T>() != null)
+            {
+                component = item.gameObject.GetComponent<T>();
+                return true;
+            }
+        }
+        component = default(T);
         return false;
     }
 
