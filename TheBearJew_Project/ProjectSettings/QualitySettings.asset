@@ -223,7 +223,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 11400000, guid: 8819acea4e6a4894490915ab1f87b431, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
-    name: Test
+    name: Toon-UltraHigh-(esse)
     pixelLightCount: 2
     shadows: 2
     shadowResolution: 1
