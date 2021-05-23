@@ -105,6 +105,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 
         _gunEquiped.GetComponent<Collider>().enabled = true;
         _gunEquiped.transform.parent = null;
+        if (_gunEquiped.GetComponent<GunShoot>().AmmoCurrent <= 0)
+            Destroy(_gunEquiped);
         _gunEquiped = null;
 
         Bat batScript = _batClone.GetComponent<Bat>();
@@ -143,4 +145,5 @@ public class PlayerWeaponHandler : MonoBehaviour
             gun.transform.localEulerAngles = inHandRotation;
         }
     }
+
 }
