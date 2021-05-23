@@ -18,9 +18,7 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction = null;
         }
         else if (_currentInteraction == null && playerWeaponHandler.HasGun)
-        {
             playerWeaponHandler.DropGun();
-        }
     }
 
     private void OnTriggerStay(Collider other)
