@@ -10,6 +10,7 @@ public class GameStatus : MonoBehaviour
 
     [SerializeField] private bool _HasPlayedCutsceneOne;
     public bool HasEnteredSewer { get; set; }
+    public bool HasOpenedEndGate { get; set; }
     public bool HasEnemyAlive { get; set; } = true;
 
     #endregion
@@ -46,6 +47,8 @@ public class GameStatus : MonoBehaviour
         //Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
     }
 
+    private Transform GetSpawnPointInScene() => GameObject.FindGameObjectWithTag("SpawnPoint").transform;
+
     private void Piso1FChecks()
     {
         if (!_HasPlayedCutsceneOne)
@@ -56,14 +59,17 @@ public class GameStatus : MonoBehaviour
 
         if (!HasEnemyAlive)
             ManagerPiso1F.Instance?.LevelEndUpdate();
+
+        if (HasEnteredSewer)
+            PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(GetSpawnPointInScene().position);
     }
 
     #region Piso_0F
     private void Piso0FEsgotoChecks()
     {
-        Transform spawn = GameObject.FindGameObjectWithTag("SpawnPoint").transform;
-        PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(spawn.position);
+        PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(GetSpawnPointInScene().position);
     }
+
     #endregion
 
     private void TuneisSubterraneosChechks() { }
