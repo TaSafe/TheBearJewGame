@@ -12,6 +12,7 @@ public class GateMainPiso1F : Gate, IInteraction
     {
         if (CheckKeyInPlayerInventary())
         {
+            GameStatus.Instance.HasOpenedEndGate = true;
             RemoveKeyFromPlayerInventary();
             gameObject.SetActive(false);
             return;
