@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3d109d007b58e4da8bcbeddea74420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itens: []
 --- !u!95 &2143428507454617066
 Animator:
   serializedVersion: 3
@@ -332,6 +331,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3823962154072372733, guid: 0e109016a2414e340b91fab87b64c04b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 02bbb7deb53830a46986570e90c7960a, type: 2}
+    - target: {fileID: 210311500146912275, guid: 0e109016a2414e340b91fab87b64c04b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1537f6705a046c04a9075b8e340baaec, type: 2}
     - target: {fileID: 919132149155446097, guid: 0e109016a2414e340b91fab87b64c04b, type: 3}
       propertyPath: m_Name
       value: TestNovoDonny
