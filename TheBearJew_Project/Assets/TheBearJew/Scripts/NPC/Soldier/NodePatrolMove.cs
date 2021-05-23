@@ -28,7 +28,7 @@ public class NodePatrolMove : BTNode
 
     public override IEnumerator Run(BTRoot root)
     {
-        status = Status.RUNNING;
+        status = Status.FAILURE;
 
         if (_targets[_currentTarget] != null)
         {
@@ -40,11 +40,7 @@ public class NodePatrolMove : BTNode
             }
             _currentTarget++;
             if (_currentTarget > _targets.Count - 1) _currentTarget = 0;
-
-            status = Status.SUCCESS;
         }
-        
-        if (status == Status.RUNNING) status = Status.FAILURE;
 
         Print();
     }

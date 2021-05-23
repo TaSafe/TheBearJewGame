@@ -23,30 +23,18 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        _currentInteraction = other.GetComponent<IInteraction>();
-        if (_currentInteraction != null)
-        {
-            UiHUD.instance.ShowIntereactionUI(true);
-            _currentInteraction.Interacting();
-        }
-    }
+        if (_currentInteraction == null)
+            _currentInteraction = other.GetComponent<IInteraction>();
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    _currentInteraction = other.GetComponent<IInteraction>();
-    //    if (_currentInteraction == null)
-    //        UiHUD.instance.ShowIntereactionUI(false);
-    //}
+        if (_currentInteraction != null)
+            UiHUD.instance.ShowIntereactionUI(true);
+    }
 
     private void OnTriggerExit(Collider other)
     {
-        if (_currentInteraction != null)
-        {
-            UiHUD.instance.ShowIntereactionUI(false);
-            _currentInteraction.IdleInteraction();
-            _currentInteraction = null;
-        }
+        _currentInteraction = null;
+        UiHUD.instance.ShowIntereactionUI(false);
     }
 }

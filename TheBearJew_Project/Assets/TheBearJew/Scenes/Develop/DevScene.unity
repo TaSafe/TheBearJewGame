@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c0281ec6862ac4db2f75874ce63454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: {fileID: 1263536285}
+  _keyName: 
   dialogueDontHaveKey: {fileID: 11400000, guid: 2d699cc9a249f3c439179d270ab59884, type: 2}
   dialogueDontHaveNecessaryKey: {fileID: 11400000, guid: efb72702d21c8ad478aeeb9a940c5d12, type: 2}
 --- !u!1 &955496561
@@ -1631,6 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1f65228f035cc4183b79229eec1f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _keyName: 
   _keyHudImage: {fileID: 0}
   OnCollect:
     m_PersistentCalls:
@@ -1755,6 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1f65228f035cc4183b79229eec1f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _keyName: 
   _keyHudImage: {fileID: 0}
   OnCollect:
     m_PersistentCalls:
@@ -1850,6 +1852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1f65228f035cc4183b79229eec1f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _keyName: 
   _keyHudImage: {fileID: 0}
   OnCollect:
     m_PersistentCalls:

@@ -25,7 +25,7 @@ public class NodeApproximationToPlayer : BTNode
             status = Status.SUCCESS;
         }
 
-        //Print();
+        Print();
 
         yield return new WaitForSeconds(.2f);
     }

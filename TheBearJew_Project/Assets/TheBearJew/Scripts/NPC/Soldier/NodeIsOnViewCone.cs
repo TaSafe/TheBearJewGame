@@ -25,7 +25,7 @@ public class NodeIsOnViewCone : BTNode
 
             Ray ray = new Ray(rayOrigin, PlayerInput.Instance.gameObject.transform.position - rayOrigin);
             
-            //Debug.DrawRay(ray.origin, ray.direction * _coneDistance, Color.blue);
+            Debug.DrawRay(ray.origin, ray.direction * _coneDistance, Color.blue);
             
             if (Physics.Raycast(ray, out RaycastHit hit, _coneDistance))
             {
@@ -34,7 +34,7 @@ public class NodeIsOnViewCone : BTNode
             }
         }
 
-        //Print();
+        Print();
 
         yield break;
     }

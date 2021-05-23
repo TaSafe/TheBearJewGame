@@ -15,15 +15,17 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     public void IdleInteraction() { }
 
-    public void Interacting() { }
+    public void Interacting() {  }
 
     public void Interaction()
     {
-        if (PlayerInput.Instance.PlayerWeaponHandler.HasGun) return;
+        if (PlayerInput.Instance.PlayerWeaponHandler.HasGun)
+            PlayerInput.Instance.PlayerWeaponHandler.DropGun();
 
         UiHUD.instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;
-        //FIXME: mudar o FindGameObjectWithTag("Player") para a instancia singleton
-        GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);
+        //Obs: Modificado para PlayerInput.Instance
+        //GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);
+        PlayerInput.Instance.PlayerWeaponHandler.EquipGun(gameObject, inHandPos, inHandRot);
     }
 }
