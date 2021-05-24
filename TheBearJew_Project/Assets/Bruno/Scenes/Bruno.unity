@@ -290,30 +290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2543535660015073092, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4c7324752068b954ab1482b01876cdc3, type: 2}
-    - target: {fileID: 2697648828231656535, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.362
-      objectReference: {fileID: 0}
-    - target: {fileID: 2697648828231656535, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.621
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693640201678235135, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 54842bfe6edd5b24f96e0d6fc4b15a59, type: 2}
-    - target: {fileID: 6932004994415387190, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 54842bfe6edd5b24f96e0d6fc4b15a59, type: 2}
-    - target: {fileID: 7118280516041260712, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_TagString
-      value: Outlined
-      objectReference: {fileID: 0}
     - target: {fileID: 7135845434201662184, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
       propertyPath: m_Name
       value: DONNY_PREFAB
@@ -362,10 +338,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7904205912635484583, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 54842bfe6edd5b24f96e0d6fc4b15a59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f22f18a2d1602b48a3598d6cbafb835, type: 3}
 --- !u!1 &1786717361
@@ -469,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1921217845
 BoxCollider:
   m_ObjectHideFlags: 0
