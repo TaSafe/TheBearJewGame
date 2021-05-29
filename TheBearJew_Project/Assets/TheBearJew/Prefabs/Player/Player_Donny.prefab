@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 7524728255561194286}
   - component: {fileID: 199877970418009530}
   - component: {fileID: 614240683466833398}
+  - component: {fileID: 8665290203971244626}
   - component: {fileID: 3207659195655924212}
   m_Layer: 0
   m_Name: InteractionArea
@@ -203,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5565323100996209276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2572952574110108908}
@@ -238,6 +239,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.65
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &8665290203971244626
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565323100996209276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.65
+  m_Center: {x: 0, y: 0.83, z: 0}
 --- !u!114 &3207659195655924212
 MonoBehaviour:
   m_ObjectHideFlags: 0

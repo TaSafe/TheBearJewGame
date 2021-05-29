@@ -8,5 +8,5 @@ public class DialogueTest : MonoBehaviour, IInteraction
 
     public void Interacting() { }
 
-    public void Interaction() => DialogueSystem.instance.DialogueChanger(_sequence);
+    public void Interaction() => DialogueSystem.Instance.DialogueChanger(_sequence);
 }

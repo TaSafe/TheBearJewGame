@@ -27,6 +27,6 @@ public class GateSewerPiso1F : Gate, IInteraction
             return;
         }
         else
-            DialogueSystem.instance.DialogueChanger(dialogueDontHaveCrowbar);
+            DialogueSystem.Instance.DialogueChanger(dialogueDontHaveCrowbar);
     }
 }

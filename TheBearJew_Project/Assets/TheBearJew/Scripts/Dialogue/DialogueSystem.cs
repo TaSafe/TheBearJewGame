@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public static DialogueSystem instance;
+    public static DialogueSystem Instance { get; private set; }
     
     [SerializeField] private List<DialogueCharacterImage> _characterImages;
 
@@ -14,8 +14,8 @@ public class DialogueSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
     }

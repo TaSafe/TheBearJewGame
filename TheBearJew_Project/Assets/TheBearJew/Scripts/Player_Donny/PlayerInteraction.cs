@@ -13,7 +13,10 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction.Interaction();
             UiHUD.instance.ShowIntereactionUI(false);
 
-            if (DialogueSystem.instance.HasStartedDialogue) return;
+            if (DialogueSystem.Instance != null)
+            {
+                if (DialogueSystem.Instance.HasStartedDialogue) return;
+            }
 
             _currentInteraction = null;
         }
