@@ -81,5 +81,8 @@ public class GameStatus : MonoBehaviour
             ManagerPiso0F.Instance?.LevelEndUpdate();
     }
 
-    private void TuneisSubterraneosChechks() { }
+    private void TuneisSubterraneosChechks() 
+    {
+
+    }
 }
