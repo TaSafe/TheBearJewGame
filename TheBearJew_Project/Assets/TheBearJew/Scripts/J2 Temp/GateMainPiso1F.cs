@@ -18,6 +18,6 @@ public class GateMainPiso1F : Gate, IInteraction
             return;
         }
         else
-            DialogueSystem.instance.DialogueChanger(dialogueDontHaveKey);
+            DialogueSystem.Instance.DialogueChanger(dialogueDontHaveKey);
     }
 }
