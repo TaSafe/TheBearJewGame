@@ -1,11 +1,12 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySelfStatus : MonoBehaviour, IDamage
 {
     [SerializeField] private EnemyDataSO _enemyData;
     [SerializeField] private GameObject _lifeUi;
     [SerializeField] private GameObject[] _gunsToDrop;
+    [SerializeField] private UnityEvent OnDeath;
 
     private LifeSystem _lifeSystem;
     private UiLifeEnemy _uiLife;
@@ -45,7 +46,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
             var rand = UnityEngine.Random.Range(0, _gunsToDrop.Length);
             Instantiate(_gunsToDrop[rand], transform.position, Quaternion.identity);
 
-            ManagerPiso1F.Instance?.RemoveEnemiesFromList(gameObject);
+            OnDeath?.Invoke();
 
             Destroy(gameObject);
         }

@@ -28,9 +28,9 @@ public class ManagerPiso1F : MonoBehaviour
             _enemies.Remove(enemy);
 
         if (_enemies.Count <= 0)
-            GameStatus.Instance.HasEnemyAlive = false;
+            GameStatus.Instance.HasEnemyAlivePiso1F = false;
 
-        if (!GameStatus.Instance.HasEnemyAlive)
+        if (!GameStatus.Instance.HasEnemyAlivePiso1F)
         {
             _Crowbar.GetComponent<Collider>().enabled = true;
             _CrowbarParticle.SetActive(true);

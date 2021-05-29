@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +10,13 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private bool _HasPlayedCutsceneOne;
     public bool HasEnteredSewer { get; set; }
     public bool HasOpenedEndGate { get; set; }
-    public bool HasEnemyAlive { get; set; } = true;
+    public bool HasEnemyAlivePiso1F { get; set; } = true;
 
+    #endregion
+
+    #region PISO 0F ESGOTO Variables
+    public bool HasEnemyAlivePiso0F { get; set; } = true;
+    public bool HasPickedUpTheKey { get; set; }
     #endregion
 
     private void Awake()
@@ -49,6 +53,11 @@ public class GameStatus : MonoBehaviour
 
     private Transform GetSpawnPointInScene() => GameObject.FindGameObjectWithTag("SpawnPoint").transform;
 
+
+    /************************************/
+    /////         CHECAGENS          /////
+    /************************************/
+
     private void Piso1FChecks()
     {
         if (!_HasPlayedCutsceneOne)
@@ -57,20 +66,20 @@ public class GameStatus : MonoBehaviour
             _HasPlayedCutsceneOne = true;
         }
 
-        if (!HasEnemyAlive)
+        if (!HasEnemyAlivePiso1F)
             ManagerPiso1F.Instance?.LevelEndUpdate();
 
         if (HasEnteredSewer)
-            PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(GetSpawnPointInScene().position);
+            PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
     }
 
-    #region Piso_0F
     private void Piso0FEsgotoChecks()
     {
-        PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(GetSpawnPointInScene().position);
-    }
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
 
-    #endregion
+        if (!HasEnemyAlivePiso0F)
+            ManagerPiso0F.Instance?.LevelEndUpdate();
+    }
 
     private void TuneisSubterraneosChechks() { }
 }

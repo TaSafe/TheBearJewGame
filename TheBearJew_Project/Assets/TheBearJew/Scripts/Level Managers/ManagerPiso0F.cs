@@ -5,6 +5,8 @@ public class ManagerPiso0F : MonoBehaviour
 {
     public static ManagerPiso0F Instance { get; private set; }
 
+    [SerializeField] private GameObject _key;
+
     [Header("Enemies")]
     [SerializeField] private List<GameObject> _enemies = new List<GameObject>();
 
@@ -22,7 +24,7 @@ public class ManagerPiso0F : MonoBehaviour
             _enemies.Remove(enemy);
 
         if (_enemies.Count <= 0)
-            GameStatus.Instance.HasEnemyAlive = false;
+            GameStatus.Instance.HasEnemyAlivePiso0F = false;
     }
 
     public void LevelEndUpdate()
@@ -31,6 +33,12 @@ public class ManagerPiso0F : MonoBehaviour
         {
             enemy.gameObject.SetActive(false);
         }
+
+        if (!GameStatus.Instance.HasPickedUpTheKey)
+        {
+            _key.SetActive(true);
+        }
     }
 
+    public void KeyPickedUp() => GameStatus.Instance.HasPickedUpTheKey = true;
 }

@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-60788
+  m_Name: pb_Mesh-243240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -401,6 +401,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 648339586}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 25219449}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_04
@@ -2106,7 +2138,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-63782
+  m_Name: pb_Mesh-245902
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2270,7 +2302,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-66050
+  m_Name: pb_Mesh-248170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3253,7 +3285,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-63112
+  m_Name: pb_Mesh-245232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4413,6 +4445,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 680882926}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 573451942}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_12
@@ -4500,6 +4564,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2047056124}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 587262465}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_07
@@ -5921,6 +6017,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1530995384}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 630724159}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_10
@@ -6161,6 +6289,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 20561552}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 663650121}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_14
@@ -6963,7 +7123,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-63452
+  m_Name: pb_Mesh-245572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7193,6 +7353,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 529879144}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 851623839}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_09
@@ -7267,7 +7459,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-62786
+  m_Name: pb_Mesh-244906
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7855,6 +8047,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 335556162}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 956736315}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_13
@@ -8089,7 +8313,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-62132
+  m_Name: pb_Mesh-244252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8612,7 +8836,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-65402
+  m_Name: pb_Mesh-247522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8871,7 +9095,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-65066
+  m_Name: pb_Mesh-247186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9270,6 +9494,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 138118352}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1348245659}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_02
@@ -10173,7 +10429,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61808
+  m_Name: pb_Mesh-243928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10337,7 +10593,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-65726
+  m_Name: pb_Mesh-247846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12255,6 +12511,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1022326226}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2121179451}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -12950,6 +13238,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2070112117}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1844621887}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_05
@@ -13037,6 +13357,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1753701046}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1858407893}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_06
@@ -13215,6 +13567,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 119568687}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1887661453}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_11
@@ -13298,6 +13682,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 745412194}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1898606287}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_01
@@ -13372,7 +13788,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-66722
+  m_Name: pb_Mesh-248822
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13640,7 +14056,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-66374
+  m_Name: pb_Mesh-248494
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14278,7 +14694,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64140
+  m_Name: pb_Mesh-246260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14564,6 +14980,38 @@ PrefabInstance:
       propertyPath: _patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1414326088}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 55072852}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveEnemiesFromList
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerPiso1F, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2133568469}
+    - target: {fileID: 2071493264, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 21561333456821770, guid: fc9b55db7069bb643a78788c73ae1715, type: 3}
       propertyPath: m_Name
       value: Enemy_03
