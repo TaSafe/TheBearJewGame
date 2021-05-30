@@ -1083,6 +1083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46b1a39322e52bd43b445f9f86473822, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho_05
@@ -1993,6 +1997,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46b1a39322e52bd43b445f9f86473822, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho_02
@@ -2426,6 +2434,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 153425390375968716, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153425390375968716, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -2564,6 +2576,10 @@ PrefabInstance:
     - target: {fileID: 5822071944818345311, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227959499869201782, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7227959499869201782, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5009,6 +5025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9ebacd63e3a74e439c4f96d5d453500, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho_04
@@ -5136,6 +5156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46b1a39322e52bd43b445f9f86473822, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho_01
@@ -5198,6 +5222,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9ebacd63e3a74e439c4f96d5d453500, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho_03
@@ -6061,6 +6089,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 908134411}
     m_Modifications:
+    - target: {fileID: 5156262471250947439, guid: ca25968e47780ca48b1a34ed8cdb71c2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: faec29a91ad1e104b97182b6c0160359, type: 2}
     - target: {fileID: 6324625880686056960, guid: ca25968e47780ca48b1a34ed8cdb71c2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6279,6 +6311,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194618698}
     m_Modifications:
+    - target: {fileID: 7510887788931859138, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9ebacd63e3a74e439c4f96d5d453500, type: 2}
     - target: {fileID: 8303781014966493975, guid: d1b302a80432247489e9b924f3b4b35f, type: 3}
       propertyPath: m_Name
       value: carrinho
