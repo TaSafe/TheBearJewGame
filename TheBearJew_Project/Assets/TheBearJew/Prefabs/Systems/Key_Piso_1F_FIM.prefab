@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyName: Piso_1F_End
-  _keyHudImage: {fileID: 21300000, guid: 6a410026a6e5ab1418c30966532819ef, type: 3}
+  _keyHudImage: {fileID: 21300000, guid: b51f537ccdb2835418e495bdd6c2e811, type: 3}
   OnCollect:
     m_PersistentCalls:
       m_Calls: []

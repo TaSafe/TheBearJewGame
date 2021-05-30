@@ -11,7 +11,7 @@ public class PlayerInteraction : MonoBehaviour
         if (_currentInteraction != null /*&& !playerWeaponHandler.HasGun*/)
         {
             _currentInteraction.Interaction();
-            UiHUD.instance.ShowIntereactionUI(false);
+            UiHUD.Instance.ShowIntereactionUI(false);
 
             if (DialogueSystem.Instance != null)
             {
@@ -30,12 +30,12 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteraction = other.GetComponent<IInteraction>();
 
         if (_currentInteraction != null)
-            UiHUD.instance.ShowIntereactionUI(true);
+            UiHUD.Instance.ShowIntereactionUI(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         _currentInteraction = null;
-        UiHUD.instance.ShowIntereactionUI(false);
+        UiHUD.Instance.ShowIntereactionUI(false);
     }
 }

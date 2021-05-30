@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class GateDevSceneOne : Gate, IInteraction
+public class GateDevSceneOne : Gate
 {
     [SerializeField] private DialogueSequence dialogueDontHaveKey;
     [SerializeField] private DialogueSequence dialogueDontHaveNecessaryKey;
 
-    public void Interaction() => GateActions();
+    public override void Interaction() => GateActions();
 
     public override void GateActions()
     {

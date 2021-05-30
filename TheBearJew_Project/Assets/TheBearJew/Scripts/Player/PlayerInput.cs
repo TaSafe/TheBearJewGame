@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour
     private void PlayerInputs()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            UiHUD.instance.Pause();
+            UiHUD.Instance.Pause();
 
         if (!IsAllInputsEnable) return;
 

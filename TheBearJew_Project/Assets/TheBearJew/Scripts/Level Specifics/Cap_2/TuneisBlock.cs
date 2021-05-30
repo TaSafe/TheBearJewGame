@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TuneisBlock : Gate, IInteraction
+public class TuneisBlock : Gate
 {
     [SerializeField] private GameObject _dynamiteModel;
     [SerializeField] private DialogueSequence _dialogueBeforeDynamite;
     [SerializeField] private DialogueSequence _dialogueAfterDynamite;
-    public void Interaction() => GateActions();
+    public override void Interaction() => GateActions();
 
     public override void GateActions()
     {

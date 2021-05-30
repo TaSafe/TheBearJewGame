@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-public abstract class Gate : MonoBehaviour
+public abstract class Gate : MonoBehaviour, IInteraction
 {
     [SerializeField] private string _keyName;
 
     public abstract void GateActions();
+
+    public abstract void Interaction();
 
     public bool CheckKeyInPlayerInventary()
     {
@@ -24,6 +26,7 @@ public abstract class Gate : MonoBehaviour
         {
             PlayerInput.Instance.Inventory.RemoveItem(key.gameObject);
             key.gameObject.transform.parent = null;
+            UiHUD.Instance.UIItemRemove(key.KeyHudImage);
             Destroy(key.gameObject);
         }
     }

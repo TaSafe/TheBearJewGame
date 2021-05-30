@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GateSewerPiso1F : Gate, IInteraction
+public class GateSewerPiso1F : Gate
 {
     [SerializeField] private DialogueSequence dialogueDontHaveCrowbar;
 
-    public void Interaction() => GateActions();
+    public override void Interaction() => GateActions();
 
     public override void GateActions()
     {
