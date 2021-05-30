@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-public abstract class Gate : MonoBehaviour
+public abstract class Gate : MonoBehaviour, IInteraction
 {
     [SerializeField] private string _keyName;
 
     public abstract void GateActions();
+
+    public abstract void Interaction();
 
     public bool CheckKeyInPlayerInventary()
     {

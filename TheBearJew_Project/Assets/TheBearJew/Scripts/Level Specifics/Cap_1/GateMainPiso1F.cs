@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class GateMainPiso1F : Gate, IInteraction
+public class GateMainPiso1F : Gate
 {
     [SerializeField] private DialogueSequence dialogueDontHaveKey;
 
-    public void Interaction() => GateActions();
+    public override void Interaction() => GateActions();
 
     public override void GateActions()
     {
