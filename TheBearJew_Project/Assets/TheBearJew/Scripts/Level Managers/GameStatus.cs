@@ -19,8 +19,6 @@ public class GameStatus : MonoBehaviour
     public bool HasPickedUpTheKey { get; set; }
     #endregion
 
-
-
     private void Awake()
     {
         if (Instance == null)

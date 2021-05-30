@@ -4,8 +4,6 @@ public class GateMainPiso1F : Gate, IInteraction
 {
     [SerializeField] private DialogueSequence dialogueDontHaveKey;
 
-    public void IdleInteraction() { }
-    public void Interacting() { }
     public void Interaction() => GateActions();
 
     public override void GateActions()

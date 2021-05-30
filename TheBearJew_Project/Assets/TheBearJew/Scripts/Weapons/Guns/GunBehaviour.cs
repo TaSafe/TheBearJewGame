@@ -13,10 +13,6 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     private void Start() => Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
 
-    public void IdleInteraction() { }
-
-    public void Interacting() {  }
-
     public void Interaction()
     {
         if (PlayerInput.Instance.PlayerWeaponHandler.HasGun)

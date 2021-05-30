@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GatePiso0F : MonoBehaviour, IInteraction
 {
 
-    public void IdleInteraction() { }
-    public void Interacting() { }
     public void Interaction()
     {
         SceneManager.LoadScene("Piso_1F");
