@@ -10,14 +10,14 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
     void Start()
     {
         _lifeSystem = new LifeSystem(_totalLife);
-        UiHUD.instance.SetLifeBar(_totalLife);
+        UiHUD.Instance.SetLifeBar(_totalLife);
     }
 
     public void Damage(float damage, bool bat = false)
     {
         _lifeSystem.RemoveLife(damage);
 
-        UiHUD.instance.ChangeLifeBar(_lifeSystem.CurrentLife);
+        UiHUD.Instance.ChangeLifeBar(_lifeSystem.CurrentLife);
 
         if (_lifeSystem.IsDead())
         {
@@ -32,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         SetPlayerPosition(RespawnPosition);
 
         _lifeSystem.AddLife(_totalLife);
-        UiHUD.instance.SetLifeBar(_totalLife);
+        UiHUD.Instance.SetLifeBar(_totalLife);
     }
 
     public void SetPlayerPosition(Vector3 position)

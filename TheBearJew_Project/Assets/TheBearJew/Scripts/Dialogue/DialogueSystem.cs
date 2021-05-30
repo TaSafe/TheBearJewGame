@@ -28,7 +28,7 @@ public class DialogueSystem : MonoBehaviour
         {
             PlayerInput.Instance.DisableInput();
 
-            UiHUD.instance.DialogueShow(true);
+            UiHUD.Instance.DialogueShow(true);
 
             HasEndedSequence = false;
             HasStartedDialogue = true;
@@ -45,7 +45,7 @@ public class DialogueSystem : MonoBehaviour
                 characterImg = CharacterImageFinder(sequence);
 
             //Atualiza a caixa de diálogo
-            UiHUD.instance.DialogueChangeTexts(
+            UiHUD.Instance.DialogueChangeTexts(
                     sequence.Dialogues[_dialogueIndex].characterName.ToString(),
                     sequence.Dialogues[_dialogueIndex].dialogueText,
                     characterImg);
@@ -60,8 +60,8 @@ public class DialogueSystem : MonoBehaviour
         {
             _dialogueIndex = 0;
             HasStartedDialogue = false;
-            UiHUD.instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.instance.HudWeaponImageDefault);
-            UiHUD.instance.DialogueShow(false);
+            UiHUD.Instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.Instance.HudWeaponImageDefault);
+            UiHUD.Instance.DialogueShow(false);
             PlayerInput.Instance.EnableInput();
 
             HasEndedSequence = false;   //Reseta a sequência
@@ -80,6 +80,6 @@ public class DialogueSystem : MonoBehaviour
             if (character.CharacterName == sequence.Dialogues[_dialogueIndex].characterName)
                 return character.CharacterImage;
         }
-        return UiHUD.instance.HudWeaponImageDefault;
+        return UiHUD.Instance.HudWeaponImageDefault;
     }
 }

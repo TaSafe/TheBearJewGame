@@ -24,6 +24,7 @@ public abstract class Gate : MonoBehaviour
         {
             PlayerInput.Instance.Inventory.RemoveItem(key.gameObject);
             key.gameObject.transform.parent = null;
+            UiHUD.Instance.UIItemRemove(key.KeyHudImage);
             Destroy(key.gameObject);
         }
     }
