@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.Video;
 
@@ -8,6 +9,8 @@ public class VideoController : MonoBehaviour
 
     [SerializeField] private GameObject _videoPanel;
     [SerializeField] private VideoClip _video;
+    [SerializeField] private Slider sliderJumpProgress;
+    [SerializeField] private float jumpTimeTime;
     [SerializeField] private UnityEvent OnVideoEnd;
 
     private void Awake()
@@ -30,15 +33,27 @@ public class VideoController : MonoBehaviour
         _videoPanel.GetComponentInChildren<VideoPlayer>().loopPointReached -= VideoHasEnded;
     }
 
+    public void VideoActivate()
+    {
+        PlayerInput.Instance?.SetVideo(true);
+        _videoPanel.SetActive(true);
+    }
+
     private void VideoHasEnded(VideoPlayer source)
     {
+        PlayerInput.Instance?.SetVideo(false);
         OnVideoEnd?.Invoke();
         _videoPanel.SetActive(false);
     }
 
-    public void VideoActivate()
+    public void JumpVideo()
     {
-        PlayerInput.Instance?.DisableInput();
-        _videoPanel.SetActive(true);
+        if (sliderJumpProgress.value < sliderJumpProgress.maxValue)
+            sliderJumpProgress.value += (1f / jumpTimeTime) * Time.deltaTime;
+        else
+            _videoPanel.GetComponentInChildren<VideoPlayer>().time = _videoPanel.GetComponentInChildren<VideoPlayer>().clip.length;
     }
+
+    public void JumpVideoReset() => sliderJumpProgress.value = 0f;
+
 }
