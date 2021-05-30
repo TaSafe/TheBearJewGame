@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     private Movement _movement;
     private PlayerInteraction _playerInteraction;
     private bool inputEnabled = true;
+    private bool videoInputEnabled;
 
     private void Awake()
     {
@@ -38,16 +39,30 @@ public class PlayerInput : MonoBehaviour
 
     private void PlayerInputs()
     {
+        //Vídeo
+        if (videoInputEnabled)
+        {
+            if (Input.GetKey(KeyCode.Space))
+                VideoController.Instance.JumpVideo();
+            else
+                VideoController.Instance.JumpVideoReset();
+
+            return;
+        }
+
+        //Pausa
         if (Input.GetKeyDown(KeyCode.Escape))
             UiHUD.Instance.Pause();
 
         if (!IsAllInputsEnable) return;
 
+        //Interação
         if (Input.GetMouseButtonDown(1))
             _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
 
         if (!inputEnabled) return;
 
+        //In-game
         _aim.Aiming();
 
         float xInput = Input.GetAxisRaw("Horizontal");
@@ -69,4 +84,6 @@ public class PlayerInput : MonoBehaviour
 
     public void EnableInput() => inputEnabled = true;
     public void DisableInput() => inputEnabled = false;
+
+    public void SetVideo(bool state) => videoInputEnabled = state;
 }
