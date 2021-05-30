@@ -19,6 +19,8 @@ public class GameStatus : MonoBehaviour
     public bool HasPickedUpTheKey { get; set; }
     #endregion
 
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -83,6 +85,7 @@ public class GameStatus : MonoBehaviour
 
     private void TuneisSubterraneosChechks() 
     {
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
 
     }
 }
