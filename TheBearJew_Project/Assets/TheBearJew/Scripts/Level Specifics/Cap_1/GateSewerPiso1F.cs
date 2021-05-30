@@ -7,8 +7,6 @@ public class GateSewerPiso1F : Gate, IInteraction
 {
     [SerializeField] private DialogueSequence dialogueDontHaveCrowbar;
 
-    public void IdleInteraction() { }
-    public void Interacting() { }
     public void Interaction() => GateActions();
 
     public override void GateActions()

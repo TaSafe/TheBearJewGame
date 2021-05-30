@@ -5,8 +5,6 @@ public class GateDevSceneOne : Gate, IInteraction
     [SerializeField] private DialogueSequence dialogueDontHaveKey;
     [SerializeField] private DialogueSequence dialogueDontHaveNecessaryKey;
 
-    public void IdleInteraction() { }
-    public void Interacting() { }
     public void Interaction() => GateActions();
 
     public override void GateActions()

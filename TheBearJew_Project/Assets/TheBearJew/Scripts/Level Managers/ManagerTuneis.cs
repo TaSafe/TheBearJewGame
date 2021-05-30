@@ -6,6 +6,7 @@ public class ManagerTuneis : MonoBehaviour
     public static ManagerTuneis Instance { get; private set; }
 
     public bool IsDynamiteInPlace { get; set; }
+    public bool HasBlockExploded { get; set; }
 
     private void Awake()
     {

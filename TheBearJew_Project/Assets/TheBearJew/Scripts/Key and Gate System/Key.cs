@@ -9,8 +9,6 @@ public class Key : MonoBehaviour, IInteraction
 
     public string KeyName { get { return _keyName; } }
 
-    public void IdleInteraction() { }
-    public void Interacting() { }
     public void Interaction()
     {
         if (!PlayerInput.Instance.Inventory.ContainItem(gameObject))

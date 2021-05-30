@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
@@ -65,6 +66,11 @@ public class DialogueSystem : MonoBehaviour
 
             HasEndedSequence = false;   //Reseta a sequência
         }
+    }
+
+    internal void DialogueChanger(object dialogueWithoutDynamite)
+    {
+        throw new NotImplementedException();
     }
 
     private Sprite CharacterImageFinder(DialogueSequence sequence)
