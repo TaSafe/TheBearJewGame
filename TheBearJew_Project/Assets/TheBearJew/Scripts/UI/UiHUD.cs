@@ -5,7 +5,7 @@ using TMPro;
 
 public class UiHUD : MonoBehaviour
 {
-    public static UiHUD instance;
+    public static UiHUD Instance { get; private set; }
 
     [SerializeField] GameObject _groupInteractionUI;
     [SerializeField] GameObject _groupPauseMenu;
@@ -23,14 +23,53 @@ public class UiHUD : MonoBehaviour
     [SerializeField] private TMP_Text _dialogueTxt;
     [SerializeField] private Image _dialogueCharacterImg;
 
+    [Header("HUD Itens")]
+    [SerializeField] private GameObject _hudItensGroup;
+    private Image[] _hudItensSlots;
+
     public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        _hudItensSlots = _hudItensGroup.GetComponentsInChildren<Image>();
+        for (int i = 0; i < _hudItensSlots.Length; i++)
+        {
+            _hudItensSlots[i].enabled = false;
+        }
+    }
+
+    public void UIItemAdd(Sprite sprite)
+    {
+        for (int i = 0; i < _hudItensSlots.Length; i++)
+        {
+            if (!_hudItensSlots[i].enabled)
+            {
+                _hudItensSlots[i].sprite = sprite;
+                _hudItensSlots[i].enabled = true;
+                break;
+            }
+        }
+    }
+
+    public void UIItemRemove(Sprite sprite)
+    {
+        for (int i = 0; i < _hudItensSlots.Length; i++)
+        {
+            if (_hudItensSlots[i].enabled && _hudItensSlots[i].sprite == sprite)
+            {
+                _hudItensSlots[i].sprite = HudWeaponImageDefault;
+                _hudItensSlots[i].enabled = false;
+                break;
+            }
+        }
     }
 
     public void ShowIntereactionUI(bool value)

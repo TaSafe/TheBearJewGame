@@ -21,8 +21,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         Bat batScript = _batClone.GetComponent<Bat>();
         EquipGun(_batClone, batScript.ParentInHandPosition , batScript.ParentInHandRotation);
         
-        UiHUD.instance.HudWeaponImage(batScript.WeaponData.HudImage);
-        UiHUD.instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);
+        UiHUD.Instance.HudWeaponImage(batScript.WeaponData.HudImage);
+        UiHUD.Instance.HudWeaponAmmo(batScript.WeaponData.MaxAmmo);
     }
     
     public void Attack(bool mouseButtonDown)
@@ -47,7 +47,7 @@ public class PlayerWeaponHandler : MonoBehaviour
                 _batClone.SetActive(false);
                 _gunEquiped.SetActive(true);
                 
-                UiHUD.instance.HudChangeWeapon(
+                UiHUD.Instance.HudChangeWeapon(
                     _gunEquiped.GetComponent<GunShoot>().AmmoCurrent, 
                     _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage,
                     _batClone.GetComponent<Weapon>().WeaponData.HudImage
@@ -59,7 +59,7 @@ public class PlayerWeaponHandler : MonoBehaviour
                 _gunEquiped.SetActive(false);
                 _batClone.SetActive(true);
                 
-                UiHUD.instance.HudChangeWeapon(
+                UiHUD.Instance.HudChangeWeapon(
                     _batClone.GetComponent<Weapon>().WeaponData.MaxAmmo, 
                     _batClone.GetComponent<Weapon>().WeaponData.HudImage, 
                     _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage
@@ -85,7 +85,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             _batClone.SetActive(false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
 
-            UiHUD.instance.HudChangeWeapon(
+            UiHUD.Instance.HudChangeWeapon(
                 gun.GetComponent<GunShoot>().AmmoCurrent, 
                 gun.GetComponent<GunBehaviour>().WeaponData.HudImage, 
                 _batClone.GetComponent<Weapon>().WeaponData.HudImage
@@ -112,10 +112,10 @@ public class PlayerWeaponHandler : MonoBehaviour
         Bat batScript = _batClone.GetComponent<Bat>();
         _batClone.SetActive(true);
 
-        UiHUD.instance.HudChangeWeapon(
+        UiHUD.Instance.HudChangeWeapon(
             batScript.WeaponData.MaxAmmo, 
             batScript.WeaponData.HudImage, 
-            UiHUD.instance.HudWeaponImageDefault
+            UiHUD.Instance.HudWeaponImageDefault
             );
 
         FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");  //Som dropar arma

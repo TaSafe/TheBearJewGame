@@ -46,7 +46,7 @@ public class GunShoot : MonoBehaviour
 
         FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundShoot); //Som do tiro genérico
 
-        UiHUD.instance.HudWeaponAmmo(AmmoCurrent);
+        UiHUD.Instance.HudWeaponAmmo(AmmoCurrent);
 
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {

@@ -9,6 +9,6 @@ public class GatePiso0F : MonoBehaviour, IInteraction
     public void Interaction()
     {
         SceneManager.LoadScene("Piso_1F");
-        UiHUD.instance?.ShowIntereactionUI(false);
+        UiHUD.Instance?.ShowIntereactionUI(false);
     }
 }
