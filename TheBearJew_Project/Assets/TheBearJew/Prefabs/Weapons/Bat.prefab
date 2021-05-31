@@ -2029,7 +2029,6 @@ MonoBehaviour:
   _weaponData: {fileID: 11400000, guid: 868b40a5f75a6814480524bf8d782999, type: 2}
   _vfxMuzzleFlash: {fileID: 4393054787553148848, guid: d9f1d6cb8251c674da0446945f11df8b, type: 3}
   _vfxHit: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
-  _inHandPos: {x: 0.38, y: -0.03963836, z: -0.09196191}
-  _inHandRot: {x: 90, y: 0, z: 0}
-  _attackStartTime: 0.73
+  _inHandPos: {x: 0.101, y: -0.017, z: -0.043}
+  _inHandRot: {x: 93.42401, y: -58.94101, z: -49.80402}
   _attackRadius: 0.7

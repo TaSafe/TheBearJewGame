@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bat : Weapon
 {
-    [Range(0f, 1f)] [SerializeField] private float _attackStartTime;
+    //[Range(0f, 1f)] [SerializeField] private float _attackStartTime;  //ANTIGO ATAQUE
     [Range(0f, 1f)] [SerializeField] private float _attackRadius;
 
     private GameObject _muzzle;
@@ -11,34 +10,25 @@ public class Bat : Weapon
 
     private void Start()
     {
-        var playerRef = GameObject.FindGameObjectWithTag("Player"); //FIXME: mudar para instancia do player
-        _muzzle = playerRef.GetComponent<PlayerWeaponHandler>().Muzzle;
-        _animator = playerRef.GetComponentInChildren<Animator>();
+        _muzzle = PlayerInput.Instance.PlayerWeaponHandler.Muzzle;
+        _animator = PlayerInput.Instance.GetComponentInChildren<Animator>();
     }
 
     public override void Attack()
     {
-        _animator.SetTrigger("batSlash");
-        StartCoroutine(Attacking(_attackStartTime));
+        if (_animator.GetInteger("hitBatAnimation") == 0)
+        {
+            int animationClip = Random.Range(1, 5);
+            _animator.SetInteger("hitBatAnimation", animationClip);
+        }
+        //StartCoroutine(Attacking(_attackStartTime));  //ANTIGO ATAQUE
     }
 
-    private IEnumerator Attacking(float attackTime)
+    public void AttackFromAnimation()
     {
-        var time = attackTime + Time.deltaTime;
-
-        while (time > 0f)
-        {
-            if (time < .3f) //Sound
-                FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot); 
-
-            time -= Time.deltaTime;
-            yield return null;
-        }
-
-        //Ataque
         Collider[] colliders = Physics.OverlapSphere(_muzzle.transform.position, _attackRadius);
 
-        if (colliders == null) yield break;
+        if (colliders == null) return;
 
         foreach (var collider in colliders)
         {
@@ -50,8 +40,37 @@ public class Bat : Weapon
         }
     }
 
-    private void OnDisable()
-    {
-        StopAllCoroutines();
-    }
+    //ANTIGO ATAQUE
+    //private void OnDisable()
+    //{
+    //    StopAllCoroutines();
+    //}
+
+    //private IEnumerator Attacking(float attackTime)
+    //{
+    //    float time = attackTime + Time.deltaTime;
+
+    //    while (time > 0f)
+    //    {
+    //        if (time < .3f) //Sound
+    //            FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot); 
+
+    //        time -= Time.deltaTime;
+    //        yield return null;
+    //    }
+
+    //    //Ataque
+    //    Collider[] colliders = Physics.OverlapSphere(_muzzle.transform.position, _attackRadius);
+
+    //    if (colliders == null) yield break;
+
+    //    foreach (var collider in colliders)
+    //    {
+    //        if (collider.CompareTag("Player")) continue;
+
+    //        IDamage iDamage = collider.GetComponent<IDamage>();
+    //        if (iDamage != null)
+    //            iDamage.Damage(WeaponData.Damage, true);
+    //    }
+    //}
 }
