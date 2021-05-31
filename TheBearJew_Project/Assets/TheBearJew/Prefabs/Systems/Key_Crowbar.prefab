@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7752523325264165100}
   - component: {fileID: 7752523325264165101}
   m_Layer: 0
-  m_Name: Crowbar
+  m_Name: Key_Crowbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyName: Crowbar
-  _keyHudImage: {fileID: 21300000, guid: b1f652dadb6649c4db1dde4ba17c5aef, type: 3}
+  _keyHudImage: {fileID: 21300000, guid: 8611aa67860ac3043b01405470891cbd, type: 3}
   OnCollect:
     m_PersistentCalls:
       m_Calls:
