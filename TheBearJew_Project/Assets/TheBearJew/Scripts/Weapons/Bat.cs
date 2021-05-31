@@ -18,6 +18,7 @@ public class Bat : Weapon
     {
         if (_animator.GetInteger("hitBatAnimation") == 0)
         {
+            _animator.speed += _animator.speed * WeaponData.FireRate;
             int animationClip = Random.Range(1, 5);
             _animator.SetInteger("hitBatAnimation", animationClip);
         }
