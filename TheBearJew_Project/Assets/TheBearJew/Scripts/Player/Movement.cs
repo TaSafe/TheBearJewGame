@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     public float InputY { get; private set; }
 
     //Animation
-    private Animator _animator;
+    public Animator _animator;
 
     private void Start()
     {

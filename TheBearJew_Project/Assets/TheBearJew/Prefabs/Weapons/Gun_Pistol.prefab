@@ -1918,8 +1918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: 7cc31328284cd88408f7417671633384, type: 2}
-  inHandPos: {x: 0.3, y: -0.02, z: -0.011}
-  inHandRot: {x: 0, y: 90, z: 90}
+  inHandPos: {x: 0.051, y: -0.042, z: 0.048}
+  inHandRot: {x: -4.141, y: 74.918, z: 92.151}
 --- !u!114 &866347299
 MonoBehaviour:
   m_ObjectHideFlags: 0

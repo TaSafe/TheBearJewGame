@@ -4,12 +4,14 @@ public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _muzzle;
     [SerializeField] private GameObject _batPrefab;
+    [SerializeField] private GameObject _handBone;
 
     public GameObject Muzzle { get { return _muzzle; } }
     public bool HasGun { get; private set; }
 
     private GameObject _gunEquiped;
     private GameObject _batClone;
+    private Animator _animator;
 
     public enum WeaponEquiped { bat, gun }
     [HideInInspector] public WeaponEquiped _weaponEquiped;
@@ -17,7 +19,9 @@ public class PlayerWeaponHandler : MonoBehaviour
     private void Start()
     {
         _batClone = Instantiate(_batPrefab);
-        
+
+        _animator = GetComponentInChildren<Animator>();
+
         Bat batScript = _batClone.GetComponent<Bat>();
         EquipGun(_batClone, batScript.ParentInHandPosition , batScript.ParentInHandRotation);
         
@@ -46,7 +50,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             case WeaponEquiped.bat:
                 _batClone.SetActive(false);
                 _gunEquiped.SetActive(true);
-                
+                _animator.SetBool("IsWithBat", false);
                 UiHUD.Instance.HudChangeWeapon(
                     _gunEquiped.GetComponent<GunShoot>().AmmoCurrent, 
                     _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage,
@@ -58,7 +62,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             case WeaponEquiped.gun:
                 _gunEquiped.SetActive(false);
                 _batClone.SetActive(true);
-                
+                _animator.SetBool("IsWithBat", true);
                 UiHUD.Instance.HudChangeWeapon(
                     _batClone.GetComponent<Weapon>().WeaponData.MaxAmmo, 
                     _batClone.GetComponent<Weapon>().WeaponData.HudImage, 
@@ -78,11 +82,13 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             SetGunToHand(gun, inHandPosition, inHandRotation);
             _weaponEquiped = WeaponEquiped.bat;
+            _animator.SetBool("IsWithBat", true);
         }
         else
         {
             _gunEquiped = gun;
             _batClone.SetActive(false);
+            _animator.SetBool("IsWithBat", false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
 
             UiHUD.Instance.HudChangeWeapon(
@@ -126,24 +132,28 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void SetGunToHand(GameObject gun, Vector3 inHandPosition, Vector3 inHandRotation)
     {
-        var child = GetComponentsInChildren<Transform>();
-        GameObject neededChild = null;
+        gun.transform.SetParent(_handBone.transform);
+        gun.transform.localPosition = inHandPosition;
+        gun.transform.localEulerAngles = inHandRotation;
 
-        for (int i = 0; i < child.Length; i++)
-        {
-            if (child[i].Find("swat:RightHand") != null)
-            {
-                neededChild = child[i].gameObject;
-                break;
-            }
-        }
+        //var child = GetComponentsInChildren<Transform>();
+        //GameObject neededChild = null;
 
-        if (neededChild != null)
-        {
-            gun.transform.SetParent(neededChild.transform);
-            gun.transform.localPosition = inHandPosition;
-            gun.transform.localEulerAngles = inHandRotation;
-        }
+        //for (int i = 0; i < child.Length; i++)
+        //{
+        //    if (child[i].Find("swat:RightHand") != null)
+        //    {
+        //        neededChild = child[i].gameObject;
+        //        break;
+        //    }
+        //}
+
+        //if (neededChild != null)
+        //{
+        //    gun.transform.SetParent(neededChild.transform);
+        //    gun.transform.localPosition = inHandPosition;
+        //    gun.transform.localEulerAngles = inHandRotation;
+        //}
     }
 
 }
