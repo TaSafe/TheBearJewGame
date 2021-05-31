@@ -104,7 +104,7 @@ public class UiHUD : MonoBehaviour
         if (currentAmmo == -1)
         {
             _hudGunAmmo.color = Color.white;
-            _hudGunAmmo.SetText("infinito");
+            _hudGunAmmo.SetText("\u221E");
         }
         else if (currentAmmo > 0)
         {

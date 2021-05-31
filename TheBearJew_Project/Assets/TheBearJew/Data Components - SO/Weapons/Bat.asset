@@ -16,6 +16,6 @@ MonoBehaviour:
   _damage: 5
   _maxAmmo: -1
   _fireRate: 1
-  _hudImage: {fileID: 21300000, guid: dbaa49644dd3e9d43a47e7e19ad9fac4, type: 3}
+  _hudImage: {fileID: 21300000, guid: db711a50e711d3543a6cd67b1f896469, type: 3}
   _soundShoot: event:/Donny/bat
   _soundNoAmmo: 
