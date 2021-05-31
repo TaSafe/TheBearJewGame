@@ -6,16 +6,18 @@ using TMPro;
 public class UiHUD : MonoBehaviour
 {
     public static UiHUD Instance { get; private set; }
+    public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
 
-    [SerializeField] GameObject _groupInteractionUI;
-    [SerializeField] GameObject _groupPauseMenu;
-    [SerializeField] Slider _playerLifeBar;
-    
+
+    [SerializeField] private GameObject _groupInteractionUI;
+    [SerializeField] private GameObject _groupPauseMenu;
+    [SerializeField] private Slider _playerLifeBar;
+                     
     [Header("HUD Weapon")]
-    [SerializeField] Image _hudWeaponImageActive;
-    [SerializeField] Image _hudWeaponImageInactive;
-    [SerializeField] Sprite _hudWeaponImageDefault;
-    [SerializeField] TMP_Text _hudGunAmmo;
+    [SerializeField] private Image _hudWeaponImageActive;
+    [SerializeField] private Image _hudWeaponImageInactive;
+    [SerializeField] private Sprite _hudWeaponImageDefault;
+    [SerializeField] private TMP_Text _hudGunAmmo;
 
     [Header("Diálogo")]
     [SerializeField] private GameObject _dialogueUI;
@@ -25,9 +27,10 @@ public class UiHUD : MonoBehaviour
 
     [Header("HUD Itens")]
     [SerializeField] private GameObject _hudItensGroup;
+    
     private Image[] _hudItensSlots;
-
-    public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
+    private Color _inactiveHudWeaponAlphaOne;
+    private Color _inactiveHudWeaponAlphaZero;
 
     private void Awake()
     {
@@ -44,6 +47,17 @@ public class UiHUD : MonoBehaviour
         {
             _hudItensSlots[i].enabled = false;
         }
+
+        _inactiveHudWeaponAlphaOne = new Color(
+                    _hudWeaponImageInactive.color.r,
+                    _hudWeaponImageInactive.color.g,
+                    _hudWeaponImageInactive.color.b,
+                    1f);
+        _inactiveHudWeaponAlphaZero = new Color(
+                    _hudWeaponImageInactive.color.r,
+                    _hudWeaponImageInactive.color.g,
+                    _hudWeaponImageInactive.color.b,
+                    0f);
     }
 
     public void UIItemAdd(Sprite sprite)
@@ -128,7 +142,13 @@ public class UiHUD : MonoBehaviour
         if (activeState)
             _hudWeaponImageActive.sprite = sprite;
         else
+        {
             _hudWeaponImageInactive.sprite = sprite;
+            if (sprite == HudWeaponImageDefault)
+                _hudWeaponImageInactive.color = _inactiveHudWeaponAlphaZero;
+            else
+                _hudWeaponImageInactive.color = _inactiveHudWeaponAlphaOne;
+        }
     }
 
     public void HudChangeWeapon(float currentAmmo, Sprite activeWeaponImage, Sprite inactiveWeaponImage)
