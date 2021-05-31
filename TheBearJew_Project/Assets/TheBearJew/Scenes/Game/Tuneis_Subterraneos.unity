@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: {fileID: 1183020227}
-  _hasVideoPlayed: 0
+  _hasVideoPlayed: 1
 --- !u!1 &438660545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6916176434088546652, guid: e0db3e25e7e708a468ecf5aa3543a95b, type: 3}
