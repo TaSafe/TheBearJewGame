@@ -541,7 +541,7 @@ MonoBehaviour:
   _videoPanel: {fileID: 2207458518290750745}
   _video: {fileID: 0}
   sliderJumpProgress: {fileID: 5552769159962321480}
-  jumpTimeTime: 3
+  jumpTimeTime: 2
   OnVideoEnd:
     m_PersistentCalls:
       m_Calls: []

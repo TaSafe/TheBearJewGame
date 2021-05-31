@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452bce34b7c5bd0419ef4300a828bbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 
+  nextScene: Subida_Para_a_Abadia
 --- !u!65 &244650522
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class VideoController : MonoBehaviour
     [SerializeField] private float jumpTimeTime;
     [SerializeField] private UnityEvent OnVideoEnd;
 
+    private VideoPlayer _videoPlayer;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,9 +25,9 @@ public class VideoController : MonoBehaviour
 
     private void OnEnable()
     {
-        VideoPlayer videoPlayer = _videoPanel.GetComponentInChildren<VideoPlayer>();
-        videoPlayer.clip = _video;
-        videoPlayer.loopPointReached += VideoHasEnded;
+        _videoPlayer = _videoPanel.GetComponentInChildren<VideoPlayer>();
+        _videoPlayer.clip = _video;
+        _videoPlayer.loopPointReached += VideoHasEnded;
     }
 
     private void OnDisable()
@@ -46,12 +48,19 @@ public class VideoController : MonoBehaviour
         _videoPanel.SetActive(false);
     }
 
+    //Para mudar o vídeo em runtime
+    public void ChangeVideo(VideoClip video)
+    {
+        _videoPlayer.clip = video;
+        _videoPlayer.time = 0f;
+    }
+
     public void JumpVideo()
     {
         if (sliderJumpProgress.value < sliderJumpProgress.maxValue)
             sliderJumpProgress.value += (1f / jumpTimeTime) * Time.deltaTime;
         else
-            _videoPanel.GetComponentInChildren<VideoPlayer>().time = _videoPanel.GetComponentInChildren<VideoPlayer>().clip.length;
+            _videoPlayer.time = _videoPlayer.clip.length;
     }
 
     public void JumpVideoReset() => sliderJumpProgress.value = 0f;
