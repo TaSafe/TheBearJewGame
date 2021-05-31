@@ -111,9 +111,16 @@ public class PlayerWeaponHandler : MonoBehaviour
         if (_weaponEquiped != WeaponEquiped.gun) return;
 
         _gunEquiped.GetComponent<Collider>().enabled = true;
+
         _gunEquiped.transform.parent = null;
+        _gunEquiped.transform.position = new Vector3(
+            transform.position.x, 1.5f, transform.position.z);
+        _gunEquiped.transform.localRotation = Quaternion.Euler(
+            0f, 90f, 0f);
+
         if (_gunEquiped.GetComponent<GunShoot>().AmmoCurrent <= 0)
             Destroy(_gunEquiped);
+
         _gunEquiped = null;
 
         Bat batScript = BatClone.GetComponent<Bat>();
