@@ -74,8 +74,8 @@ public class PlayerInput : MonoBehaviour
             PlayerWeaponHandler.Attack(false);
 
         if (Input.GetMouseButtonDown(0))
-            PlayerWeaponHandler.Attack(true);
-
+                PlayerWeaponHandler.Attack(true);
+        
         if (Input.GetKeyDown(KeyCode.Q))
             PlayerWeaponHandler.SwitchWeapons();
 
