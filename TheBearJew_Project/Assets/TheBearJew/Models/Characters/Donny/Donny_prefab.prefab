@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 7515466755035019346}
   - component: {fileID: 4516092164306068008}
   m_Layer: 0
-  m_Name: DONNY_PREFAB
+  m_Name: Donny_prefab
   m_TagString: Outlined
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
