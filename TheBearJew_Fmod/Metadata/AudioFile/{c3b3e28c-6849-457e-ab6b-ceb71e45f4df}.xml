@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c3b3e28c-6849-457e-ab6b-ceb71e45f4df}">
+		<property name="assetPath">
+			<value>German_burn_them.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.063673469387755</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{936baf91-5492-48dc-a54a-7205ff1bc7b5}</destination>
+		</relationship>
+	</object>
+</objects>
