@@ -5,9 +5,10 @@ public class GunShoot : MonoBehaviour
 {
     [SerializeField] private GameObject _vfxMuzzleFlash;
     [SerializeField] private GameObject _vfxHit;
+    public float AmmoCurrent { get; private set; }
 
     private GunBehaviour _gunBehaviour;
-    public float AmmoCurrent { get; private set; }
+    private bool _firstShoot = true; //GAMBIARRA
     
     void Start()
     {
@@ -15,7 +16,6 @@ public class GunShoot : MonoBehaviour
         AmmoCurrent = _gunBehaviour.WeaponData.MaxAmmo;
     }
 
-    bool _firstShoot = true; //GAMBIARRA
     public void MakeShoot()
     {
         if (_firstShoot)
@@ -48,6 +48,7 @@ public class GunShoot : MonoBehaviour
 
         UiHUD.Instance.HudWeaponAmmo(AmmoCurrent);
 
+        //Detecção do Raycast do tiro
         if (Physics.Raycast(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward, out var hitInfo, float.MaxValue))
         {
             Instantiate(_vfxHit, hitInfo.point, Quaternion.identity);
@@ -56,7 +57,7 @@ public class GunShoot : MonoBehaviour
             {
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
 
-                //Feedback sonoro hit no inimigo 
+                //Feedback sonoro hit no inimigo FIXME: mover para a classe que lida com o dano do inimigo
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/hit_enemy_layer");
             }
         }
