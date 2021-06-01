@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{daeab93a-4115-46c5-b875-d93de8fe2645}">
+		<property name="volume">
+			<value>6.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{cd86a2a2-7474-4f41-ba13-9ccc51438497}</destination>
 		</relationship>
@@ -95,6 +98,9 @@
 		<property name="timelockedOffset">
 			<value>0.029999999999999999</value>
 		</property>
+		<property name="pitch">
+			<value>-0.699999988</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{1cbe8c69-ae31-4a8b-8557-94c8258951a0}</destination>
 			<destination>{f2fec3b9-d47a-43f0-99b3-bd8219c09951}</destination>
@@ -104,6 +110,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3c8acdd7-2edb-4c7a-a684-09134584a184}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -120,6 +129,7 @@
 	<object class="MixerBusEffectChain" id="{cd86a2a2-7474-4f41-ba13-9ccc51438497}">
 		<relationship name="effects">
 			<destination>{7f888c78-90be-488f-bd53-50c4413d785d}</destination>
+			<destination>{4c68ae63-14dd-4b94-b2a0-aea659642051}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2a4bff8f-8d75-40bc-9a83-93aed47ead50}" />
@@ -129,7 +139,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>8.5</value>
+			<value>6.5</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{f2fec3b9-d47a-43f0-99b3-bd8219c09951}">
@@ -147,5 +157,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{375db3b2-edfb-4fad-afd1-ef0de3e86052}" />
 	<object class="MixerBusFader" id="{7f888c78-90be-488f-bd53-50c4413d785d}" />
+	<object class="SFXReverbEffect" id="{4c68ae63-14dd-4b94-b2a0-aea659642051}">
+		<property name="wetLevel">
+			<value>-14.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1b6b9046-3e86-44fc-9d11-94cfc9d327b6}" />
 </objects>

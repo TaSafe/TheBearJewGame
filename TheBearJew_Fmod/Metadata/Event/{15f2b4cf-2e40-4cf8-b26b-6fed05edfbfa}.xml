@@ -114,7 +114,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{1a9e4328-1f25-4e11-ae6f-414c857497a9}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-1.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -132,6 +132,9 @@
 	<object class="SoundScatterer" id="{e5aeb103-2cfc-4221-a715-410a3d24fd7b}">
 		<property name="length">
 			<value>16.5</value>
+		</property>
+		<property name="volume">
+			<value>3.5</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>10000</value>
