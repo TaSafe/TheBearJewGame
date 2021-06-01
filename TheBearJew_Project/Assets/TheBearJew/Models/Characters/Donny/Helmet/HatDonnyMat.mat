@@ -45,13 +45,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_8606F96E: 1
-    - _OutlineDepthSensitivity: 1
+    - _OutlineDepthSensitivity: 0.698
     - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 1
-    - _Smoothness: 0.5
+    - _OutlineThickness: 5.01
+    - _Smoothness: 0.088
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecularColor: {r: 0.18867922, g: 0.112857684, b: 0.09149162, a: 0.78039217}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 //TODO: Colocar a animação
 //TODO: Acertar o timing da rolagem
@@ -6,28 +7,41 @@
 
 public class PlayerRoll : MonoBehaviour
 {
+    [SerializeField] private float _rollDistance = 4f;
+    [SerializeField] private float _rollSpeed = 10f;
+    [SerializeField] private float _rayCastColisionDetectionDistance = 1f;
+    [Tooltip("In seconds")][SerializeField] private float _coolDownTime;
+
     private Movement _movement;
     private CharacterController _characterCotroller;
     private Vector3 _rollDirection;
     private bool _isRolling;
-    private float _rollSpeed = 10f;
+    private bool _isCoolingDown;
     private float _rollingSpeed;
-    private float _rayCastDistance = 1f;
 
     void Start()
-    {
+    {        
         _movement = GetComponent<Movement>();
         _characterCotroller = GetComponent<CharacterController>();
+
+        UiHUD.Instance.CooldownProgressBar.SetMaxValue(_coolDownTime);
+        UiHUD.Instance.CooldownProgressBar.SlideValue(_coolDownTime);
+        UiHUD.Instance.CooldownProgressBar.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !_isRolling && !_isCoolingDown)
         {
-            _rollDirection = new Vector3(_movement.InputX, 0f, _movement.InputY).normalized;
-            _rollingSpeed = _rollSpeed;
-            _characterCotroller.enabled = false;
-            _isRolling = true;
+            if (_movement.InputX != 0f || _movement.InputY != 0f)
+            {
+                _rollDirection = new Vector3(_movement.InputX, 0f, _movement.InputY).normalized;
+                _rollingSpeed = _rollSpeed;
+                _characterCotroller.enabled = false;
+                _isRolling = true;
+                _movement.Animator.SetBool("isRolling", _isRolling);
+                _isCoolingDown = true;
+            }
         }
 
         Roll();
@@ -35,30 +49,50 @@ public class PlayerRoll : MonoBehaviour
 
     void Roll()
     {
-        Debug.DrawRay(transform.position, _rollDirection * _rayCastDistance, Color.blue);
-
         if (_isRolling)
         {
             //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
-            //TODO: Tornar as variáveis que controlam os parâmetros de Rolar em SerializeField pra editar pelo inspector
-            if (Physics.Raycast(transform.position, _rollDirection, out RaycastHit hit, _rayCastDistance))
+            Vector3 positionAboveTriggerColliders = new Vector3(transform.position.x, 1.8f, transform.position.z);
+            if (Physics.Raycast(positionAboveTriggerColliders, _rollDirection, out RaycastHit hit, _rayCastColisionDetectionDistance))
             {
                 if (hit.collider != null)
                 {
                     _characterCotroller.enabled = true;
                     _isRolling = false;
+                    _movement.Animator.SetBool("isRolling", _isRolling);
+                    StartCoroutine(Cooldown(_coolDownTime));
                     return;
                 }
             }
 
-            transform.position += (_rollDirection * 2f) * _rollingSpeed * Time.deltaTime;
+            transform.position += (_rollDirection * _rollDistance) * _rollingSpeed * Time.deltaTime;
             _rollingSpeed -= _rollingSpeed * 10f * Time.deltaTime;
+            
             if (_rollingSpeed < 5f)
             {
                 _characterCotroller.enabled = true;
                 _isRolling = false;
+                _movement.Animator.SetBool("isRolling", _isRolling);
+                StartCoroutine(Cooldown(_coolDownTime));
             }
         }
+    }
+
+    private IEnumerator Cooldown(float time)
+    {
+        UiHUD.Instance.CooldownProgressBar.gameObject.SetActive(true);
+        float timer = time + Time.deltaTime;
+
+        while (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+            UiHUD.Instance.CooldownProgressBar.SlideValue(timer);
+            yield return null;
+        }
+
+        UiHUD.Instance.CooldownProgressBar.SlideValue(time);
+        UiHUD.Instance.CooldownProgressBar.gameObject.SetActive(false);
+        _isCoolingDown = false;
     }
 
 }

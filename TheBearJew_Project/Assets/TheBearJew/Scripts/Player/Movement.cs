@@ -22,12 +22,12 @@ public class Movement : MonoBehaviour
     public float InputY { get; private set; }
 
     //Animation
-    public Animator _animator;
+    public Animator Animator { get; private set; }
 
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        _animator = GetComponentInChildren<Animator>();
+        Animator = GetComponentInChildren<Animator>();
     }
 
     public void Move(float inputX, float inputY)
@@ -71,8 +71,8 @@ public class Movement : MonoBehaviour
         float velocityZ = Vector3.Dot(move.normalized, transform.forward);
 
         //Altera os valores na animação
-        _animator.SetFloat("xVelocity", velocityX, .1f, Time.deltaTime);
-        _animator.SetFloat("zVelocity", velocityZ, .1f, Time.deltaTime);
+        Animator.SetFloat("xVelocity", velocityX, .1f, Time.deltaTime);
+        Animator.SetFloat("zVelocity", velocityZ, .1f, Time.deltaTime);
     }
 
     void OnDrawGizmos()

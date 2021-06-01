@@ -21,6 +21,7 @@ public class Bat : Weapon
             _animator.speed += _animator.speed * WeaponData.FireRate;
             int animationClip = Random.Range(1, 5);
             _animator.SetInteger("hitBatAnimation", animationClip);
+            FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot);
         }
         //StartCoroutine(Attacking(_attackStartTime));  //ANTIGO ATAQUE
     }

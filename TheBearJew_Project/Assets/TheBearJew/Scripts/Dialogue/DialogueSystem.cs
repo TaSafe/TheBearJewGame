@@ -5,8 +5,9 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem Instance { get; private set; }
-    
+
     [SerializeField] private List<DialogueCharacterImage> _characterImages;
+    [FMODUnity.EventRef] [SerializeField] string _soundChangeDialogue;
 
     public bool HasEndedSequence { get; private set; }
     public bool HasStartedDialogue { get; private set; }
@@ -43,6 +44,9 @@ public class DialogueSystem : MonoBehaviour
                 characterImg = CharacterImageFinder(sequence);
             else if (sequence.Dialogues[_dialogueIndex - 1].characterName != sequence.Dialogues[_dialogueIndex].characterName)
                 characterImg = CharacterImageFinder(sequence);
+
+            //Som de troca de diálogo
+            FMODUnity.RuntimeManager.PlayOneShot(_soundChangeDialogue);
 
             //Atualiza a caixa de diálogo
             UiHUD.Instance.DialogueChangeTexts(
