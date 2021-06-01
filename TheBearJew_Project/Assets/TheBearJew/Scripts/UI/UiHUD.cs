@@ -7,6 +7,7 @@ public class UiHUD : MonoBehaviour
 {
     public static UiHUD Instance { get; private set; }
     public Sprite HudWeaponImageDefault { get { return _hudWeaponImageDefault; } }
+    public UiRollCooldownProgress CooldownProgressBar { get; private set; }
 
 
     [SerializeField] private GameObject _groupInteractionUI;
@@ -39,6 +40,10 @@ public class UiHUD : MonoBehaviour
         else
             Destroy(gameObject);
     }
+    private void OnEnable()
+    {
+        CooldownProgressBar = FindObjectOfType<UiRollCooldownProgress>();
+    }
 
     private void Start()
     {
@@ -58,6 +63,8 @@ public class UiHUD : MonoBehaviour
                     _hudWeaponImageInactive.color.g,
                     _hudWeaponImageInactive.color.b,
                     0f);
+
+        //CooldownProgressBar = FindObjectOfType<UiRollCooldownProgress>();
     }
 
     public void UIItemAdd(Sprite sprite)

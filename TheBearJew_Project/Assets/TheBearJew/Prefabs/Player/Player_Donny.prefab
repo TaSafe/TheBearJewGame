@@ -103,7 +103,6 @@ MonoBehaviour:
     m_Bits: 64
   _checkSpherePosition: {x: 0, y: 0, z: 0}
   _checkSphereRadius: 0.1
-  _animator: {fileID: 0}
 --- !u!114 &2572952574110108690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af171db6e5ff2374ca6a728cf5f6392d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rollDistance: 6
+  _rollSpeed: 8
+  _rayCastColisionDetectionDistance: 0.8
+  _coolDownTime: 2
 --- !u!114 &2572952573481704341
 MonoBehaviour:
   m_ObjectHideFlags: 0

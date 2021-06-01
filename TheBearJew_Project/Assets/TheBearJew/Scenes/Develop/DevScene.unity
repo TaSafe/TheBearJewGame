@@ -162,7 +162,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-512126
+  m_Name: pb_Mesh-798068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -735,7 +735,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh180506
+  m_Name: pb_Mesh367590
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1080,8 +1080,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2.8, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &851897639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,7 +1430,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-512116
+  m_Name: pb_Mesh-798058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2016,7 +2016,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-512784
+  m_Name: pb_Mesh-798726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2511,7 +2511,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-512806
+  m_Name: pb_Mesh-798748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3222,7 +3222,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-513564
+  m_Name: pb_Mesh-799506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3386,7 +3386,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-512136
+  m_Name: pb_Mesh-798078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3972,6 +3972,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018210307436543301, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618700465490756483, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618700465490756483, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6673748024177819999, guid: 9f2c3fd5ad117e441826d92aff662e56, type: 3}
