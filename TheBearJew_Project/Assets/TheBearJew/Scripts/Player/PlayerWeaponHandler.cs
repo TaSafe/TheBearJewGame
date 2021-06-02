@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
@@ -118,6 +119,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             transform.position.x, 1.5f, transform.position.z);
         _gunEquiped.transform.localRotation = Quaternion.Euler(
             0f, 90f, 0f);
+        SceneManager.MoveGameObjectToScene(_gunEquiped, SceneManager.GetActiveScene());
 
         if (_gunEquiped.GetComponent<GunShoot>().AmmoCurrent <= 0)
             Destroy(_gunEquiped);
