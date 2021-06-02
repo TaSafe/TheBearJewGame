@@ -21,6 +21,8 @@ public class VideoController : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        
     }
 
     private void OnEnable()
@@ -28,12 +30,10 @@ public class VideoController : MonoBehaviour
         _videoPlayer = _videoPanel.GetComponentInChildren<VideoPlayer>();
         _videoPlayer.clip = _video;
         _videoPlayer.loopPointReached += VideoHasEnded;
+        
     }
 
-    private void OnDisable()
-    {
-        _videoPanel.GetComponentInChildren<VideoPlayer>().loopPointReached -= VideoHasEnded;
-    }
+    private void OnDisable() => _videoPlayer.loopPointReached -= VideoHasEnded;
 
     public void VideoActivate()
     {

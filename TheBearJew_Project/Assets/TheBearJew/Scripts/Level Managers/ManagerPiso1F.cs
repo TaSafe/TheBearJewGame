@@ -5,7 +5,7 @@ public class ManagerPiso1F : MonoBehaviour
 {
     public static ManagerPiso1F Instance { get; private set; }
 
-    [SerializeField] private GameObject _endGate;
+    [SerializeField] private GateMainPiso1F _endGate;
 
     [Header("Enemies")]
     [SerializeField] private List<GameObject> _enemies = new List<GameObject>();
@@ -40,7 +40,7 @@ public class ManagerPiso1F : MonoBehaviour
     public void LevelEndUpdate()
     {
         if (GameStatus.Instance.HasOpenedEndGate)
-            _endGate.SetActive(false);
+            _endGate.GateInGameFeedback();
 
         _Crowbar.SetActive(false);
         foreach (GameObject enemy in _enemies)
@@ -48,5 +48,4 @@ public class ManagerPiso1F : MonoBehaviour
             enemy.gameObject.SetActive(false);
         }
     }
-
 }

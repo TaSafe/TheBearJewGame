@@ -24,7 +24,10 @@ public class ManagerPiso0F : MonoBehaviour
             _enemies.Remove(enemy);
 
         if (_enemies.Count <= 0)
+        {
             GameStatus.Instance.HasEnemyAlivePiso0F = false;
+            _key.SetActive(true);
+        }
     }
 
     public void LevelEndUpdate()
