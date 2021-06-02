@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour, IDamage
 {
-    private enum State { ATTACK, RELOAD }
+    private enum State { ATTACK, RELOAD, PHASE_CHANGE }
     private State _currentState;
 
     private BossStatus bossStatus;
     private float fireRateTimer;
     private float shootTimer;
     private bool isCoolingDown;
+    private bool hasChangedState;
 
     private void Start()
     {
@@ -29,6 +30,9 @@ public class BossBehaviour : MonoBehaviour, IDamage
             case State.RELOAD:
                 Reload();
                 break;
+            case State.PHASE_CHANGE:
+                PhaseChange();
+                break;
         }
     }
 
@@ -36,12 +40,20 @@ public class BossBehaviour : MonoBehaviour, IDamage
 
     public void Damage(float damage, bool bat = false)
     {
+        if (_currentState == State.PHASE_CHANGE) return;
+
         bossStatus.LifeSystem.RemoveLife(damage);
-        BossUI.Instance.LifeBarSetValue(bossStatus.LifeSystem.CurrentLife);
+        BossUI.Instance.LifeBarSetValue((float)(BossUI.Instance.LifeBarGetCurrentValue() - damage));
 
         if (bossStatus.LifeSystem.IsDead())
         {
             //Faz algo
+        }
+
+        if (bossStatus.LifeSystem.CurrentLife < bossStatus.enemyData.Life * 0.5 && !hasChangedState)
+        {
+            hasChangedState = true;
+            ChangeState(State.PHASE_CHANGE);
         }
     }
 
@@ -76,7 +88,7 @@ public class BossBehaviour : MonoBehaviour, IDamage
         if (!bossStatus.navMeshAgent.hasPath)
             bossStatus.navMeshAgent.SetDestination(bossStatus.reloadPoints[Random.Range(0, bossStatus.reloadPoints.Count)].position);
 
-        if (!bossStatus.animator.GetBool("isMoving"))
+        if (!bossStatus.animator.GetBool("isMoving") && bossStatus.navMeshAgent.velocity != Vector3.zero)
             bossStatus.animator.SetBool("isMoving", true);
     }
 
@@ -91,31 +103,23 @@ public class BossBehaviour : MonoBehaviour, IDamage
         ChangeState(State.ATTACK);
     }
 
-    //private void AttackFromClose()
-    //{
-    //    transform.LookAt(PlayerInput.Instance.transform.position, Vector3.up);
+    private void PhaseChange()
+    {
+        StopAllCoroutines();
+        bossStatus.navMeshAgent.ResetPath();
+        bossStatus.animator.SetBool("isMoving", false);
+        isCoolingDown = false;
 
-    //    if (timer <= 0f)
-    //    {
-            
+        BossUI.Instance.LifeBarSetMaxValue(bossStatus.enemyData.Life / 2);
+        BossUI.Instance.LifeBarSetBackgroundColor(bossStatus.defaultBarColor);
+        BossUI.Instance.LifeBarSetColor(bossStatus.secondBarColor);
 
-    //        if (MathUtilities.ConeChecker(gameObject, PlayerInput.Instance.transform.position, 45f))
-    //        {
-    //            PlayerInput.Instance.PlayerBehaviour.Damage(bossStatus.flamethrowerDamage);
-    //            Debug.DrawLine(transform.position, PlayerInput.Instance.transform.position);
-    //        }
+        bossStatus.navMeshAgent.speed *= 1.5f;
+        bossStatus.navMeshAgent.angularSpeed += 100f;
+        bossStatus.smgFireRate -= 0.07f;
 
-    //        timer += Time.deltaTime + bossStatus.flamethrowerFireRate;
-    //    }
-    //    else
-    //        timer -= Time.deltaTime;
-
-    //    if (Vector3.Distance(transform.position, PlayerInput.Instance.transform.position) > bossStatus.RangeFarAttack)
-    //    {
-    //        timer = 0f;
-    //        ChangeState(State.FAR_ATTACK);
-    //    }
-    //}
+        ChangeState(State.ATTACK);
+    }
 
 }
 
