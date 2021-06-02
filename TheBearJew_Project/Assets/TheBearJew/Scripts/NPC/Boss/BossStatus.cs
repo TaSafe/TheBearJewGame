@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 public class BossStatus : MonoBehaviour
 {
-    [SerializeField] private EnemyDataSO _enemyData;
+    public EnemyDataSO enemyData;
+    public Color firstBarColor;
+    public Color secondBarColor;
+    [HideInInspector] public Color defaultBarColor;
 
     [Header("Attack Atributes")]
     [SerializeField] private Transform _muzzle;
@@ -28,9 +31,13 @@ public class BossStatus : MonoBehaviour
 
     private void Start()
     {
-        LifeSystem = new LifeSystem(_enemyData.Life);
+        LifeSystem = new LifeSystem(enemyData.Life);
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        BossUI.Instance.LifeBarSetMaxValue(_enemyData.Life);
+
+        BossUI.Instance.LifeBarSetMaxValue(enemyData.Life / 2);
+        defaultBarColor = BossUI.Instance.LifeBarGetDefaultColor();
+        BossUI.Instance.LifeBarSetBackgroundColor(secondBarColor);
+        BossUI.Instance.LifeBarSetColor(firstBarColor);
     }
 }
