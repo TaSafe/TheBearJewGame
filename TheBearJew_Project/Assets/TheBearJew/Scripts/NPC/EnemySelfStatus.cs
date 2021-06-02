@@ -38,7 +38,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
     //A 'execução' tá bem torta, tem que pensar melhor depois - 27/04/2021
     private void DeathCheck(bool batAttack)
     {
-        if (_lifeSystem.IsDead() || /*execução*/ batAttack && _lifeSystem.CurrentLife < 40f)
+        if (_lifeSystem.IsDead() || batAttack && _lifeSystem.CurrentLife < 40f)
         {
             _uiLife.Destroy();
 

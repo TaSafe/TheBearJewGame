@@ -8,15 +8,18 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _rangePlayerFollow;
     [SerializeField] private float _rangePlayerAttack;
+    
     [Header("Gun Stuff")]
     [SerializeField] private Transform _muzzle;
     [SerializeField] private GameObject _bullet;
+    [SerializeField] private float shootDamage = 20f;
     
     private enum Behaviours { patrol, follow, attack }
     private NavMeshAgent _navMeshAgent;
     private int _currentPatrolPoint;
     private Transform _playerPosition;
     private float _elevateRaycastStartPoint = 3f;
+    private bool shoot;
 
     void Start()
     {
@@ -76,10 +79,11 @@ public class EnemyBehaviours : MonoBehaviour
         if (!CheckPlayerNear(_rangePlayerAttack)) ChangeBehaviour(Behaviours.follow);
     }
 
-    bool shoot;
+
     private IEnumerator Shoot()
     {
-        Instantiate(_bullet, _muzzle.position, _muzzle.rotation);
+        GameObject bullet = Instantiate(_bullet, _muzzle.position, _muzzle.rotation);
+        bullet.GetComponent<Bullet>().SetDamage(shootDamage);
         shoot = true;
         //som tiro
         FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/enemy_shot");
@@ -93,7 +97,7 @@ public class EnemyBehaviours : MonoBehaviour
         _currentBehaviour = newBehave;
     }
 
-    //CÓDIGO NOJENTO ABAIXO - PREGUIÇA DE FAZER DIREITO
+    // SALVE ESSE CÓDIGO DE SUA FEIURA TERRÍVEL
     private bool CheckPlayerNear(float range)
     {
         if (Vector3.Distance(transform.position, _playerPosition.position) < range)
