@@ -20,16 +20,28 @@ public class EnemyBehaviours : MonoBehaviour
     private Transform _playerPosition;
     private float _elevateRaycastStartPoint = 3f;
     private bool shoot;
+    private Animator _animator;
 
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _playerPosition = GameObject.FindGameObjectWithTag("Player").transform; //TODO: mudar para a instancia
-
+        _animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
+        if (_navMeshAgent.velocity != Vector3.zero)
+        {
+            if (!_animator.GetBool("isMoving"))
+                _animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            if (_animator.GetBool("isMoving"))
+                _animator.SetBool("isMoving", false);
+        }
+
         switch (_currentBehaviour)
         {
             case Behaviours.patrol:
