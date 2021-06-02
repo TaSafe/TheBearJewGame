@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{2552ff98-e4de-4b3a-a01d-f29ebb38b446}">
+		<property name="assetPath">
+			<value>grama2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69599999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{936baf91-5492-48dc-a54a-7205ff1bc7b5}</destination>
+		</relationship>
+	</object>
+</objects>

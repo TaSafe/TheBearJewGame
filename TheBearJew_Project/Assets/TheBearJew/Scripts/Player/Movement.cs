@@ -53,10 +53,16 @@ public class Movement : MonoBehaviour
             _characterController.Move(move * _characterSpeed * Time.deltaTime);
 
             //som passos
-            Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Piso_0F_Esgoto")
+            Scene cena = SceneManager.GetActiveScene();
+            if (cena.name == "Piso_0F_Esgoto")
+            {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_metal");
-            else 
+            }
+            else if ( cena.name == "Subida_Para_a_Abadia")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_grama");
+            }
+            else
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Passos_concreto");
         }
 
