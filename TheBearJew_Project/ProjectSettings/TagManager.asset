@@ -9,6 +9,7 @@ TagManager:
   - Outlined
   - Enemy
   - SpawnPoint
+  - Bullet
   layers:
   - Default
   - TransparentFX
