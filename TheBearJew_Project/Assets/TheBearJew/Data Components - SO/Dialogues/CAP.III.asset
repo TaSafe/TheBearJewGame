@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a46efbfae9331549922899d6a2559ad, type: 3}
+  m_Name: CAP.III
+  m_EditorClassIdentifier: 
+  dialogues:
+  - characterName: 2
+    dialogueText: "Soldado Max na escuta! Donny Donowitz?? \xC9 voc\xEA mesmo? Sargento
+      isso foi muito arriscado, algum solado alem\xE3o qualquer poderia ter recebido
+      essa chamada. Estou no exercito alem\xE3o cooperando com os Aliados. Talvez
+      eu consiga te ajudar, sem que desconfiem de mim aqui."
+  - characterName: 1
+    dialogueText: "Voc\xEA conseguiria entra em contato com o General Ed Fenech??
+      Ele precisar saber que continuarei com a miss\xE3o, ele provavelmente iniciara
+      a invas\xE3o surpresa a esse lugar, temo que se isso acontecer n\xE3o conseguiria
+      concluir a miss\xE3o, pois haver\xE1 bombardeios e as informa\xE7\xF5es podem
+      ser perdidas. Quando meu grupo foi fuzilado os equipamentos de comunica\xE7\xE3o
+      foram danificados e eu n\xE3o consegui falar com ningu\xE9m. "
+  - characterName: 2
+    dialogueText: "Posso tentar! Te avisarei se conseguir algo. O General fica na
+      abadia, com a base principal de estrat\xE9gia, provavelmente o que voc\xEA
+      procura estar\xE1 l\xE1. Mas n\xE3o pense que ser\xE1 um trajeto f\xE1cil,
+      l\xE1 est\xE3o os melhores soldados do General.  Voc\xEA precisar tomar cuidado!"
+  - characterName: 1
+    dialogueText: Esses porcos que precisaram ter cuidado!
+  - characterName: 2
+    dialogueText: "Ei cara, qual o seu lance com esse taco? Os soldados est\xE3o
+      comentando sobre... "
+  - characterName: 1
+    dialogueText: "Isso aqui? A \xE9 s\xF3 uma lembrancinha de Boston, onde nasci,
+      em um bairro judeu. Quando eu soube que havia sido convocado para atuar na
+      guerra quis trazer algo comigo. Mas n\xE3o \xE9 qualquer bast\xE3o... Eu fiquei
+      animado pra caralho quando fui convocado. Finalmente eu poderia fazer algo
+      contra esses porcos nazistas. Pedi para que cada ente querido meu e os judeus
+      do meu bairro que escrevessem no bast\xE3o o nome de algum parente deles que
+      estava na Europa. \xC9 a forma que posso me vingar nesses nazistas filhos da
+      puta!"
+  - characterName: 0
+    dialogueText: "Hum, voc\xEA \xE9 uma cara interessante de fato. Mas enfim, voc\xEA
+      encontrara a frente o port\xE3o principal para a Abadia, e precisara ativar
+      duas chaves para abrir. Uma do lado leste e a outra do lado oeste."
