@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Max
   m_EditorClassIdentifier: 
   _characterName: 2
-  _image: {fileID: 21300000, guid: cfe3dcc3bcbdac34b96f5e77c5d748f1, type: 3}
+  _image: {fileID: 21300000, guid: 4760b32fdf6dc2a42b8e320709d90066, type: 3}
