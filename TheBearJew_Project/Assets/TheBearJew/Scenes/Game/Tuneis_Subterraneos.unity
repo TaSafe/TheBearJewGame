@@ -3359,7 +3359,7 @@ PrefabInstance:
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: _video
       value: 
-      objectReference: {fileID: 32900000, guid: dd69ab89fbf2dc147a5fa1466d006347, type: 3}
+      objectReference: {fileID: 32900000, guid: 91268e0c23c8160409e4e3dc9d134230, type: 3}
     - target: {fileID: 2207458519662351727, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: m_Name
       value: Canvas_Video

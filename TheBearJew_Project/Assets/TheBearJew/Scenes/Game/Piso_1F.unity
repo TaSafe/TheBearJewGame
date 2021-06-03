@@ -22621,7 +22621,7 @@ PrefabInstance:
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: _video
       value: 
-      objectReference: {fileID: 32900000, guid: 75ad73523d7b5c147a3dbdbaf9da8678, type: 3}
+      objectReference: {fileID: 32900000, guid: 2a4930b61e2268048a4c17ba63ce7430, type: 3}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.size
       value: 1

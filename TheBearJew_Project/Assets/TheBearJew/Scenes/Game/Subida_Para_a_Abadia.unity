@@ -35616,8 +35616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253e85d430270e8429184fd7e50a7634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _videoBeforeBoss: {fileID: 32900000, guid: 75ad73523d7b5c147a3dbdbaf9da8678, type: 3}
-  _videoAfterBoss: {fileID: 32900000, guid: dd69ab89fbf2dc147a5fa1466d006347, type: 3}
+  _videoBeforeBoss: {fileID: 32900000, guid: e9710eac8fe762347b2337720f7867c8, type: 3}
+  _videoAfterBoss: {fileID: 32900000, guid: eebf45e518509554f8c8c12bf802a9c6, type: 3}
   _bossActivation: {fileID: 2111004452}
   _boss: {fileID: 1665813300}
   _bossUI: {fileID: 1245155943}
@@ -42446,7 +42446,7 @@ PrefabInstance:
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: _video
       value: 
-      objectReference: {fileID: 32900000, guid: 2165894538d64ac4d8e318fe3b37f04b, type: 3}
+      objectReference: {fileID: 32900000, guid: 0dc67a25435a9fc4490a35e831ab70cc, type: 3}
     - target: {fileID: 2207458519662351727, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: m_Name
       value: Canvas_Video
