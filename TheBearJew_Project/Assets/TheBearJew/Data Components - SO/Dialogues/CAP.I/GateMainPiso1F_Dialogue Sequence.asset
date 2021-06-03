@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GateMainPiso1F_Dialogue Sequence
   m_EditorClassIdentifier: 
   dialogues:
-  - characterName: 0
+  - characterName: 1
     dialogueText: "Preciso encontrar a chave desse port\xE3o..."

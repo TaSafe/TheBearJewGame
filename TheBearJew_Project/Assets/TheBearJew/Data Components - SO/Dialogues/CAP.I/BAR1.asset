@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BAR1
   m_EditorClassIdentifier: 
   dialogues:
-  - characterName: 0
+  - characterName: 1
     dialogueText: "N\xE3o trocaria meu bast\xE3o por nada. Mas esse p\xE9 de cabra
       aqui vai servir pra alguma coisa"

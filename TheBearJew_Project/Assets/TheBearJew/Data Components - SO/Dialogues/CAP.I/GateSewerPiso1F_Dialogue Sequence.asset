@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GateSewerPiso1F_Dialogue Sequence
   m_EditorClassIdentifier: 
   dialogues:
-  - characterName: 0
+  - characterName: 1
     dialogueText: Preciso encontrar algo que me ajude a abrir essa passagem
