@@ -197,4 +197,14 @@ public class UiHUD : MonoBehaviour
             _dialogueTxt.SetText(text);
     }
     #endregion
+
+    public void BackToMainMenu()
+    {
+        SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameStatus.Instance.gameObject, SceneManager.GetActiveScene());
+
+        SceneManager.LoadScene("MenuInicial");
+    }
+
 }
