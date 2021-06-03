@@ -9896,10 +9896,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138025380}
     - target: {fileID: 8455651376563956553, guid: c9bb15a71764b0d4ab9d4bc2f948b37b, type: 3}
-      propertyPath: _HasPlayedCutsceneOne
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455651376563956553, guid: c9bb15a71764b0d4ab9d4bc2f948b37b, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
       objectReference: {fileID: 2121179451}
@@ -21790,7 +21786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101174848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.62, y: 0.85, z: 19.96}
+  m_LocalPosition: {x: 13.62, y: 0.85, z: 16.81}
   m_LocalScale: {x: 11.812094, y: 1.5536, z: 1.5536}
   m_Children: []
   m_Father: {fileID: 0}

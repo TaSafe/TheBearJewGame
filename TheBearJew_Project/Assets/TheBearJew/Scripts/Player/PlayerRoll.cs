@@ -52,7 +52,7 @@ public class PlayerRoll : MonoBehaviour
         if (_isRolling)
         {
             //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
-            Vector3 positionAboveTriggerColliders = new Vector3(transform.position.x, 1.8f, transform.position.z);
+            Vector3 positionAboveTriggerColliders = new Vector3(transform.position.x, 1.3f, transform.position.z);
             if (Physics.Raycast(positionAboveTriggerColliders, _rollDirection, out RaycastHit hit, _rayCastColisionDetectionDistance))
             {
                 if (hit.collider != null)

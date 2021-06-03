@@ -7,7 +7,7 @@ public class BossBehaviour : MonoBehaviour, IDamage
     private enum State { ATTACK, RELOAD, PHASE_CHANGE }
     private State _currentState;
 
-    private BossStatus bossStatus;
+    [HideInInspector] public BossStatus bossStatus;
     private float fireRateTimer;
     private float shootTimer;
     private bool isCoolingDown;
@@ -47,7 +47,8 @@ public class BossBehaviour : MonoBehaviour, IDamage
 
         if (bossStatus.LifeSystem.IsDead())
         {
-            //Faz algo
+            GetComponent<BossBehaviour>().enabled = false;
+            ManagerSubida.Instance.BossDefeat();
         }
 
         if (bossStatus.LifeSystem.CurrentLife < bossStatus.enemyData.Life * 0.5 && !hasChangedState)

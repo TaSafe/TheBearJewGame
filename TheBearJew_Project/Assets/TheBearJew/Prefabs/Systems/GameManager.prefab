@@ -43,22 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01362497be6e9a34e93edb714d7a33a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HasPlayedCutsceneOne: 1
-  _Crowbar: {fileID: 0}
-  _CrowbarParticle: {fileID: 0}
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HasEnteredSewer: 0
+  _HasPlayedCutsceneOne: 0
+  _HasPlayedCutsceneTwo: 0
+  _HasPlayedCutsceneThree: 0
+  _endScene: MenuFinal

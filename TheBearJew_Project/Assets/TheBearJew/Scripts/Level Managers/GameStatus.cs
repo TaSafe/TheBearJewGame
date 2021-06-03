@@ -5,9 +5,12 @@ public class GameStatus : MonoBehaviour
 {
     public static GameStatus Instance { get; private set; }
 
-    #region PISO 1F Variables
-
     [SerializeField] private bool _HasPlayedCutsceneOne;
+    [SerializeField] private bool _HasPlayedCutsceneTwo;
+    [SerializeField] private bool _HasPlayedCutsceneThree;
+    [SerializeField] private string _endScene;
+
+    #region PISO 1F Variables
     public bool HasEnteredSewer { get; set; }
     public bool HasOpenedEndGate { get; set; }
     public bool HasEnemyAlivePiso1F { get; set; } = true;
@@ -45,6 +48,9 @@ public class GameStatus : MonoBehaviour
                 break;
             case "Tuneis_Subterraneos":
                 TuneisSubterraneosChechks();
+                break;
+            case "Subida_Para_a_Abadia":
+                 SubidaChecks();
                 break;
         }
 
@@ -85,5 +91,32 @@ public class GameStatus : MonoBehaviour
     {
         PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
 
+        if (!_HasPlayedCutsceneTwo)
+        {
+            VideoController.Instance?.VideoActivate();
+            _HasPlayedCutsceneTwo = true;
+        }
     }
+
+    private void SubidaChecks()
+    {
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
+
+        if (!_HasPlayedCutsceneThree)
+        {
+            VideoController.Instance?.VideoActivate();
+            _HasPlayedCutsceneThree = true;
+        }
+    }
+
+    public void EndGame()
+    {
+        SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+
+        VideoController.Instance.OnVideoEnd?.RemoveListener(EndGame);
+        SceneManager.LoadScene(_endScene);
+    }
+
 }

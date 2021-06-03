@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour, IDamage
 {
@@ -27,6 +28,9 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
             //som de morte
             FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/death");
             Respawn();
+
+            if (SceneManager.GetActiveScene().name == "Subida_Para_a_Abadia")
+                ManagerSubida.Instance.PlayerDeathBoss();
         }
     }
 

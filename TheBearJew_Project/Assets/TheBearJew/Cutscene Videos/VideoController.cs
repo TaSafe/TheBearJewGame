@@ -11,7 +11,7 @@ public class VideoController : MonoBehaviour
     [SerializeField] private VideoClip _video;
     [SerializeField] private Slider sliderJumpProgress;
     [SerializeField] private float jumpTimeTime;
-    [SerializeField] private UnityEvent OnVideoEnd;
+    [SerializeField] public UnityEvent OnVideoEnd;
 
     private VideoPlayer _videoPlayer;
 
