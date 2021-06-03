@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0296fc9c9069e76498bf3b8023aedc2b, type: 3}
-  m_Name: Max
+  m_Name: Donny_
   m_EditorClassIdentifier: 
-  _characterName: 2
-  _image: {fileID: 21300000, guid: cfe3dcc3bcbdac34b96f5e77c5d748f1, type: 3}
+  _characterName: 1
+  _image: {fileID: 21300000, guid: 76ea3c8a4a736644395f3c7468d1bf63, type: 3}
