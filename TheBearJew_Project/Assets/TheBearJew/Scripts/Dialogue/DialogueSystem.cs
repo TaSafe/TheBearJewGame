@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] private List<DialogueCharacterImage> _characterImages;
     [FMODUnity.EventRef] [SerializeField] string _soundChangeDialogue;
+
+    [HideInInspector] public UnityEvent OnDialogueEnd;
 
     public bool HasEndedSequence { get; private set; }
     public bool HasStartedDialogue { get; private set; }
@@ -62,6 +65,7 @@ public class DialogueSystem : MonoBehaviour
         //Reseta diálogo após finalizar
         if (HasEndedSequence)
         {
+            OnDialogueEnd?.Invoke();
             _dialogueIndex = 0;
             HasStartedDialogue = false;
             UiHUD.Instance.DialogueChangeTexts(string.Empty, string.Empty, UiHUD.Instance.HudWeaponImageDefault);
@@ -70,11 +74,6 @@ public class DialogueSystem : MonoBehaviour
 
             HasEndedSequence = false;   //Reseta a sequência
         }
-    }
-
-    internal void DialogueChanger(object dialogueWithoutDynamite)
-    {
-        throw new NotImplementedException();
     }
 
     private Sprite CharacterImageFinder(DialogueSequence sequence)
