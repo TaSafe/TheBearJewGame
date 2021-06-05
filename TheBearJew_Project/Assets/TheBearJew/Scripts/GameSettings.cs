@@ -1,19 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSettings : MonoBehaviour
 {
     [SerializeField] private Dropdown _dropdownWindowType;
     [SerializeField] private Dropdown _dropdownGraphicQuality;
+    
+    [Header("Cursor")]
+    [SerializeField] private Texture2D cursorTexture;
 
     private int dropdownOldValue = 0;
     private enum Window { FULLSCREEN, BORDERLESS, WINDOW }
 
     private void Awake()
     {
-        //_dropdownWindowType.SetValueWithoutNotify(dropdownOldValue);  //Pra isso funcionar tem que manter o valor salvo entre as cenas
+        Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2, cursorTexture.height / 2), CursorMode.Auto);
         _dropdownGraphicQuality.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
     }
+
+    public void ChangeScene(string scene) => SceneManager.LoadScene(scene);
 
     public void WindowType(int value)
     {
