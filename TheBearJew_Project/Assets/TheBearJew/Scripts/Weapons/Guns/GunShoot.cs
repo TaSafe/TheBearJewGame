@@ -16,6 +16,8 @@ public class GunShoot : MonoBehaviour
         AmmoCurrent = _gunBehaviour.WeaponData.MaxAmmo;
     }
 
+    private void Update() => Debug.DrawRay(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward * 50f, Color.red);
+    
     public void MakeShoot()
     {
         if (_firstShoot)

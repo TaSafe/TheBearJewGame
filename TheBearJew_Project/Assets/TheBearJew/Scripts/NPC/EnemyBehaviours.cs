@@ -95,7 +95,7 @@ public class EnemyBehaviours : MonoBehaviour
     private IEnumerator Shoot()
     {
         GameObject bullet = Instantiate(_bullet, _muzzle.position, _muzzle.rotation);
-        bullet.GetComponent<Bullet>().SetDamage(shootDamage);
+        bullet.GetComponent<Bullet>().SetBullet(shootDamage, gameObject.name);
         shoot = true;
         //som tiro
         FMODUnity.RuntimeManager.PlayOneShot("event:/Guns/enemy_shot");

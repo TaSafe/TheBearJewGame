@@ -68,7 +68,7 @@ public class BossBehaviour : MonoBehaviour, IDamage
             if (fireRateTimer <= 0f)
             {
                 GameObject bullet = Instantiate(bossStatus.Bullet, bossStatus.Muzzle.position, transform.rotation);
-                bullet.GetComponent<Bullet>().SetDamage(bossStatus.smgDamage);
+                bullet.GetComponent<Bullet>().SetBullet(bossStatus.smgDamage, gameObject.name);
                 FMODUnity.RuntimeManager.PlayOneShot(bossStatus.smgShootSound);
 
                 fireRateTimer += Time.deltaTime + bossStatus.smgFireRate;

@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float destroyTime = 7f;
 
     private float damage;
+    private string parent;
 
     private void Awake() => Destroy(gameObject, destroyTime);
 
@@ -18,9 +19,15 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponentInParent<IDamage>()?.Damage(damage);
             Destroy(gameObject);
         }
-        else if (!other.gameObject.CompareTag("Bullet"))
-            Destroy(gameObject);
+
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.name == parent) return;
+        
+        Destroy(gameObject);
     }
 
-    public void SetDamage(float damage) => this.damage = damage;
+    public void SetBullet(float damage, string parent)
+    {
+        this.damage = damage;
+        this.parent = parent;
+    }
 }

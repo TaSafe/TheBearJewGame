@@ -9463,7 +9463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17424979614846779, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 17424979614846779, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9471,7 +9471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17424979614846779, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.1
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 17424979614846779, guid: fd55bf68e769bda4c983ae16ab6289fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28290,7 +28290,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/Trilha/Track3
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -42359,6 +42359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2207458518290750745, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351715, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -42453,7 +42457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7589861958757317245, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
@@ -65589,7 +65593,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/Ambiente_Lvl3
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 3
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
