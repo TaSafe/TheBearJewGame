@@ -32,11 +32,11 @@ public class GameStatus : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnEnable() => SceneManager.sceneLoaded += SceneLoaded;
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
 
-    private void OnDisable() => SceneManager.sceneLoaded -= SceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
-    private void SceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         switch (SceneManager.GetActiveScene().name)
         {
@@ -53,12 +53,9 @@ public class GameStatus : MonoBehaviour
                  SubidaChecks();
                 break;
         }
-
-        //Debug.Log("Scene loaded: " + SceneManager.GetActiveScene().name);
     }
 
-    private Transform GetSpawnPointInScene() => GameObject.FindGameObjectWithTag("SpawnPoint").transform;
-
+    private Vector3 GetSpawnPointInScene() => GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
 
     /************************************/
     /////         CHECAGENS          /////
@@ -76,12 +73,12 @@ public class GameStatus : MonoBehaviour
             ManagerPiso1F.Instance?.LevelEndUpdate();
 
         if (HasEnteredSewer)
-            PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
+            PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
     }
 
     private void Piso0FEsgotoChecks()
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
 
         if (!HasEnemyAlivePiso0F)
             ManagerPiso0F.Instance?.LevelEndUpdate();
@@ -89,7 +86,9 @@ public class GameStatus : MonoBehaviour
 
     private void TuneisSubterraneosChechks() 
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
+
+        PlayerInput.Instance.PlayerBehaviour?.VisualChange();
 
         if (!_HasPlayedCutsceneTwo)
         {
@@ -100,7 +99,7 @@ public class GameStatus : MonoBehaviour
 
     private void SubidaChecks()
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene().position);
+        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
 
         if (!_HasPlayedCutsceneThree)
         {
@@ -118,5 +117,4 @@ public class GameStatus : MonoBehaviour
         VideoController.Instance.OnVideoEnd?.RemoveListener(EndGame);
         SceneManager.LoadScene(_endScene);
     }
-
 }

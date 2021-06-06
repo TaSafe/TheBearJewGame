@@ -5,6 +5,13 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
 {
     [SerializeField] private float _totalLife = 100;
 
+    [Header("Visual")]
+    [SerializeField] private Material _donnyWhithoutMilitaryUniform;
+    [SerializeField] private GameObject _backpack;
+    [SerializeField] private GameObject _helmet;
+    [SerializeField] private GameObject _body;
+    [SerializeField] private GameObject _hair;
+
     private LifeSystem _lifeSystem;
     public Vector3 RespawnPosition { get; set; }
 
@@ -47,5 +54,13 @@ public class PlayerBehaviour : MonoBehaviour, IDamage
         GetComponent<CharacterController>().enabled = false;
         transform.position = position;
         GetComponent<CharacterController>().enabled = true;
+    }
+
+    public void VisualChange()
+    {
+        _body.GetComponent<SkinnedMeshRenderer>().material = _donnyWhithoutMilitaryUniform;
+        _backpack.SetActive(false);
+        _helmet.SetActive(false);
+        _hair.SetActive(true);
     }
 }

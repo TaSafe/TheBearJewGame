@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateToMouse : MonoBehaviour
 {
-    public Camera camera;
+    public Camera _camera;
     public float MaximumLenght;
     private Ray rayMouse;
     private Vector3 pos;
@@ -15,11 +15,11 @@ public class RotateToMouse : MonoBehaviour
     
     void Update()
     {
-        if(camera != null)
+        if(_camera != null)
         {
             RaycastHit hit;
             var mousePos = Input.mousePosition;
-            rayMouse = camera.ScreenPointToRay(mousePos);
+            rayMouse = _camera.ScreenPointToRay(mousePos);
             if(Physics.Raycast(rayMouse.origin, rayMouse.direction, out hit, MaximumLenght))
             {
                 RotateToMouseDirection(gameObject,hit.point);
