@@ -112,6 +112,7 @@ public class GameStatus : MonoBehaviour
     {
         SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(UiHUD.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
 
         VideoController.Instance.OnVideoEnd?.RemoveListener(EndGame);

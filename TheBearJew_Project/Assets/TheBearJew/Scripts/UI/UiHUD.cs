@@ -39,11 +39,11 @@ public class UiHUD : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
-    private void OnEnable()
-    {
-        CooldownProgressBar = FindObjectOfType<UiRollCooldownProgress>();
-    }
+
+    private void OnEnable() => CooldownProgressBar = FindObjectOfType<UiRollCooldownProgress>();
 
     private void Start()
     {
@@ -63,10 +63,9 @@ public class UiHUD : MonoBehaviour
                     _hudWeaponImageInactive.color.g,
                     _hudWeaponImageInactive.color.b,
                     0f);
-
-        //CooldownProgressBar = FindObjectOfType<UiRollCooldownProgress>();
     }
 
+    #region ITEM
     public void UIItemAdd(Sprite sprite)
     {
         for (int i = 0; i < _hudItensSlots.Length; i++)
@@ -93,10 +92,8 @@ public class UiHUD : MonoBehaviour
         }
     }
 
-    public void ShowIntereactionUI(bool value)
-    {
-        _groupInteractionUI.SetActive(value);
-    }
+    public void ShowIntereactionUI(bool value) => _groupInteractionUI.SetActive(value);
+    #endregion
 
     //FIXME: mover para uma classe própria a função Pause()
     public void Pause()
@@ -203,6 +200,7 @@ public class UiHUD : MonoBehaviour
         SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(GameStatus.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
 
         SceneManager.LoadScene("MenuInicial");
     }
