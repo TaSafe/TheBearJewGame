@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "\xE1 \xE7 \xE3 \xE2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eae5475e552d6a4f88950f1dd4b98df, type: 2}
   m_sharedMaterial: {fileID: 8462510369689007057, guid: 5eae5475e552d6a4f88950f1dd4b98df, type: 2}

@@ -52,8 +52,10 @@ public class DialogueSystem : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(_soundChangeDialogue);
 
             //Atualiza a caixa de diálogo
+            string characterName = sequence.Dialogues[_dialogueIndex].characterName.ToString().Replace("_", " ");
+
             UiHUD.Instance.DialogueChangeTexts(
-                    sequence.Dialogues[_dialogueIndex].characterName.ToString(),
+                    characterName,
                     sequence.Dialogues[_dialogueIndex].dialogueText,
                     characterImg);
 
