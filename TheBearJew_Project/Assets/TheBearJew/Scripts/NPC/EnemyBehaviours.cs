@@ -8,6 +8,7 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _rangePlayerFollow;
     [SerializeField] private float _rangePlayerAttack;
+    [SerializeField] private LayerMask _ignoreLayer;
     
     [Header("Gun Stuff")]
     [SerializeField] private Transform _muzzle;
@@ -18,7 +19,7 @@ public class EnemyBehaviours : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private int _currentPatrolPoint;
     private Transform _playerPosition;
-    private float _elevateRaycastStartPoint = 3f;
+    private float _elevateRaycastStartPoint = 1.5f;
     private bool shoot;
     private Animator _animator;
 
@@ -115,7 +116,7 @@ public class EnemyBehaviours : MonoBehaviour
         if (Vector3.Distance(transform.position, _playerPosition.position) < range)
         {
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + _elevateRaycastStartPoint, transform.position.z);
-            Vector3 pos2 = new Vector3(_playerPosition.position.x, _playerPosition.position.y, _playerPosition.position.z);
+            Vector3 pos2 = new Vector3(_playerPosition.position.x, _playerPosition.position.y + _elevateRaycastStartPoint, _playerPosition.position.z);
 
             Vector3 direction = pos2 - pos;
 
@@ -123,7 +124,7 @@ public class EnemyBehaviours : MonoBehaviour
 
             Debug.DrawRay(ray.origin, ray.direction * 50f, Color.green);
 
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit, _ignoreLayer))
             {
                 if (hit.collider.CompareTag("Player"))
                     return true;
