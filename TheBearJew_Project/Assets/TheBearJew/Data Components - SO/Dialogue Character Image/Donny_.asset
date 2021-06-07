@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Donny_
   m_EditorClassIdentifier: 
   _characterName: 1
-  _image: {fileID: 21300000, guid: 76ea3c8a4a736644395f3c7468d1bf63, type: 3}
+  _image: {fileID: 21300000, guid: a277781679255774ca5cd30fa7e02126, type: 3}
