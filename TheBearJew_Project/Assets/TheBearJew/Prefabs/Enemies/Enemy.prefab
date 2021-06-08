@@ -100,6 +100,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  _gunDropeedHeight: 1
 --- !u!114 &2071493263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3527111122854533960}
     m_Modifications:
+    - target: {fileID: 2422301642723182645, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5844630284538746362, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
       propertyPath: m_Layer
       value: 8

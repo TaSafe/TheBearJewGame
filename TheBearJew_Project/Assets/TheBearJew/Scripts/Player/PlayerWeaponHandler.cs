@@ -45,7 +45,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void SwitchWeapons()
     {
-        if (!HasGun /*|| _animator.GetInteger(HIT_BAT_ANIMATION) != 0*/) return;
+        if (!HasGun) return;
+
         //O que os cases executam pode ser substituído por um método
         switch (_weaponEquiped)
         {
@@ -113,6 +114,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         if (_weaponEquiped != WeaponEquiped.GUN) return;
 
         _gunEquiped.GetComponent<Collider>().enabled = true;
+        _gunEquiped.GetComponent<GunBehaviour>().interactableVFX.SetActive(true);
 
         _gunEquiped.transform.parent = null;
         _gunEquiped.transform.position = new Vector3(
@@ -147,25 +149,6 @@ public class PlayerWeaponHandler : MonoBehaviour
         gun.transform.SetParent(_handBone.transform);
         gun.transform.localPosition = inHandPosition;
         gun.transform.localEulerAngles = inHandRotation;
-
-        //var child = GetComponentsInChildren<Transform>();
-        //GameObject neededChild = null;
-
-        //for (int i = 0; i < child.Length; i++)
-        //{
-        //    if (child[i].Find("swat:RightHand") != null)
-        //    {
-        //        neededChild = child[i].gameObject;
-        //        break;
-        //    }
-        //}
-
-        //if (neededChild != null)
-        //{
-        //    gun.transform.SetParent(neededChild.transform);
-        //    gun.transform.localPosition = inHandPosition;
-        //    gun.transform.localEulerAngles = inHandRotation;
-        //}
     }
 
 }

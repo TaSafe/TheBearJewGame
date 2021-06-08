@@ -7,6 +7,7 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
     [SerializeField] private GameObject _lifeUi;
     [SerializeField] private GameObject[] _gunsToDrop;
     [SerializeField] private UnityEvent OnDeath;
+    [SerializeField] private float _gunDropeedHeight;
 
     private LifeSystem _lifeSystem;
     private UiLifeEnemy _uiLife;
@@ -43,8 +44,9 @@ public class EnemySelfStatus : MonoBehaviour, IDamage
             _uiLife.Destroy();
 
             //Drop da arma
-            var rand = UnityEngine.Random.Range(0, _gunsToDrop.Length);
-            Instantiate(_gunsToDrop[rand], transform.position, Quaternion.identity);
+            var random = Random.Range(0, _gunsToDrop.Length);
+            Vector3 dropPosition = new Vector3(transform.position.x, transform.position.y + _gunDropeedHeight, transform.position.z);
+            Instantiate(_gunsToDrop[random], dropPosition, Quaternion.Euler(0f, 90f, 0f));
 
             OnDeath?.Invoke();
 
