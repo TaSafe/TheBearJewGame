@@ -8,18 +8,18 @@ public class GunShoot : MonoBehaviour
     [SerializeField] private LayerMask _ignoreLayer;
 
     public float AmmoCurrent { get; private set; }
-    public GunBehaviour _gunBehaviour { get; private set; }
+    public GunBehaviour GunBehaviour { get; private set; }
     
     
     private bool _firstShoot = true; //GAMBIARRA
     
     void Start()
     {
-        _gunBehaviour = GetComponent<GunBehaviour>();
-        AmmoCurrent = _gunBehaviour.WeaponData.MaxAmmo;
+        GunBehaviour = GetComponent<GunBehaviour>();
+        AmmoCurrent = GunBehaviour.WeaponData.MaxAmmo;
     }
 
-    private void Update() => Debug.DrawRay(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward * 30f, Color.red);
+    private void Update() => Debug.DrawRay(GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.forward * 30f, Color.red);
     
     public void MakeShoot()
     {
@@ -30,9 +30,9 @@ public class GunShoot : MonoBehaviour
     //Aqui executa o tiro
     public IEnumerator ShootRate()
     {
-        Shoot(_gunBehaviour.WeaponData.Damage);
+        Shoot(GunBehaviour.WeaponData.Damage);
         _firstShoot = false;
-        yield return new WaitForSeconds(_gunBehaviour.WeaponData.FireRate);
+        yield return new WaitForSeconds(GunBehaviour.WeaponData.FireRate);
         _firstShoot = true;
     }
 
@@ -40,21 +40,21 @@ public class GunShoot : MonoBehaviour
     {
         if (AmmoCurrent <= 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundNoAmmo); //Som sem munição
+            FMODUnity.RuntimeManager.PlayOneShot(GunBehaviour.WeaponData.SoundNoAmmo); //Som sem munição
             return;
         }
 
         AmmoCurrent--;
         
-        var muzzleFlash = Instantiate(_vfxMuzzleFlash, _gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.rotation);
-        muzzleFlash.transform.SetParent(_gunBehaviour.transform);   //para que o flash siga o movimento da arma
+        var muzzleFlash = Instantiate(_vfxMuzzleFlash, GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.rotation);
+        muzzleFlash.transform.SetParent(GunBehaviour.transform);   //para que o flash siga o movimento da arma
 
-        FMODUnity.RuntimeManager.PlayOneShot(_gunBehaviour.WeaponData.SoundShoot);
+        FMODUnity.RuntimeManager.PlayOneShot(GunBehaviour.WeaponData.SoundShoot);
 
         UiHUD.Instance.HudWeaponAmmo(AmmoCurrent);
 
         //Detecção do Raycast do tiro
-        Ray ray = new Ray(_gunBehaviour.Muzzle.position, _gunBehaviour.Muzzle.forward);
+        Ray ray = new Ray(GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 30f, _ignoreLayer))
         {
             Instantiate(_vfxHit, hitInfo.point, Quaternion.identity);
