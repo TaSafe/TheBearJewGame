@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/TheBearJew/Scenes/Game/MenuFinal.unity
     guid: 51578c1ec888818429609e1b441389fc
   - enabled: 0
-    path: Assets/TheBearJew/J1/Level_01.unity
-    guid: a7e40ea2dfd05a94f9b8c30825b2b38c
-  - enabled: 0
     path: Assets/TheBearJew/Scenes/Develop/DevScene.unity
     guid: d99c2e5781d85ac4a8b99c1db0324bc2
   - enabled: 0
