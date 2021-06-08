@@ -12,12 +12,12 @@ public class PlayerWeaponHandler : MonoBehaviour
     public GameObject BatClone { get; private set; }
     public GunShoot CurrentGunShoot { get; private set; }
 
+    public enum WeaponEquiped { BAT, GUN }
+    [HideInInspector] public WeaponEquiped _weaponEquiped;
+
     private GameObject _gunEquiped;
     private Animator _animator;
     private const string IS_WITH_BAT = "IsWithBat";
-
-    public enum WeaponEquiped { BAT, GUN }
-    [HideInInspector] public WeaponEquiped _weaponEquiped;
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         //Para parâmetros trigger o 'GetMouseButton' pode registrar que está precionado por mais de um frame, por isso usar o 'GetMouseButtonDown'
 
         if (_weaponEquiped == WeaponEquiped.GUN && !mouseButtonDown && HasGun)
-            _gunEquiped?.GetComponent<GunShoot>().MakeShoot();
+            _gunEquiped?.GetComponent<GunShoot>().MakeShoot(); //TODO: modificar para a referencia que o script faz ao equipar
 
         //Isso foi feito para que o ataque do bastão não seja disparado errado
         if (_weaponEquiped == WeaponEquiped.BAT && mouseButtonDown) 
