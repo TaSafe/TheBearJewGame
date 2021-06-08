@@ -26,7 +26,7 @@ public class EnemyBehaviours : MonoBehaviour
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _playerPosition = GameObject.FindGameObjectWithTag("Player").transform; //TODO: mudar para a instancia
+        _playerPosition = PlayerInput.Instance.gameObject.transform;
         _animator = GetComponentInChildren<Animator>();
     }
 
@@ -110,32 +110,34 @@ public class EnemyBehaviours : MonoBehaviour
         _currentBehaviour = newBehave;
     }
 
-    // SALVE ESSE CÓDIGO DE SUA FEIURA TERRÍVEL
     private bool CheckPlayerNear(float range)
     {
         if (Vector3.Distance(transform.position, _playerPosition.position) < range)
         {
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y + _elevateRaycastStartPoint, transform.position.z);
-            Vector3 pos2 = new Vector3(_playerPosition.position.x, _playerPosition.position.y + _elevateRaycastStartPoint, _playerPosition.position.z);
+            Vector3 position = new Vector3(
+                transform.position.x, 
+                transform.position.y + _elevateRaycastStartPoint, 
+                transform.position.z);
 
-            Vector3 direction = pos2 - pos;
+            Vector3 position2 = new Vector3(
+                _playerPosition.position.x, 
+                _playerPosition.position.y + _elevateRaycastStartPoint, 
+                _playerPosition.position.z);
 
-            Ray ray = new Ray(pos, direction);
+            Vector3 direction = position2 - position;
 
-            Debug.DrawRay(ray.origin, ray.direction * 50f, Color.green);
+            Ray ray = new Ray(position, direction);
+
+            Debug.DrawRay(ray.origin, ray.direction * 25f, Color.green);
 
             if (Physics.Raycast(ray, out RaycastHit hit, _ignoreLayer))
             {
                 if (hit.collider.CompareTag("Player"))
                     return true;
-                else
-                    return false;
             }
-            else
-                return false;
         }
-        else
-            return false;
+        
+        return false;
     }
 
     private void OnDrawGizmos()

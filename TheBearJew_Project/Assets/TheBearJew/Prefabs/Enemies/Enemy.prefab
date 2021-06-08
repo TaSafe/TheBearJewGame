@@ -888,9 +888,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3527111122854533960}
     m_Modifications:
+    - target: {fileID: 5844630284538746362, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8851519156494932514, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
       propertyPath: m_Name
       value: Gun_Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851519156494932514, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8851519156494932517, guid: 196a9fb7061290246a3a9eaf25df978c, type: 3}
       propertyPath: m_RootOrder
