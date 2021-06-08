@@ -8,8 +8,9 @@ public class GunShoot : MonoBehaviour
     [SerializeField] private LayerMask _ignoreLayer;
 
     public float AmmoCurrent { get; private set; }
-
-    private GunBehaviour _gunBehaviour;
+    public GunBehaviour _gunBehaviour { get; private set; }
+    
+    
     private bool _firstShoot = true; //GAMBIARRA
     
     void Start()
