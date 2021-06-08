@@ -10,6 +10,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     public GameObject Muzzle { get { return _muzzle; } }
     public bool HasGun { get; private set; }
     public GameObject BatClone { get; private set; }
+    public GunShoot CurrentGunShoot { get; private set; }
 
     private GameObject _gunEquiped;
     private Animator _animator;
@@ -95,6 +96,8 @@ public class PlayerWeaponHandler : MonoBehaviour
             _animator.SetBool("IsWithBat", false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
 
+            CurrentGunShoot = _gunEquiped.GetComponent<GunShoot>();
+
             UiHUD.Instance.HudChangeWeapon(
                 gun.GetComponent<GunShoot>().AmmoCurrent, 
                 gun.GetComponent<GunBehaviour>().WeaponData.HudImage, 
@@ -123,9 +126,10 @@ public class PlayerWeaponHandler : MonoBehaviour
             0f, 90f, 0f);
         SceneManager.MoveGameObjectToScene(_gunEquiped, SceneManager.GetActiveScene());
 
-        if (_gunEquiped.GetComponent<GunShoot>().AmmoCurrent <= 0)
+        if (CurrentGunShoot.AmmoCurrent <= 0)
             Destroy(_gunEquiped);
 
+        CurrentGunShoot = null;
         _gunEquiped = null;
 
         FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");  //Som dropar arma
