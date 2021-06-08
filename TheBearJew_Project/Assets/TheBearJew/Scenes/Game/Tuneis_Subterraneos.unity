@@ -11378,6 +11378,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 870576738, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
+      propertyPath: _donnyWhithoutMilitaryUniform
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f248c59af7da994a80a9522b04cff9b, type: 2}
+    - target: {fileID: 69949345174709713, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcd001556afb350449cfb5c05ca46814, type: 2}
     - target: {fileID: 2572952574110108904, guid: 8fea5569c83289741895400d2a7e9772, type: 3}
       propertyPath: m_Name
       value: Player_Donny
