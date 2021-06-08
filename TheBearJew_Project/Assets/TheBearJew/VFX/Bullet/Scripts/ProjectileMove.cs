@@ -40,5 +40,6 @@ public class ProjectileMove : MonoBehaviour
             var hitVFX = Instantiate (hitPrefab, pos, rot);
         }
         Destroy (gameObject);
+        
     }
 }
