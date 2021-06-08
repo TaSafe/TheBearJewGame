@@ -3,6 +3,7 @@
 public class GunBehaviour : MonoBehaviour, IInteraction
 {
     [SerializeField] private WeaponData _gunData;
+    public GameObject interactableVFX;
 
     [Header("Posição ao ser pega pelo player")]
     [SerializeField] private Vector3 inHandPos;
@@ -20,8 +21,8 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
         UiHUD.Instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;
-        //Obs: Modificado para PlayerInput.Instance
-        //GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerWeaponHandler>().EquipGun(gameObject, inHandPos, inHandRot);
+        interactableVFX.SetActive(false);
+
         PlayerInput.Instance.PlayerWeaponHandler.EquipGun(gameObject, inHandPos, inHandRot);
     }
 }
