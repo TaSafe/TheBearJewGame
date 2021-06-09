@@ -14,7 +14,7 @@ public class Handler : MonoBehaviour, IInteraction
         _collider.enabled = false;
 
         //TODO: Som -> tirar o comentário quando acrescentar
-        //FMODUnity.RuntimeManager.PlayOneShot(_handleTurningSound);
+        FMODUnity.RuntimeManager.PlayOneShot(_handleTurningSound);
 
         ManagerSubida.Instance.HandleOn();
     }
