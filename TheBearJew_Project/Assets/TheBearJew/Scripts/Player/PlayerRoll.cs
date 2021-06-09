@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-//TODO: Colocar a animação
-//TODO: Acertar o timing da rolagem
 //TODO: Bloquear alguns inputs do jogador enquanto está rolando
 
 public class PlayerRoll : MonoBehaviour
 {
+    public bool ActivateRoll { get; set; }
+
     [SerializeField] private float _rollDistance = 4f;
     [SerializeField] private float _rollSpeed = 10f;
     [SerializeField] private float _rayCastColisionDetectionDistance = 1f;
-    [Tooltip("In seconds")][SerializeField] private float _coolDownTime;
+    [SerializeField] private float _coolDownTime;
 
     private Movement _movement;
     private CharacterController _characterCotroller;
@@ -31,7 +31,7 @@ public class PlayerRoll : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !_isRolling && !_isCoolingDown)
+        if (ActivateRoll && !_isRolling && !_isCoolingDown)
         {
             if (_movement.InputX != 0f || _movement.InputY != 0f)
             {

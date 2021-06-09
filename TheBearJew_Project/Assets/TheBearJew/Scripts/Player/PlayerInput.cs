@@ -4,14 +4,16 @@
 public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput Instance { get; private set; }
-    public Inventory Inventory { get; private set; }
+    
     public PlayerWeaponHandler PlayerWeaponHandler { get; private set; }
     public PlayerBehaviour PlayerBehaviour { get; private set; }
+    public Inventory Inventory { get; private set; }
     public bool IsAllInputsEnable { get; set; } = true; //HACK: pra parar tudo temporariamente
 
     private Aim _aim;
     private Movement _movement;
     private PlayerInteraction _playerInteraction;
+    private PlayerRoll _playerRoll;
     private bool inputEnabled = true;
     private bool videoInputEnabled;
 
@@ -30,6 +32,7 @@ public class PlayerInput : MonoBehaviour
         _aim = GetComponent<Aim>();
         _movement = GetComponent<Movement>();
         _playerInteraction = GetComponentInChildren<PlayerInteraction>();
+        _playerRoll = GetComponent<PlayerRoll>();
         PlayerWeaponHandler = GetComponent<PlayerWeaponHandler>();
         Inventory = GetComponent<Inventory>();
         PlayerBehaviour = GetComponent<PlayerBehaviour>();
@@ -79,7 +82,11 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             PlayerWeaponHandler.SwitchWeapons();
 
-        //FIXME: Adicionar o input do espaço do PlayerRoll
+        if (Input.GetKeyDown(KeyCode.Space))
+            _playerRoll.ActivateRoll = true;
+
+        if (Input.GetKeyUp(KeyCode.Space))
+            _playerRoll.ActivateRoll = false;
     }
 
     public void EnableInput() => inputEnabled = true;
