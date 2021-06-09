@@ -5,6 +5,8 @@ public class SubidaDialogueTrigger : MonoBehaviour, IInteraction
     [SerializeField] private DialogueSequence dialogueSequence;
     private bool startDialogue;
 
+    public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GENERAL;
+
     public void Interaction()
     {
         if (startDialogue)

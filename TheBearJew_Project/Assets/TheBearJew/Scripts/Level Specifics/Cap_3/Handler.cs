@@ -7,6 +7,8 @@ public class Handler : MonoBehaviour, IInteraction
     [SerializeField] private GameObject _vfxInteraction;
     [FMODUnity.EventRef] [SerializeField] private string _handleTurningSound;
 
+    public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GENERAL;
+
     public void Interaction()
     {
         _handle.transform.Rotate(new Vector3(0f, 180f, 0f));

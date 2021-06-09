@@ -60,8 +60,19 @@ public class PlayerInput : MonoBehaviour
         if (!IsAllInputsEnable) return;
 
         //Interação
-        if (Input.GetMouseButtonDown(1))
-            _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
+        if (_playerInteraction.CurrentInteraction != null)
+        {
+            if (Input.GetMouseButtonDown(1) && _playerInteraction.CurrentInteraction.MyType == IInteraction.InteractionType.GUN)
+                _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
+
+            if (Input.GetKeyDown(KeyCode.E) && _playerInteraction.CurrentInteraction.MyType == IInteraction.InteractionType.GENERAL)
+                _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(1))
+                _playerInteraction.WeaponHandlerInteraction(PlayerWeaponHandler);
+        }
 
         if (!inputEnabled) return;
 

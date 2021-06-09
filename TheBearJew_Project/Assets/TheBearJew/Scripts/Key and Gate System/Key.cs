@@ -10,6 +10,8 @@ public class Key : MonoBehaviour, IInteraction
     public string KeyName { get { return _keyName; } }
     public Sprite KeyHudImage { get { return _keyHudImage; } }
 
+    public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GENERAL;
+
     public void Interaction()
     {
         if (!PlayerInput.Instance.Inventory.ContainItem(gameObject))

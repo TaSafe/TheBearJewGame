@@ -2,15 +2,15 @@
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private IInteraction _currentInteraction = null;
+    public IInteraction CurrentInteraction { get; private set; } = null;
 
     private void Start() => Physics.IgnoreCollision(GetComponentInParent<CharacterController>(), gameObject.GetComponent<Collider>());
     
     public void WeaponHandlerInteraction(PlayerWeaponHandler playerWeaponHandler)
     {
-        if (_currentInteraction != null /*&& !playerWeaponHandler.HasGun*/)
+        if (CurrentInteraction != null)
         {
-            _currentInteraction.Interaction();
+            CurrentInteraction.Interaction();
             UiHUD.Instance.ShowIntereactionUI(false);
 
             if (DialogueSystem.Instance != null)
@@ -18,24 +18,31 @@ public class PlayerInteraction : MonoBehaviour
                 if (DialogueSystem.Instance.HasStartedDialogue) return;
             }
 
-            _currentInteraction = null;
+            CurrentInteraction = null;
         }
-        else if (_currentInteraction == null && playerWeaponHandler.HasGun)
+        else if (CurrentInteraction == null && playerWeaponHandler.HasGun)
             playerWeaponHandler.DropGun();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (_currentInteraction == null)
-            _currentInteraction = other.GetComponent<IInteraction>();
+        if (CurrentInteraction == null)
+            CurrentInteraction = other.GetComponent<IInteraction>();
 
-        if (_currentInteraction != null)
-            UiHUD.Instance.ShowIntereactionUI(true);
+        if (CurrentInteraction != null)
+        {
+            bool isMouse = false;
+
+            if (CurrentInteraction.MyType == IInteraction.InteractionType.GUN)
+                isMouse = true;
+
+            UiHUD.Instance.ShowIntereactionUI(true, isMouse);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _currentInteraction = null;
+        CurrentInteraction = null;
         UiHUD.Instance.ShowIntereactionUI(false);
     }
 }

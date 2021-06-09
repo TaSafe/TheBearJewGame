@@ -4,6 +4,8 @@ public abstract class Gate : MonoBehaviour, IInteraction
 {
     [SerializeField] private string _keyName;
 
+    public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GENERAL;
+
     public abstract void GateActions();
 
     public abstract void Interaction();

@@ -9,6 +9,8 @@ public class DynamiteTrigger : MonoBehaviour, IInteraction
     [FMODUnity.EventRef] [SerializeField] private string _explosionSound;
     [FMODUnity.EventRef] [SerializeField] private string _triggerNotWorkingSound;
 
+    public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GENERAL;
+
     public void Interaction()
     {
         if (ManagerTuneis.Instance.IsDynamiteInPlace && !ManagerTuneis.Instance.HasBlockExploded)

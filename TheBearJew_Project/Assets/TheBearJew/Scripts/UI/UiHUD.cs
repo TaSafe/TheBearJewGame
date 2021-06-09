@@ -10,7 +10,8 @@ public class UiHUD : MonoBehaviour
     public UiRollCooldownProgress CooldownProgressBar { get; private set; }
 
 
-    [SerializeField] private GameObject _groupInteractionUI;
+    [SerializeField] private GameObject _groupInteractionMouseUI;
+    [SerializeField] private GameObject _groupInteractionKeyEUI;
     [SerializeField] private GameObject _groupPauseMenu;
     [SerializeField] private Slider _playerLifeBar;
                      
@@ -92,7 +93,21 @@ public class UiHUD : MonoBehaviour
         }
     }
 
-    public void ShowIntereactionUI(bool value) => _groupInteractionUI.SetActive(value);
+    public void ShowIntereactionUI(bool value, bool isMouse = false)
+    {
+        if (!value)
+        {
+            _groupInteractionMouseUI.SetActive(value);
+            _groupInteractionKeyEUI.SetActive(value);
+
+            return;
+        }
+
+        if (isMouse)
+            _groupInteractionMouseUI.SetActive(value);
+        else
+            _groupInteractionKeyEUI.SetActive(value);
+    }
     #endregion
 
     //FIXME: mover para uma classe própria a função Pause()
