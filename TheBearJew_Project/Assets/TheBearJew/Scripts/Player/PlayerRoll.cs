@@ -12,12 +12,16 @@ public class PlayerRoll : MonoBehaviour
     [SerializeField] private float _rayCastColisionDetectionDistance = 1f;
     [SerializeField] private float _coolDownTime;
 
+    [Header("SFX")]
+    [FMODUnity.EventRef][SerializeField] private string _dashSound;
+
     private Movement _movement;
     private CharacterController _characterCotroller;
     private Vector3 _rollDirection;
     private bool _isRolling;
     private bool _isCoolingDown;
     private float _rollingSpeed;
+    private const string IS_ROLLING = "isRolling";
 
     void Start()
     {        
@@ -39,7 +43,10 @@ public class PlayerRoll : MonoBehaviour
                 _rollingSpeed = _rollSpeed;
                 _characterCotroller.enabled = false;
                 _isRolling = true;
-                _movement.Animator.SetBool("isRolling", _isRolling);
+
+                _movement.Animator.SetBool(IS_ROLLING, _isRolling);
+                FMODUnity.RuntimeManager.PlayOneShot(_dashSound);
+
                 _isCoolingDown = true;
             }
         }
@@ -59,7 +66,7 @@ public class PlayerRoll : MonoBehaviour
                 {
                     _characterCotroller.enabled = true;
                     _isRolling = false;
-                    _movement.Animator.SetBool("isRolling", _isRolling);
+                    _movement.Animator.SetBool(IS_ROLLING, _isRolling);
                     StartCoroutine(Cooldown(_coolDownTime));
                     return;
                 }
@@ -72,7 +79,7 @@ public class PlayerRoll : MonoBehaviour
             {
                 _characterCotroller.enabled = true;
                 _isRolling = false;
-                _movement.Animator.SetBool("isRolling", _isRolling);
+                _movement.Animator.SetBool(IS_ROLLING, _isRolling);
                 StartCoroutine(Cooldown(_coolDownTime));
             }
         }
