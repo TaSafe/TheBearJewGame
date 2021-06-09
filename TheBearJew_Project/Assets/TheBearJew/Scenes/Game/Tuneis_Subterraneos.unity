@@ -12520,14 +12520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8455651376563956553, guid: c9bb15a71764b0d4ab9d4bc2f948b37b, type: 3}
-      propertyPath: _HasPlayedCutsceneTwo
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455651376563956553, guid: c9bb15a71764b0d4ab9d4bc2f948b37b, type: 3}
-      propertyPath: _HasPlayedCutsceneThree
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8455651376563956554, guid: c9bb15a71764b0d4ab9d4bc2f948b37b, type: 3}
       propertyPath: m_RootOrder
       value: 12
