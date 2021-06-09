@@ -3,21 +3,17 @@ using UnityEngine;
 public class Handler : MonoBehaviour, IInteraction
 {
     [SerializeField] private Collider _collider;
-
-    [Header("Indicator Mesh")]
-    [SerializeField] private MeshRenderer _indicatorMeshRenderer;
-    [SerializeField] private Material _materialOn;
-    
-    [Header("Indicator Light")]
-    [SerializeField] private Light _indicatorLight;
-    [SerializeField] private Color _inidcatorLighColor;
-
+    [SerializeField] private GameObject _handle;
+    [SerializeField] private GameObject _vfxInteraction;
+    [FMODUnity.EventRef] [SerializeField] private string _handleTurningSound;
     public void Interaction()
     {
-        _indicatorMeshRenderer.material = _materialOn;
-        _indicatorLight.color = _inidcatorLighColor;
-
+        _handle.transform.Rotate(new Vector3(0f, 180f, 0f));
+        _vfxInteraction.SetActive(false);
         _collider.enabled = false;
+
+        //TODO: Som -> tirar o comentário quando acrescentar
+        //FMODUnity.RuntimeManager.PlayOneShot(_handleTurningSound);
 
         ManagerSubida.Instance.HandleOn();
     }
