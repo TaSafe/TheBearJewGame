@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalLife: 100
-  _donnyWhithoutMilitaryUniform: {fileID: 2100000, guid: 02bbb7deb53830a46986570e90c7960a, type: 2}
+  _donnyWhithoutMilitaryUniform: {fileID: 2100000, guid: 3f248c59af7da994a80a9522b04cff9b, type: 2}
   _backpack: {fileID: 3419814769699409637}
   _helmet: {fileID: 8372195883913655783}
   _body: {fileID: 4719139991352863805}
@@ -139,6 +139,7 @@ MonoBehaviour:
   _rollSpeed: 8
   _rayCastColisionDetectionDistance: 0.8
   _coolDownTime: 2
+  _dashSound: 
 --- !u!114 &2572952573481704341
 MonoBehaviour:
   m_ObjectHideFlags: 0
