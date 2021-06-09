@@ -87,13 +87,13 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             SetGunToHand(gun, inHandPosition, inHandRotation);
             _weaponEquiped = WeaponEquiped.BAT;
-            _animator.SetBool("IsWithBat", true);
+            _animator.SetBool(IS_WITH_BAT, true);
         }
         else
         {
             _gunEquiped = gun;
             BatClone.SetActive(false);
-            _animator.SetBool("IsWithBat", false);
+            _animator.SetBool(IS_WITH_BAT, false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
 
             CurrentGunShoot = _gunEquiped.GetComponent<GunShoot>();
@@ -121,7 +121,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
         _gunEquiped.transform.parent = null;
         _gunEquiped.transform.position = new Vector3(
-            transform.position.x, 1.5f, transform.position.z);
+            transform.position.x, 1f, transform.position.z);
         _gunEquiped.transform.localRotation = Quaternion.Euler(
             0f, 90f, 0f);
         SceneManager.MoveGameObjectToScene(_gunEquiped, SceneManager.GetActiveScene());

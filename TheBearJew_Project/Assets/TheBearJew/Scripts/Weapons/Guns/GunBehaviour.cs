@@ -17,7 +17,12 @@ public class GunBehaviour : MonoBehaviour, IInteraction
     public void Interaction()
     {
         if (PlayerInput.Instance.PlayerWeaponHandler.HasGun)
+        {
+            if (PlayerInput.Instance.PlayerWeaponHandler._weaponEquiped == PlayerWeaponHandler.WeaponEquiped.BAT)
+                PlayerInput.Instance.PlayerWeaponHandler.SwitchWeapons();
+
             PlayerInput.Instance.PlayerWeaponHandler.DropGun();
+        }
 
         UiHUD.Instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;

@@ -52,7 +52,7 @@ public class GunShoot : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(GunBehaviour.WeaponData.SoundShoot);
 
         UiHUD.Instance.HudWeaponAmmo(AmmoCurrent);
-        uiBullets.DesativaImage();
+        //uiBullets.DesativaImage();
         
 
         //Detecção do Raycast do tiro
