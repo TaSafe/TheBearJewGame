@@ -9,7 +9,7 @@ public class GunShoot : MonoBehaviour
 
     public float AmmoCurrent { get; private set; }
     public GunBehaviour GunBehaviour { get; private set; }
-    
+    private UiBullets uiBullets;
     
     private bool _firstShoot = true; //GAMBIARRA
     
@@ -52,6 +52,8 @@ public class GunShoot : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(GunBehaviour.WeaponData.SoundShoot);
 
         UiHUD.Instance.HudWeaponAmmo(AmmoCurrent);
+        uiBullets.DesativaImage();
+        
 
         //Detecção do Raycast do tiro
         Ray ray = new Ray(GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.forward);
