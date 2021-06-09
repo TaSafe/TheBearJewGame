@@ -130,6 +130,7 @@
 		<relationship name="effects">
 			<destination>{7f888c78-90be-488f-bd53-50c4413d785d}</destination>
 			<destination>{4c68ae63-14dd-4b94-b2a0-aea659642051}</destination>
+			<destination>{06f96ece-aaf7-4870-bff4-c6913ebb7bf6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2a4bff8f-8d75-40bc-9a83-93aed47ead50}" />
@@ -163,6 +164,11 @@
 		</property>
 		<property name="dryLevel">
 			<value>-3</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{06f96ece-aaf7-4870-bff4-c6913ebb7bf6}">
+		<property name="attackTime">
+			<value>3.60000014</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{1b6b9046-3e86-44fc-9d11-94cfc9d327b6}" />

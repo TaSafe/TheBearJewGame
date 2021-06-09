@@ -4341,6 +4341,38 @@ PrefabInstance:
       propertyPath: _video
       value: 
       objectReference: {fileID: 32900000, guid: 91268e0c23c8160409e4e3dc9d134230, type: 3}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1207167318}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351727, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: m_Name
       value: Canvas_Video
@@ -11333,7 +11365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1207167319
 Transform:
   m_ObjectHideFlags: 0
@@ -11362,7 +11394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/Trilha/Track2
-  PlayEvent: 1
+  PlayEvent: 11
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0

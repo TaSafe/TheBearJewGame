@@ -1446,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &95615923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/Trilha/Track1
-  PlayEvent: 1
+  PlayEvent: 11
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -34735,7 +34735,7 @@ PrefabInstance:
       objectReference: {fileID: 32900000, guid: 2a4930b61e2268048a4c17ba63ce7430, type: 3}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -34743,7 +34743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -34752,7 +34752,7 @@ PrefabInstance:
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 95615922}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -34767,7 +34767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Pause
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -34775,7 +34775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UiHUD, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
+      propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2207458519662351716, guid: 0da070fa0c8ec6e47af4e1477951081b, type: 3}
       propertyPath: OnVideoEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

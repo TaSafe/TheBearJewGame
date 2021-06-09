@@ -150,6 +150,12 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{1e7c3e2e-3689-48f6-b5e3-03c224d2195d}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>89</value>
+		</property>
 		<property name="isAsync">
 			<value>true</value>
 		</property>
