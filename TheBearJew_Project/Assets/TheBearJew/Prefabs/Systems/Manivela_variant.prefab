@@ -72,7 +72,7 @@ MonoBehaviour:
   _collider: {fileID: 3189680235748031429}
   _handle: {fileID: 6133894216934575435}
   _vfxInteraction: {fileID: 2823436249054526442}
-  _handleTurningSound: 
+  _handleTurningSound: event:/Eventos/alavanca
 --- !u!1001 &3171935947902996831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ef71ea8589cbe3a4b825ac626c6bf735, type: 2}
     - target: {fileID: 919132149155446097, guid: 3dc998d816363834293439dac4c339ba, type: 3}
       propertyPath: m_Name
-      value: Manivela_variant_new
+      value: Manivela_variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc998d816363834293439dac4c339ba, type: 3}
