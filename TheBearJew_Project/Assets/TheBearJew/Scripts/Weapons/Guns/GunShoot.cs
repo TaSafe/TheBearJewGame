@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class GunShoot : MonoBehaviour
 {
+    [SerializeField] private Transform _muzzleFxPosition;
     [SerializeField] private GameObject _vfxMuzzleFlash;
     [SerializeField] private GameObject _vfxHit;
+    [SerializeField] private GameObject _vfxBlood;
     [SerializeField] private LayerMask _ignoreLayer;
 
     public float AmmoCurrent { get; private set; }
@@ -46,8 +48,8 @@ public class GunShoot : MonoBehaviour
 
         AmmoCurrent--;
         
-        var muzzleFlash = Instantiate(_vfxMuzzleFlash, GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.rotation);
-        muzzleFlash.transform.SetParent(GunBehaviour.transform);   //para que o flash siga o movimento da arma
+        GameObject muzzleFlash = Instantiate(_vfxMuzzleFlash, _muzzleFxPosition.position, _muzzleFxPosition.rotation);
+        muzzleFlash.transform.SetParent(_muzzleFxPosition);   //para que o flash siga o movimento da arma
 
         FMODUnity.RuntimeManager.PlayOneShot(GunBehaviour.WeaponData.SoundShoot);
 
@@ -59,15 +61,19 @@ public class GunShoot : MonoBehaviour
         Ray ray = new Ray(GunBehaviour.Muzzle.position, GunBehaviour.Muzzle.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 30f, _ignoreLayer))
         {
-            Instantiate(_vfxHit, hitInfo.point, Quaternion.identity);
-
             if (hitInfo.collider.gameObject.GetComponent<IDamage>() != null)
             {
                 hitInfo.collider.gameObject.GetComponent<IDamage>().Damage(damage);
 
+                Instantiate(_vfxBlood, hitInfo.point, Quaternion.FromToRotation(Vector3.up, hitInfo.normal));
+
                 //Feedback sonoro hit no inimigo FIXME: mover para a classe que lida com o dano do inimigo
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/hit_enemy_layer");
+
+                return;
             }
+            
+            Instantiate(_vfxHit, hitInfo.point, Quaternion.FromToRotation(Vector3.up, hitInfo.normal));
         }
     }
 

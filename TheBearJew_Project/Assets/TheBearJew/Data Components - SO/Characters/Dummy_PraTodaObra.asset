@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dummy_PraTodaObra
   m_EditorClassIdentifier: 
   _name: PraTodaObra
-  _life: 100
+  _life: 999999

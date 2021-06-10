@@ -14,7 +14,10 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     public IInteraction.InteractionType MyType { get; set; } = IInteraction.InteractionType.GUN;
 
-    private void Start() => Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
+    private void Start()
+    {
+        Muzzle = GameObject.FindGameObjectWithTag("Muzzle").transform;
+    }
 
     public void Interaction()
     {
