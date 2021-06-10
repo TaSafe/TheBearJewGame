@@ -16,7 +16,7 @@ public class GameSettings : MonoBehaviour
     private void Awake()
     {
         Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2, cursorTexture.height / 2), CursorMode.Auto);
-        _dropdownGraphicQuality.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
+        _dropdownGraphicQuality?.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
     }
 
     public void ChangeScene(string scene) => SceneManager.LoadScene(scene);
