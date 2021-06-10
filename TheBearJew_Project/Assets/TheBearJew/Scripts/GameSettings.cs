@@ -47,4 +47,6 @@ public class GameSettings : MonoBehaviour
 
     public void QualityChange(int qualityIndex) => QualitySettings.SetQualityLevel(qualityIndex);
 
+    public void Quit() => Application.Quit();
+
 }
