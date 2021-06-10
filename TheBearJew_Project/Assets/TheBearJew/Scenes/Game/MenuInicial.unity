@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dropdownWindowType: {fileID: 1064583501}
   _dropdownGraphicQuality: {fileID: 296819630}
-  cursorTexture: {fileID: 2800000, guid: c0b74fcd0dca6f94d859fb1e7b2c9b9b, type: 3}
+  cursorTexture: {fileID: 2800000, guid: e7591a17190bde74fbdef57579afa358, type: 3}
 --- !u!1 &741681004
 GameObject:
   m_ObjectHideFlags: 0
