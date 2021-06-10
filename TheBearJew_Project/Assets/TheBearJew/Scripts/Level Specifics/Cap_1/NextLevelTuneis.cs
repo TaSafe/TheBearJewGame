@@ -8,6 +8,9 @@ public class NextLevelTuneis : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
+        {
+            UiHUD.Instance?.LoadingPanel(true);
             SceneManager.LoadScene("Tuneis_Subterraneos");
+        }
     }
 }

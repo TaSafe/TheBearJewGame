@@ -13,6 +13,7 @@ public class UiHUD : MonoBehaviour
     [SerializeField] private GameObject _groupInteractionMouseUI;
     [SerializeField] private GameObject _groupInteractionKeyEUI;
     [SerializeField] private GameObject _groupPauseMenu;
+    [SerializeField] private GameObject _loadingPanel;
     [SerializeField] private Slider _playerLifeBar;
                      
     [Header("HUD Weapon")]
@@ -209,6 +210,8 @@ public class UiHUD : MonoBehaviour
             _dialogueTxt.SetText(text);
     }
     #endregion
+
+    public void LoadingPanel(bool activeState) => _loadingPanel.SetActive(activeState);
 
     public void BackToMainMenu()
     {

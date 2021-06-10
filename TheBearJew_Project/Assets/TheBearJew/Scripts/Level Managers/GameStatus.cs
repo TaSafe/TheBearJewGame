@@ -53,6 +53,8 @@ public class GameStatus : MonoBehaviour
                  SubidaChecks();
                 break;
         }
+
+        UiHUD.Instance?.LoadingPanel(false);
     }
 
     private Vector3 GetSpawnPointInScene() => GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;

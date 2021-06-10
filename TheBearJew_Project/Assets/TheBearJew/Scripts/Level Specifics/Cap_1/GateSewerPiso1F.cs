@@ -13,6 +13,7 @@ public class GateSewerPiso1F : Gate
     {
         if (GameStatus.Instance.HasEnteredSewer)
         {
+            UiHUD.Instance?.LoadingPanel(true);
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
         }
@@ -21,6 +22,7 @@ public class GateSewerPiso1F : Gate
         {
             GameStatus.Instance.HasEnteredSewer = true;
             RemoveKeyFromPlayerInventary();
+            UiHUD.Instance?.LoadingPanel(true);
             SceneManager.LoadScene("Piso_0F_Esgoto");
             return;
         }

@@ -9,6 +9,7 @@ public class Radio : MonoBehaviour, IInteraction
 
     public void Interaction()
     {
+        UiHUD.Instance?.LoadingPanel(true);
         SceneManager.LoadScene(nextScene);
     }
 }
