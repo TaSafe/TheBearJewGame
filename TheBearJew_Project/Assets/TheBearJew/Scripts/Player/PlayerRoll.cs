@@ -80,6 +80,7 @@ public class PlayerRoll : MonoBehaviour
                 _characterCotroller.enabled = true;
                 _isRolling = false;
                 _movement.Animator.SetBool(IS_ROLLING, _isRolling);
+                if (ActivateRoll) ActivateRoll = false;
                 StartCoroutine(Cooldown(_coolDownTime));
             }
         }
