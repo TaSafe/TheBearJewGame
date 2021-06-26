@@ -14,15 +14,15 @@ public class Key : MonoBehaviour, IInteraction
 
     public void Interaction()
     {
-        if (!PlayerInput.Instance.Inventory.ContainItem(gameObject))
+        if (!Player.Instance.Inventory.ContainItem(gameObject))
         {
-            PlayerInput.Instance.Inventory.AddItem(gameObject);
+            Player.Instance.Inventory.AddItem(gameObject);
             UiHUD.Instance.UIItemAdd(KeyHudImage);
         }
 
         gameObject.SetActive(false);
         gameObject.transform.position = new Vector3(0f, 1000f, 0f);
-        gameObject.transform.SetParent(PlayerInput.Instance.transform);
+        gameObject.transform.SetParent(Player.Instance.transform);
         OnCollect?.Invoke();
     }
 }

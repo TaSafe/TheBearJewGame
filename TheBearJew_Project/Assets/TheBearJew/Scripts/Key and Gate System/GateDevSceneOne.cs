@@ -14,7 +14,7 @@ public class GateDevSceneOne : Gate
             gameObject.SetActive(false);
             return;
         }
-        else if (PlayerInput.Instance.Inventory.HasItemOfType<Key>())
+        else if (Player.Instance.Inventory.HasItemOfType<Key>())
             DialogueSystem.Instance.DialogueChanger(dialogueDontHaveNecessaryKey);
         else
             DialogueSystem.Instance.DialogueChanger(dialogueDontHaveKey);

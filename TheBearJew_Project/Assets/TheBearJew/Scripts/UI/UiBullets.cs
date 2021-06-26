@@ -14,8 +14,8 @@ public class UiBullets : MonoBehaviour
     private GunShoot _ammo;
     void Start()
     {
-        _weapon = PlayerInput.Instance.PlayerWeaponHandler.CurrentGunShoot.GunBehaviour.WeaponData;
-        _ammo = PlayerInput.Instance.PlayerWeaponHandler.CurrentGunShoot;
+        _weapon = Player.Instance.PlayerWeaponHandler.CurrentGunShoot.GunBehaviour.WeaponData;
+        _ammo = Player.Instance.PlayerWeaponHandler.CurrentGunShoot;
        
     }
 
@@ -29,7 +29,7 @@ public class UiBullets : MonoBehaviour
 
     private void CheckifHasWeapon()
     {
-        if (!PlayerInput.Instance.PlayerWeaponHandler.HasGun)
+        if (!Player.Instance.PlayerWeaponHandler.HasGun)
         {
             for (int i = 0; i < bulletsImage.Length; i++)
             {

@@ -21,18 +21,18 @@ public class GunBehaviour : MonoBehaviour, IInteraction
 
     public void Interaction()
     {
-        if (PlayerInput.Instance.PlayerWeaponHandler.HasGun)
+        if (Player.Instance.PlayerWeaponHandler.HasGun)
         {
-            if (PlayerInput.Instance.PlayerWeaponHandler._weaponEquiped == PlayerWeaponHandler.WeaponEquiped.BAT)
-                PlayerInput.Instance.PlayerWeaponHandler.SwitchWeapons();
+            if (Player.Instance.PlayerWeaponHandler._weaponEquiped == PlayerWeaponHandler.WeaponEquiped.BAT)
+                Player.Instance.PlayerWeaponHandler.SwitchWeapons();
 
-            PlayerInput.Instance.PlayerWeaponHandler.DropGun();
+            Player.Instance.PlayerWeaponHandler.DropGun();
         }
 
         UiHUD.Instance.ShowIntereactionUI(false);
         GetComponent<Collider>().enabled = false;
         interactableVFX.SetActive(false);
 
-        PlayerInput.Instance.PlayerWeaponHandler.EquipGun(gameObject, inHandPos, inHandRot);
+        Player.Instance.PlayerWeaponHandler.EquipGun(gameObject, inHandPos, inHandRot);
     }
 }

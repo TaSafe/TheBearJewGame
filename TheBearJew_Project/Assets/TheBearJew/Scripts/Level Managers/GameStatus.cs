@@ -75,12 +75,12 @@ public class GameStatus : MonoBehaviour
             ManagerPiso1F.Instance?.LevelEndUpdate();
 
         if (HasEnteredSewer)
-            PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
+            Player.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
     }
 
     private void Piso0FEsgotoChecks()
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
+        Player.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
 
         if (!HasEnemyAlivePiso0F)
             ManagerPiso0F.Instance?.LevelEndUpdate();
@@ -88,9 +88,9 @@ public class GameStatus : MonoBehaviour
 
     private void TuneisSubterraneosChechks() 
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
+        Player.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
 
-        PlayerInput.Instance.PlayerBehaviour?.VisualChange();
+        Player.Instance.PlayerBehaviour?.VisualChange();
 
         if (!_HasPlayedCutsceneTwo)
         {
@@ -101,7 +101,7 @@ public class GameStatus : MonoBehaviour
 
     private void SubidaChecks()
     {
-        PlayerInput.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
+        Player.Instance.PlayerBehaviour?.SetPlayerPosition(GetSpawnPointInScene());
 
         if (!_HasPlayedCutsceneThree)
         {
@@ -112,7 +112,7 @@ public class GameStatus : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(UiHUD.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());

@@ -26,7 +26,7 @@ public class EnemyBehaviours : MonoBehaviour
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _playerPosition = PlayerInput.Instance.gameObject.transform;
+        _playerPosition = Player.Instance.gameObject.transform;
         _animator = GetComponentInChildren<Animator>();
     }
 

@@ -12,7 +12,7 @@ public abstract class Gate : MonoBehaviour, IInteraction
 
     public bool CheckKeyInPlayerInventary()
     {
-        if (PlayerInput.Instance.Inventory.HasItemOfType<Key>(out Key key))
+        if (Player.Instance.Inventory.HasItemOfType<Key>(out Key key))
         {
             if (key.KeyName == _keyName)
                 return true;
@@ -24,9 +24,9 @@ public abstract class Gate : MonoBehaviour, IInteraction
     public void RemoveKeyFromPlayerInventary()
     {
         Key key;
-        if (PlayerInput.Instance.Inventory.HasItemOfType<Key>(out key))
+        if (Player.Instance.Inventory.HasItemOfType<Key>(out key))
         {
-            PlayerInput.Instance.Inventory.RemoveItem(key.gameObject);
+            Player.Instance.Inventory.RemoveItem(key.gameObject);
             key.gameObject.transform.parent = null;
             UiHUD.Instance.UIItemRemove(key.KeyHudImage);
             Destroy(key.gameObject);

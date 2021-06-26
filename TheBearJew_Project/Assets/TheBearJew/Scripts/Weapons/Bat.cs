@@ -2,7 +2,6 @@
 
 public class Bat : Weapon
 {
-    //[Range(0f, 1f)] [SerializeField] private float _attackStartTime;  //ANTIGO ATAQUE
     [Range(0f, 1f)] [SerializeField] private float _attackRadius;
 
     private GameObject _muzzle;
@@ -10,8 +9,8 @@ public class Bat : Weapon
 
     private void Start()
     {
-        _muzzle = PlayerInput.Instance.PlayerWeaponHandler.Muzzle;
-        _animator = PlayerInput.Instance.GetComponentInChildren<Animator>();
+        _muzzle = Player.Instance.PlayerWeaponHandler.Muzzle;
+        _animator = Player.Instance.GetComponentInChildren<Animator>();
     }
 
     public override void Attack()
@@ -23,7 +22,6 @@ public class Bat : Weapon
             _animator.SetInteger("hitBatAnimation", animationClip);
             FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot);
         }
-        //StartCoroutine(Attacking(_attackStartTime));  //ANTIGO ATAQUE
     }
 
     public void AttackFromAnimation()
@@ -41,38 +39,4 @@ public class Bat : Weapon
                 iDamage.Damage(WeaponData.Damage, true);
         }
     }
-
-    //ANTIGO ATAQUE
-    //private void OnDisable()
-    //{
-    //    StopAllCoroutines();
-    //}
-
-    //private IEnumerator Attacking(float attackTime)
-    //{
-    //    float time = attackTime + Time.deltaTime;
-
-    //    while (time > 0f)
-    //    {
-    //        if (time < .3f) //Sound
-    //            FMODUnity.RuntimeManager.PlayOneShot(WeaponData.SoundShoot); 
-
-    //        time -= Time.deltaTime;
-    //        yield return null;
-    //    }
-
-    //    //Ataque
-    //    Collider[] colliders = Physics.OverlapSphere(_muzzle.transform.position, _attackRadius);
-
-    //    if (colliders == null) yield break;
-
-    //    foreach (var collider in colliders)
-    //    {
-    //        if (collider.CompareTag("Player")) continue;
-
-    //        IDamage iDamage = collider.GetComponent<IDamage>();
-    //        if (iDamage != null)
-    //            iDamage.Damage(WeaponData.Damage, true);
-    //    }
-    //}
 }

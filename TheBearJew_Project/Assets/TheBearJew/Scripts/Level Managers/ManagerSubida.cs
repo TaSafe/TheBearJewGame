@@ -56,8 +56,8 @@ public class ManagerSubida : MonoBehaviour
 
         _blocksGroup.SetActive(true);
 
-        PlayerInput.Instance.PlayerBehaviour.SetPlayerPosition(_playerBossResposition.position);
-        PlayerInput.Instance.PlayerBehaviour.RespawnPosition = _playerBossResposition.position;
+        Player.Instance.PlayerBehaviour.SetPlayerPosition(_playerBossResposition.position);
+        Player.Instance.PlayerBehaviour.RespawnPosition = _playerBossResposition.position;
     }
 
     private void BossActivation()

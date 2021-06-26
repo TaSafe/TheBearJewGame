@@ -63,7 +63,7 @@ public class BossBehaviour : MonoBehaviour, IDamage
             ChangeState(State.RELOAD);
         else if (!isCoolingDown)
         {
-            transform.LookAt(PlayerInput.Instance.transform.position, Vector3.up);
+            transform.LookAt(Player.Instance.transform.position, Vector3.up);
 
             if (fireRateTimer <= 0f)
             {

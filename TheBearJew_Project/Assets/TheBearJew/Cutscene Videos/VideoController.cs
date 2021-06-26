@@ -37,13 +37,13 @@ public class VideoController : MonoBehaviour
 
     public void VideoActivate()
     {
-        PlayerInput.Instance?.SetVideo(true);
+        Player.Instance?.PlayerInput.InputStateOnVideo(true);
         _videoPanel.SetActive(true);
     }
 
     private void VideoHasEnded(VideoPlayer source)
     {
-        PlayerInput.Instance?.SetVideo(false);
+        Player.Instance?.PlayerInput.InputStateOnVideo(false);
         OnVideoEnd?.Invoke();
         _videoPanel.SetActive(false);
     }

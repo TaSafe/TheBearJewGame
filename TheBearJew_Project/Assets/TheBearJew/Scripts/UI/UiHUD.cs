@@ -116,7 +116,7 @@ public class UiHUD : MonoBehaviour
     {
         if (Time.timeScale > 0f)
         {
-            PlayerInput.Instance.IsAllInputsEnable = false;
+            Player.Instance.PlayerInput.IsAllInputsEnable = false;
             _groupPauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -124,7 +124,7 @@ public class UiHUD : MonoBehaviour
         {
             _groupPauseMenu.SetActive(false);
             Time.timeScale = 1f;
-            PlayerInput.Instance.IsAllInputsEnable = true;
+            Player.Instance.PlayerInput.IsAllInputsEnable = true;
         }
     }
 
@@ -215,7 +215,7 @@ public class UiHUD : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.MoveGameObjectToScene(PlayerInput.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(GameStatus.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());

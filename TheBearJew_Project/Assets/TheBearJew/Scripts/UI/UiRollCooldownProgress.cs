@@ -12,9 +12,9 @@ public class UiRollCooldownProgress : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(
-            PlayerInput.Instance.transform.position.x, 
-            transform.position.y, 
-            PlayerInput.Instance.transform.position.z);
+            Player.Instance.transform.position.x, 
+            transform.position.y,
+            Player.Instance.transform.position.z);
     }
     public void SetMaxValue(float max) => _slider.maxValue = max;
     public void SlideValue(float value) => _slider.value = value;
