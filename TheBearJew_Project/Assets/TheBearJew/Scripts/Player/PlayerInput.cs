@@ -2,7 +2,7 @@
 
 public class PlayerInput : MonoBehaviour
 {
-    public bool IsAllInputsEnable { get; set; } = true; //HACK: pra parar tudo temporariamente
+    public bool IsAllInputsEnable { get; set; } = true; //HACK: pra parar tudo temporariamente de forma direta na propriedade
     private bool inputEnabled = true;
     private bool videoInputEnabled;
 
