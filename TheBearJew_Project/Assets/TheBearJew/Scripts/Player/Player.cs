@@ -31,16 +31,4 @@ public class Player : MonoBehaviour
         PlayerRoll = GetComponent<PlayerRoll>();
         Inventory = GetComponent<Inventory>();
     }
-
-    //private void Start()
-    //{
-    //    PlayerInput = GetComponent<PlayerInput>();
-    //    PlayerBehaviour = GetComponent<PlayerBehaviour>();
-    //    PlayerWeaponHandler = GetComponent<PlayerWeaponHandler>();
-    //    Aim = GetComponent<Aim>();
-    //    Movement = GetComponent<Movement>();
-    //    PlayerInteraction = GetComponentInChildren<PlayerInteraction>();
-    //    PlayerRoll = GetComponent<PlayerRoll>();
-    //    Inventory = GetComponent<Inventory>();
-    //}
 }
