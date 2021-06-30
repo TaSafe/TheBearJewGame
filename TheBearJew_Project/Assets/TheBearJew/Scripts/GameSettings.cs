@@ -6,6 +6,7 @@ public class GameSettings : MonoBehaviour
 {
     [SerializeField] private Dropdown _dropdownWindowType;
     [SerializeField] private Dropdown _dropdownGraphicQuality;
+    [SerializeField] private Dropdown _dropdownResolution;
     
     [Header("Cursor")]
     [SerializeField] private Texture2D cursorTexture;
@@ -17,6 +18,23 @@ public class GameSettings : MonoBehaviour
     {
         Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2, cursorTexture.height / 2), CursorMode.Auto);
         _dropdownGraphicQuality?.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
+
+        _dropdownResolution.options.Clear();
+        _dropdownResolution.options.Capacity = Screen.resolutions.Length;
+
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+            var newOption = new Dropdown.OptionData(Screen.resolutions.GetValue(i).ToString());
+            if (!_dropdownResolution.options.Contains(newOption))
+                _dropdownResolution.options.Add(newOption);
+
+            if (Screen.resolutions.GetValue(i).ToString() == Screen.currentResolution.ToString())
+                currentResolutionIndex = i;
+        }
+
+        _dropdownResolution.SetValueWithoutNotify(currentResolutionIndex);
     }
 
     public void ChangeScene(string scene) => SceneManager.LoadScene(scene);
@@ -46,6 +64,12 @@ public class GameSettings : MonoBehaviour
     }
 
     public void QualityChange(int qualityIndex) => QualitySettings.SetQualityLevel(qualityIndex);
+
+    public void Resolution(int value)
+    {
+        Resolution resolution = Screen.resolutions[value];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
 
     public void Quit() => Application.Quit();
 
