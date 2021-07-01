@@ -15,6 +15,7 @@ public class Bat : Weapon
 
     public override void Attack()
     {
+        //Randomiza a animação de bater do taco. 0 é o valor default, quando não está em nenhum ataque.
         if (_animator.GetInteger("hitBatAnimation") == 0)
         {
             _animator.speed += _animator.speed * WeaponData.FireRate;

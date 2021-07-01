@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8353729269922432776}
   m_Layer: 9
-  m_Name: Muzzle
+  m_Name: MuzzleFlashVfxPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -40,8 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6398524334508288118}
   - component: {fileID: 6398524334508288119}
-  - component: {fileID: 6398524334508288112}
-  - component: {fileID: 6612499096465481971}
+  - component: {fileID: -4559637447087443875}
   m_Layer: 9
   m_Name: Gun_Submachine
   m_TagString: Untagged
@@ -79,7 +78,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0.35}
---- !u!114 &6398524334508288112
+--- !u!114 &-4559637447087443875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,28 +87,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6398524334508288113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ffa2e6374828d43b8f8793e6901a9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d83185a4975d7249a812a1e2a6f384e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunData: {fileID: 11400000, guid: 53c3f4a39e09a9a47a9c70aa3520ccd5, type: 2}
-  interactableVFX: {fileID: 6757349017053414787}
-  inHandPos: {x: 0.046, y: -0.035, z: 0.072}
-  inHandRot: {x: 0, y: 78.89, z: 92.616}
---- !u!114 &6612499096465481971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6398524334508288113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710e030c419a68d47afbe55caa9b4c00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzleFxPosition: {fileID: 8353729269922432776}
+  _weaponData: {fileID: 11400000, guid: 53c3f4a39e09a9a47a9c70aa3520ccd5, type: 2}
+  _inHandPos: {x: 0.051, y: -0.042, z: 0.048}
+  _inHandRot: {x: -4.141, y: 74.918, z: 92.151}
   _vfxMuzzleFlash: {fileID: 4393054787553148848, guid: d9f1d6cb8251c674da0446945f11df8b, type: 3}
   _vfxHit: {fileID: 2079709747427675579, guid: fdb69c8051c03af41903c128568efc77, type: 3}
+  _vfxInteraction: {fileID: 6757349017053414787}
+  _muzzleFxPosition: {fileID: 8353729269922432776}
   _vfxBlood: {fileID: 7702072056099459812, guid: f1ee65a9c20fa3843a710b77f0b9f0d8, type: 3}
   _ignoreLayer:
     serializedVersion: 2
@@ -186,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 1598034248799334, guid: 5fb125617629fb64386fdafd5ec4a612, type: 3}
       propertyPath: m_Name
       value: SM_FX_Glow_Ring_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598034248799334, guid: 5fb125617629fb64386fdafd5ec4a612, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4870304741321898, guid: 5fb125617629fb64386fdafd5ec4a612, type: 3}
       propertyPath: m_RootOrder
