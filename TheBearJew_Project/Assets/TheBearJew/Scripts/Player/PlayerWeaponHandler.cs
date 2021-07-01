@@ -10,7 +10,6 @@ public class PlayerWeaponHandler : MonoBehaviour
     public GameObject Muzzle { get { return _muzzle; } }
     public bool HasGun { get; private set; }
     public GameObject BatClone { get; private set; }
-    public GunShoot CurrentGunShoot { get; private set; }
 
     public enum WeaponEquiped { BAT, GUN }
     [HideInInspector] public WeaponEquiped _weaponEquiped;
@@ -21,10 +20,9 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void Start()
     {
-        BatClone = Instantiate(_batPrefab);
-
         _animator = GetComponentInChildren<Animator>();
 
+        BatClone = Instantiate(_batPrefab);
         Bat batScript = BatClone.GetComponent<Bat>();
         EquipGun(BatClone, batScript.ParentInHandPosition , batScript.ParentInHandRotation);
         
@@ -35,9 +33,8 @@ public class PlayerWeaponHandler : MonoBehaviour
     public void Attack(bool mouseButtonDown)
     {
         //Para parâmetros trigger o 'GetMouseButton' pode registrar que está precionado por mais de um frame, por isso usar o 'GetMouseButtonDown'
-
         if (_weaponEquiped == WeaponEquiped.GUN && !mouseButtonDown && HasGun)
-            _gunEquiped?.GetComponent<GunShoot>().MakeShoot(); //TODO: modificar para a referencia que o script faz ao equipar
+            _gunEquiped?.GetComponent<Weapon>().Attack();
 
         //Isso foi feito para que o ataque do bastão não seja disparado errado
         if (_weaponEquiped == WeaponEquiped.BAT && mouseButtonDown) 
@@ -56,10 +53,11 @@ public class PlayerWeaponHandler : MonoBehaviour
                 BatClone.SetActive(false);
                 _gunEquiped.SetActive(true);
                 _animator.SetBool(IS_WITH_BAT, false);
+                Weapon weapon = _gunEquiped.GetComponent<Weapon>();
                 UiHUD.Instance.HudChangeWeapon(
-                    _gunEquiped.GetComponent<GunShoot>().AmmoCurrent, 
-                    _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage,
-                    BatClone.GetComponent<Weapon>().WeaponData.HudImage );
+                weapon.AmmoCurrent,
+                weapon.WeaponData.HudImage,
+                BatClone.GetComponent<Weapon>().WeaponData.HudImage );
                 _weaponEquiped = WeaponEquiped.GUN; //status
 
                 break;
@@ -70,9 +68,9 @@ public class PlayerWeaponHandler : MonoBehaviour
                 BatClone.SetActive(true);
                 _animator.SetBool(IS_WITH_BAT, true);
                 UiHUD.Instance.HudChangeWeapon(
-                    BatClone.GetComponent<Weapon>().WeaponData.MaxAmmo, 
-                    BatClone.GetComponent<Weapon>().WeaponData.HudImage, 
-                    _gunEquiped.GetComponent<GunBehaviour>().WeaponData.HudImage);
+                BatClone.GetComponent<Weapon>().WeaponData.MaxAmmo, 
+                BatClone.GetComponent<Weapon>().WeaponData.HudImage,
+                _gunEquiped.GetComponent<Weapon>().WeaponData.HudImage);
                 _weaponEquiped = WeaponEquiped.BAT; //status
 
                 break;
@@ -92,15 +90,15 @@ public class PlayerWeaponHandler : MonoBehaviour
         else
         {
             _gunEquiped = gun;
+
             BatClone.SetActive(false);
             _animator.SetBool(IS_WITH_BAT, false);
             SetGunToHand(_gunEquiped, inHandPosition, inHandRotation);
 
-            CurrentGunShoot = _gunEquiped.GetComponent<GunShoot>();
-
+            Weapon weapon = gun.GetComponent<Weapon>();
             UiHUD.Instance.HudChangeWeapon(
-                gun.GetComponent<GunShoot>().AmmoCurrent, 
-                gun.GetComponent<GunBehaviour>().WeaponData.HudImage, 
+                weapon.AmmoCurrent,
+                weapon.WeaponData.HudImage,
                 BatClone.GetComponent<Weapon>().WeaponData.HudImage
                 );
 
@@ -116,8 +114,9 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         if (_weaponEquiped != WeaponEquiped.GUN) return;
 
+        Weapon weapon = _gunEquiped.GetComponent<Weapon>();
         _gunEquiped.GetComponent<Collider>().enabled = true;
-        _gunEquiped.GetComponent<GunBehaviour>().interactableVFX.SetActive(true);
+        weapon.VfxInteractionSetActive(true);
 
         _gunEquiped.transform.parent = null;
         _gunEquiped.transform.position = new Vector3(
@@ -126,14 +125,13 @@ public class PlayerWeaponHandler : MonoBehaviour
             0f, 90f, 0f);
         SceneManager.MoveGameObjectToScene(_gunEquiped, SceneManager.GetActiveScene());
 
-        if (CurrentGunShoot.AmmoCurrent <= 0)
+        if (weapon.AmmoCurrent <= 0)
             Destroy(_gunEquiped);
 
-        CurrentGunShoot = null;
         _gunEquiped = null;
 
         FMODUnity.RuntimeManager.PlayOneShot("event:/Donny/drop_weapon");  //Som dropar arma
-
+        
         //Reequipar o bastão
         Bat batScript = BatClone.GetComponent<Bat>();
         BatClone.SetActive(true);
@@ -154,5 +152,4 @@ public class PlayerWeaponHandler : MonoBehaviour
         gun.transform.localPosition = inHandPosition;
         gun.transform.localEulerAngles = inHandRotation;
     }
-
 }

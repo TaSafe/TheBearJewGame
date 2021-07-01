@@ -11,15 +11,17 @@ public class UiBullets : MonoBehaviour
     private GameObject[] bulletsBackground;
 
     private WeaponData _weapon;
-    private GunShoot _ammo;
+    //private GunShoot _ammo; // TENTAR ACESSAR O SCRIPT WEAPON DA ARMA EQUIPADA PARA ACESSAR O AmmoCurrent
     void Start()
     {
-        _weapon = Player.Instance.PlayerWeaponHandler.CurrentGunShoot.GunBehaviour.WeaponData;
-        _ammo = Player.Instance.PlayerWeaponHandler.CurrentGunShoot;
-       
+        // ESSA PROPRIEDADE NÃO EXISTE MAIS NA VERSÃO REFATORADA Player.Instance.PlayerWeaponHandler.CurrentGunShoot
+        // TENTAR ACESSAR O SCRIPT WEAPON DA ARMA EQUIPADA PARA ACESSAR O AmmoCurrent
+        //_weapon = Player.Instance.PlayerWeaponHandler.CurrentGunShoot.GunBehaviour.WeaponData;
+        //_ammo = Player.Instance.PlayerWeaponHandler.CurrentGunShoot;
+
     }
 
-    
+
     void Update()
     {
         CheckifHasWeapon();
@@ -76,23 +78,25 @@ public class UiBullets : MonoBehaviour
 
 
 
-        for (int u = 0; u < _ammo.AmmoCurrent; u++)
-        {
-            bulletsImage[u].SetActive(true);
-        }
+        //for (int u = 0; u < _ammo.AmmoCurrent; u++)// TENTAR ACESSAR O SCRIPT WEAPON DA ARMA EQUIPADA PARA ACESSAR O AmmoCurrent
+        //{
+        //    bulletsImage[u].SetActive(true);
+        //}
 
     }
 
-    public void DesativaImage()
-    {
-        int ammo = (int) _ammo.AmmoCurrent;
 
-        if (bulletsImage[ammo].activeSelf)
-        {
-            for(int i = (int) _weapon.MaxAmmo -1; i > _ammo.AmmoCurrent - 1; i--)
-            {
-                bulletsImage[i].SetActive(false);
-            }
-        }
-    }
+    // TENTAR ACESSAR O SCRIPT WEAPON DA ARMA EQUIPADA PARA ACESSAR O AmmoCurrent
+    //public void DesativaImage()
+    //{
+    //    int ammo = (int) _ammo.AmmoCurrent;
+
+    //    if (bulletsImage[ammo].activeSelf)
+    //    {
+    //        for(int i = (int) _weapon.MaxAmmo -1; i > _ammo.AmmoCurrent - 1; i--)
+    //        {
+    //            bulletsImage[i].SetActive(false);
+    //        }
+    //    }
+    //}
 }
