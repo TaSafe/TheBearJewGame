@@ -1009,8 +1009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyName: DevScene2
-  dialogueDontHaveKey: {fileID: 11400000, guid: 2d699cc9a249f3c439179d270ab59884, type: 2}
-  dialogueDontHaveNecessaryKey: {fileID: 11400000, guid: efb72702d21c8ad478aeeb9a940c5d12, type: 2}
+  dialogueDontHaveKey: {fileID: 11400000, guid: 992ad286b6aa68b419362d6e7aa00a53, type: 2}
+  dialogueDontHaveNecessaryKey: {fileID: 11400000, guid: 53dd9162820cda44db2c42d9b02fe39a, type: 2}
 --- !u!1 &955496561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,7 +2604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3002ce95055858478f5162e962e41b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequence: {fileID: 11400000, guid: 12dbf3b4402bb2c4aba25a03d4ee6bcf, type: 2}
+  _sequence: {fileID: 11400000, guid: 964121b6f97da6645a3f7cdf24270263, type: 2}
 --- !u!4 &1685285843
 Transform:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3002ce95055858478f5162e962e41b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequence: {fileID: 11400000, guid: 9fe07f086b218d44193279db7398732a, type: 2}
+  _sequence: {fileID: 11400000, guid: a8e5217957aab0046b6ef5bffc151ccc, type: 2}
 --- !u!114 &1811770734
 MonoBehaviour:
   m_ObjectHideFlags: 0
