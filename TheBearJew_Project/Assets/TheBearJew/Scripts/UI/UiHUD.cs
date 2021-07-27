@@ -216,7 +216,7 @@ public class UiHUD : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneManager.GetActiveScene());
-        SceneManager.MoveGameObjectToScene(CameraDontDestroy.Instance.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(CameraBehaviour.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(GameStatus.Instance.gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
 

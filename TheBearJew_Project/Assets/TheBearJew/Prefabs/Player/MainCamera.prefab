@@ -171,6 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1d2e42867deae419b23d7277757421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layersToHideWhenViewObstructed:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &17424980381427352
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: -4.4, y: 7, z: -4.4}
+  m_FollowOffset: {x: 0, y: 7, z: -4.4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
