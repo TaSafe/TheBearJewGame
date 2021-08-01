@@ -22,6 +22,8 @@ public class CameraBehaviour : MonoBehaviour
 
     private IEnumerator HideWhenViewObstructed()
     {
+        var waitForFixedUpdate = new WaitForFixedUpdate();  //Isso é para reduzir garbage
+
         while (true)
         {
             Physics.Raycast(
@@ -51,7 +53,7 @@ public class CameraBehaviour : MonoBehaviour
                 _environmentMeshToHide = null;
             }
 
-            yield return new WaitForFixedUpdate();
+            yield return waitForFixedUpdate;
         }
     }
 }
