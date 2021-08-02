@@ -2,8 +2,7 @@
 using UnityEngine;
 
 //TODO: Bloquear alguns inputs do jogador enquanto está rolando
-
-public class PlayerRoll : MonoBehaviour
+public class PlayerDash : MonoBehaviour
 {
     public bool ActivateRoll { get; set; }
 
@@ -11,9 +10,6 @@ public class PlayerRoll : MonoBehaviour
     [SerializeField] private float _rollSpeed = 10f;
     [SerializeField] private float _rayCastColisionDetectionDistance = 1f;
     [SerializeField] private float _coolDownTime;
-
-    [Header("SFX")]
-    [FMODUnity.EventRef][SerializeField] private string _dashSound;
 
     private Movement _movement;
     private CharacterController _characterCotroller;
@@ -23,11 +19,14 @@ public class PlayerRoll : MonoBehaviour
     private float _rollingSpeed;
     private const string IS_ROLLING = "isRolling";
 
-    void Start()
-    {        
+    private void Awake()
+    {
         _movement = GetComponent<Movement>();
         _characterCotroller = GetComponent<CharacterController>();
+    }
 
+    private void Start()
+    {      
         UiHUD.Instance.CooldownProgressBar.SetMaxValue(_coolDownTime);
         UiHUD.Instance.CooldownProgressBar.SlideValue(_coolDownTime);
         UiHUD.Instance.CooldownProgressBar.gameObject.SetActive(false);
@@ -45,44 +44,42 @@ public class PlayerRoll : MonoBehaviour
                 _isRolling = true;
 
                 _movement.Animator.SetBool(IS_ROLLING, _isRolling);
-                FMODUnity.RuntimeManager.PlayOneShot(_dashSound);
 
                 _isCoolingDown = true;
             }
         }
+
+        if (!_isRolling) return;
 
         Roll();
     }
 
     void Roll()
     {
-        if (_isRolling)
+        //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
+        Vector3 positionAboveTriggerColliders = new Vector3(transform.position.x, 1.3f, transform.position.z);
+        if (Physics.Raycast(positionAboveTriggerColliders, _rollDirection, out RaycastHit hit, _rayCastColisionDetectionDistance))
         {
-            //TODO: Filtar esse Raycast para pegar apenas paredes e inimigos
-            Vector3 positionAboveTriggerColliders = new Vector3(transform.position.x, 1.3f, transform.position.z);
-            if (Physics.Raycast(positionAboveTriggerColliders, _rollDirection, out RaycastHit hit, _rayCastColisionDetectionDistance))
-            {
-                if (hit.collider != null)
-                {
-                    _characterCotroller.enabled = true;
-                    _isRolling = false;
-                    _movement.Animator.SetBool(IS_ROLLING, _isRolling);
-                    StartCoroutine(Cooldown(_coolDownTime));
-                    return;
-                }
-            }
-
-            transform.position += (_rollDirection * _rollDistance) * _rollingSpeed * Time.deltaTime;
-            _rollingSpeed -= _rollingSpeed * 10f * Time.deltaTime;
-            
-            if (_rollingSpeed < 5f)
+            if (hit.collider != null)
             {
                 _characterCotroller.enabled = true;
                 _isRolling = false;
                 _movement.Animator.SetBool(IS_ROLLING, _isRolling);
-                if (ActivateRoll) ActivateRoll = false;
                 StartCoroutine(Cooldown(_coolDownTime));
+                return;
             }
+        }
+
+        transform.position += (_rollDirection * _rollDistance) * _rollingSpeed * Time.deltaTime;
+        _rollingSpeed -= _rollingSpeed * 10f * Time.deltaTime;
+            
+        if (_rollingSpeed < 5f)
+        {
+            _characterCotroller.enabled = true;
+            _isRolling = false;
+            _movement.Animator.SetBool(IS_ROLLING, _isRolling);
+            if (ActivateRoll) ActivateRoll = false;
+            StartCoroutine(Cooldown(_coolDownTime));
         }
     }
 

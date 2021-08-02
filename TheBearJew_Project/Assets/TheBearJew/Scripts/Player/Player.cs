@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Aim Aim { get; private set; }
     public Movement Movement { get; private set; }
     public PlayerInteraction PlayerInteraction { get; private set; }
-    public PlayerRoll PlayerRoll { get; private set; }
+    public PlayerDash PlayerRoll { get; private set; }
     public Inventory Inventory { get; private set; }
 
     private void Awake()
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         Aim = GetComponent<Aim>();
         Movement = GetComponent<Movement>();
         PlayerInteraction = GetComponentInChildren<PlayerInteraction>();
-        PlayerRoll = GetComponent<PlayerRoll>();
+        PlayerRoll = GetComponent<PlayerDash>();
         Inventory = GetComponent<Inventory>();
     }
 }
