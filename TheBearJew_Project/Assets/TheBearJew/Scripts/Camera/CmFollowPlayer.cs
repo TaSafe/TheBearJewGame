@@ -5,7 +5,7 @@ public class CmFollowPlayer : MonoBehaviour
 {
     void Awake()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<CinemachineVirtualCamera>().Follow = player.transform;
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        GetComponent<CinemachineVirtualCamera>().Follow = player;
     }
 }
